@@ -1,6 +1,6 @@
 # System Model
 
-Skill: `yao-meta-skill`
+Skill: `captain-meta-skill`
 
 - Stability score: `100/100`
 - Stability band: `system-ready`

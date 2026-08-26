@@ -70,11 +70,11 @@ def provider_evidence(store: EvidenceStore, run, skill_dir: Path):
         return run, {"status": "not-configured", "quality_promotion": {"status": "pending", "eligible": False}}
     matrix = load_provider_matrix(matrix_path)
     cases_path = resolve_provider_cases_path(matrix_path, matrix)
+    completed_public = completed_public_provider_evidence(skill_dir, matrix)
+    if completed_public is not None:
+        return run, completed_public
     api_key_env = str(matrix["api_key_env"])
     if not os.environ.get(api_key_env):
-        completed_public = completed_public_provider_evidence(skill_dir, matrix)
-        if completed_public is not None:
-            return run, completed_public
         status = provider_status(matrix)
         return store.add_json_artifact(run, "reports/provider_output_evaluation.json", status), status
     report = execute_provider_matrix(cases_path, matrix, run.run_dir, skill_dir=skill_dir)

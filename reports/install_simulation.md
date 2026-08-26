@@ -17,10 +17,10 @@
 
 | Check | Status | Detail |
 | --- | --- | --- |
-| `archive-present` | `pass` | Package archive exists: dist/yao-meta-skill.zip |
+| `archive-present` | `pass` | Package archive exists: dist/captain-meta-skill.zip |
 | `archive-safe-paths` | `pass` | Archive has no absolute or parent-traversal entries |
 | `single-skill-entrypoint` | `pass` | Installed package exposes only the root SKILL.md entrypoint |
-| `single-top-level` | `pass` | Archive top-level directory is yao-meta-skill |
+| `single-top-level` | `pass` | Archive top-level directory is captain-meta-skill |
 | `entrypoint-load` | `pass` | Installed SKILL.md frontmatter is readable |
 | `entrypoint-name` | `pass` | Installed SKILL.md name matches package directory |
 | `entrypoint-description` | `pass` | Installed SKILL.md description is present |

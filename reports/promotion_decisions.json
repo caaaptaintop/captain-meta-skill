@@ -7,7 +7,7 @@
   },
   "targets": [
     {
-      "name": "yao-meta-skill",
+      "name": "captain-meta-skill",
       "winner_label": "Current",
       "winner_description": "Create, improve, or evaluate an existing skill from workflows, prompts, SOPs, scripts. Use for migration/release/package, routing, evals/tests, install/trust checks, 优化已有 skill, 补 trigger 评测. Exclude summary/translation/docs, brainstorming, one-off prompts, copy-only edits, outline-only requests.",
       "winner_tokens": 74,
@@ -177,7 +177,7 @@
       },
       "registry": [
         {
-          "name": "yao-meta-skill",
+          "name": "captain-meta-skill",
           "role": "baseline",
           "label": "Baseline",
           "ranking_state": "reference",
@@ -188,7 +188,7 @@
           "holdout_errors": 0
         },
         {
-          "name": "yao-meta-skill",
+          "name": "captain-meta-skill",
           "role": "current",
           "label": "Current",
           "ranking_state": "selected_by_dev",
@@ -200,7 +200,7 @@
           "reason_tags": []
         },
         {
-          "name": "yao-meta-skill",
+          "name": "captain-meta-skill",
           "role": "candidate",
           "label": "Minimal",
           "ranking_state": "not_selected",
@@ -214,7 +214,7 @@
           ]
         },
         {
-          "name": "yao-meta-skill",
+          "name": "captain-meta-skill",
           "role": "candidate",
           "label": "Guardrail",
           "ranking_state": "not_selected",
@@ -228,7 +228,7 @@
           ]
         },
         {
-          "name": "yao-meta-skill",
+          "name": "captain-meta-skill",
           "role": "candidate",
           "label": "Balanced",
           "ranking_state": "not_selected",
@@ -242,7 +242,7 @@
           ]
         },
         {
-          "name": "yao-meta-skill",
+          "name": "captain-meta-skill",
           "role": "candidate",
           "label": "Artifact Aware",
           "ranking_state": "not_selected",
@@ -257,7 +257,7 @@
           ]
         },
         {
-          "name": "yao-meta-skill",
+          "name": "captain-meta-skill",
           "role": "candidate",
           "label": "Boundary",
           "ranking_state": "not_selected",

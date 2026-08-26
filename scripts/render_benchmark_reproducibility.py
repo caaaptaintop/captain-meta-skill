@@ -100,7 +100,7 @@ REPRODUCTION_COMMANDS = [
     {
         "label": "package",
         "command": "python3 scripts/yao.py package . --platform openai --platform claude --platform generic --platform vscode --expectations evals/packaging_expectations.json --output-dir dist --zip --self",
-        "evidence": "dist/yao-meta-skill.zip",
+        "evidence": "dist/captain-meta-skill.zip",
     },
     {
         "label": "package verify",

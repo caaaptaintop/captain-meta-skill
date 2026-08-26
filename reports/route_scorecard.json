@@ -9,7 +9,7 @@
     "no_route_accuracy": 1.0
   },
   "route_stats": {
-    "yao-meta-skill": {
+    "captain-meta-skill": {
       "expected_count": 3,
       "predicted_count": 3,
       "correct_count": 3,
@@ -43,26 +43,26 @@
     }
   },
   "confusion_matrix": {
-    "yao-meta-skill": {
-      "yao-meta-skill": 3,
+    "captain-meta-skill": {
+      "captain-meta-skill": 3,
       "team-frontend-review": 0,
       "governed-incident-command": 0,
       "no_route": 0
     },
     "team-frontend-review": {
-      "yao-meta-skill": 0,
+      "captain-meta-skill": 0,
       "team-frontend-review": 3,
       "governed-incident-command": 0,
       "no_route": 0
     },
     "governed-incident-command": {
-      "yao-meta-skill": 0,
+      "captain-meta-skill": 0,
       "team-frontend-review": 0,
       "governed-incident-command": 3,
       "no_route": 0
     },
     "no_route": {
-      "yao-meta-skill": 0,
+      "captain-meta-skill": 0,
       "team-frontend-review": 0,
       "governed-incident-command": 0,
       "no_route": 4
@@ -74,14 +74,14 @@
     {
       "family": "meta_create",
       "prompt": "Create a reusable skill from this workflow and add evals before sharing it with the team.",
-      "expected_route": "yao-meta-skill",
-      "predicted_route": "yao-meta-skill",
+      "expected_route": "captain-meta-skill",
+      "predicted_route": "captain-meta-skill",
       "correct": true,
       "margin": 0.681,
       "ambiguous": false,
       "ranked_routes": [
         {
-          "name": "yao-meta-skill",
+          "name": "captain-meta-skill",
           "score": 0.681,
           "passed_threshold": true,
           "threshold": 0.33,
@@ -114,14 +114,14 @@
     {
       "family": "meta_iterate",
       "prompt": "Refactor this existing skill description, tighten the trigger boundary, and package it for reuse.",
-      "expected_route": "yao-meta-skill",
-      "predicted_route": "yao-meta-skill",
+      "expected_route": "captain-meta-skill",
+      "predicted_route": "captain-meta-skill",
       "correct": true,
       "margin": 0.516,
       "ambiguous": false,
       "ranked_routes": [
         {
-          "name": "yao-meta-skill",
+          "name": "captain-meta-skill",
           "score": 0.516,
           "passed_threshold": true,
           "threshold": 0.33,
@@ -153,14 +153,14 @@
     {
       "family": "meta_operationalize",
       "prompt": "Turn these prompts, notes, and transcripts into a maintained skill package with references and scripts.",
-      "expected_route": "yao-meta-skill",
-      "predicted_route": "yao-meta-skill",
+      "expected_route": "captain-meta-skill",
+      "predicted_route": "captain-meta-skill",
       "correct": true,
       "margin": 0.74,
       "ambiguous": false,
       "ranked_routes": [
         {
-          "name": "yao-meta-skill",
+          "name": "captain-meta-skill",
           "score": 0.74,
           "passed_threshold": true,
           "threshold": 0.33,
@@ -224,7 +224,7 @@
           "matched_negative_concepts": []
         },
         {
-          "name": "yao-meta-skill",
+          "name": "captain-meta-skill",
           "score": 0.006,
           "passed_threshold": false,
           "threshold": 0.33,
@@ -264,7 +264,7 @@
           "matched_negative_concepts": []
         },
         {
-          "name": "yao-meta-skill",
+          "name": "captain-meta-skill",
           "score": 0.004,
           "passed_threshold": false,
           "threshold": 0.33,
@@ -296,7 +296,7 @@
           "matched_negative_concepts": []
         },
         {
-          "name": "yao-meta-skill",
+          "name": "captain-meta-skill",
           "score": 0.006,
           "passed_threshold": false,
           "threshold": 0.33,
@@ -344,7 +344,7 @@
           "matched_negative_concepts": []
         },
         {
-          "name": "yao-meta-skill",
+          "name": "captain-meta-skill",
           "score": 0.005,
           "passed_threshold": false,
           "threshold": 0.33,
@@ -374,7 +374,7 @@
           "matched_negative_concepts": []
         },
         {
-          "name": "yao-meta-skill",
+          "name": "captain-meta-skill",
           "score": 0.179,
           "passed_threshold": false,
           "threshold": 0.33,
@@ -416,7 +416,7 @@
           "matched_negative_concepts": []
         },
         {
-          "name": "yao-meta-skill",
+          "name": "captain-meta-skill",
           "score": 0.379,
           "passed_threshold": true,
           "threshold": 0.33,
@@ -456,7 +456,7 @@
           "matched_negative_concepts": []
         },
         {
-          "name": "yao-meta-skill",
+          "name": "captain-meta-skill",
           "score": 0.0,
           "passed_threshold": false,
           "threshold": 0.33,
@@ -493,7 +493,7 @@
           "matched_negative_concepts": []
         },
         {
-          "name": "yao-meta-skill",
+          "name": "captain-meta-skill",
           "score": 0.0,
           "passed_threshold": false,
           "threshold": 0.33,
@@ -524,7 +524,7 @@
       "ambiguous": false,
       "ranked_routes": [
         {
-          "name": "yao-meta-skill",
+          "name": "captain-meta-skill",
           "score": 0.024,
           "passed_threshold": false,
           "threshold": 0.33,
@@ -575,7 +575,7 @@
           "matched_negative_concepts": []
         },
         {
-          "name": "yao-meta-skill",
+          "name": "captain-meta-skill",
           "score": 0.0,
           "passed_threshold": false,
           "threshold": 0.33,

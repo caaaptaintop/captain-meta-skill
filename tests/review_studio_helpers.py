@@ -13,7 +13,7 @@ SCRIPT = SCRIPTS / "render_review_studio.py"
 CANONICAL_MUTATION_PATHS = (
     Path("reports"),
     Path("registry/index.json"),
-    Path("registry/packages/yao-meta-skill.json"),
+    Path("registry/packages/captain-meta-skill.json"),
     Path("skill_atlas"),
     Path("skill-ir/examples/yao-meta-skill.json"),
 )
@@ -192,7 +192,7 @@ def prepare_review_studio_inputs(tmp_root: Path) -> None:
         "upgrade_check.py",
         ROOT,
         "--previous-package-json",
-        ROOT / "registry" / "examples" / "yao-meta-skill-1.0.0.json",
+        ROOT / "registry" / "examples" / "captain-meta-skill-0.0.0.json",
         "--current-package-json",
         ROOT / "reports" / "registry_audit.json",
         "--output-json",

@@ -71,7 +71,7 @@ def main() -> None:
         if adapter.get("ir_schema_version") != "2.0.0":
             failures.append(f"{name}: missing Skill IR schema version")
         contract = adapter.get("semantic_contract", {})
-        if contract.get("name") != "yao-meta-skill":
+        if contract.get("name") != "captain-meta-skill":
             failures.append(f"{name}: semantic contract name mismatch")
         if contract.get("trigger_description") != adapter.get("description"):
             failures.append(f"{name}: trigger description is not adapter description")

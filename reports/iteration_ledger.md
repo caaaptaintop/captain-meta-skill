@@ -31,7 +31,7 @@
 
 | Target | Decision | Winner | Causes | Next Action |
 | --- | --- | --- | --- | --- |
-| `yao-meta-skill` | `keep_current` | `Current` | no_candidate_outperformed_current | Keep the current description and open a new candidate only when fresh route evidence appears. |
+| `captain-meta-skill` | `keep_current` | `Current` | no_candidate_outperformed_current | Keep the current description and open a new candidate only when fresh route evidence appears. |
 | `team-frontend-review` | `keep_current` | `Current` | no_candidate_outperformed_current, current_holdout_risk | Keep the current description and open a new candidate only when fresh route evidence appears. |
 | `governed-incident-command` | `keep_current` | `Current` | no_candidate_outperformed_current, current_holdout_gap_present, current_holdout_risk | Keep the current description and open a new candidate only when fresh route evidence appears. |
 
@@ -43,7 +43,7 @@
 
 | Route | Precision | Recall | Avg Margin |
 | --- | ---: | ---: | ---: |
-| `yao-meta-skill` | 1.0 | 1.0 | 0.646 |
+| `captain-meta-skill` | 1.0 | 1.0 | 0.646 |
 | `team-frontend-review` | 1.0 | 1.0 | 0.805 |
 | `governed-incident-command` | 1.0 | 1.0 | 0.709 |
 | `no_route` | 1.0 | 1.0 | - |

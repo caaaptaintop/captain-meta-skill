@@ -4,7 +4,7 @@
 - Package directory: `dist`
 - Targets: `4 / 4` adapters present
 - Archive present: `True`
-- Archive SHA256: `f5275f7471c04e62dfc862d714e5d752a688d66952277bee848364634c0046e7`
+- Archive SHA256: `c4ca51a4f545a4ac860bc685e2856ce6e735ad2469c8a8b1bd6ea9e91b7c2bd6`
 - Nested SKILL.md entries: `0`
 - Failures: `0`
 - Warnings: `0`
@@ -130,9 +130,9 @@
 | `vscode-file-targets/vscode/adapter.json` | `pass` | Package contains targets/vscode/adapter.json |
 | `vscode-file-targets/vscode/README.md` | `pass` | Package contains targets/vscode/README.md |
 | `archive-safe-paths` | `pass` | Archive has no absolute or parent-traversal entries |
-| `archive-entry-yao-meta-skill/SKILL.md` | `pass` | Archive contains yao-meta-skill/SKILL.md |
-| `archive-entry-yao-meta-skill/manifest.json` | `pass` | Archive contains yao-meta-skill/manifest.json |
-| `archive-entry-yao-meta-skill/agents/interface.yaml` | `pass` | Archive contains yao-meta-skill/agents/interface.yaml |
+| `archive-entry-captain-meta-skill/SKILL.md` | `pass` | Archive contains captain-meta-skill/SKILL.md |
+| `archive-entry-captain-meta-skill/manifest.json` | `pass` | Archive contains captain-meta-skill/manifest.json |
+| `archive-entry-captain-meta-skill/agents/interface.yaml` | `pass` | Archive contains captain-meta-skill/agents/interface.yaml |
 | `archive-single-skill-entrypoint` | `pass` | Archive exposes only the root SKILL.md entrypoint |
 | `archive-excludes-generated` | `pass` | Archive excludes local caches, platform noise, .yao state, external submission drafts, local evidence pointers, generated dist/, .previews/, and tests/tmp* contents |
 | `archive-portable-evidence-index` | `pass` | Archive includes a self-contained portable evidence pointer and verified report index |

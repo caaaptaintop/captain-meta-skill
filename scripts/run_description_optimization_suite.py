@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parent.parent
 
 TARGETS = [
     {
-        "name": "yao-meta-skill",
+        "name": "captain-meta-skill",
         "title": "Root Description Optimization",
         "description_file": ROOT / "SKILL.md",
         "baseline_file": ROOT / "evals" / "baseline_description.txt",

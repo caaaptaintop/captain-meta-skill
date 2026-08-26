@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 OPTIMIZATION_REPORTS = {
-    "yao-meta-skill": ROOT / "reports" / "description_optimization.json",
+    "captain-meta-skill": ROOT / "reports" / "description_optimization.json",
     "team-frontend-review": ROOT / "examples" / "team-frontend-review" / "optimization" / "reports" / "description_optimization.json",
     "governed-incident-command": ROOT
     / "examples"
@@ -20,7 +20,7 @@ OPTIMIZATION_REPORTS = {
 }
 
 CONTEXT_REPORTS = {
-    "yao-meta-skill": ROOT / "reports" / "context_budget.json",
+    "captain-meta-skill": ROOT / "reports" / "context_budget.json",
     "team-frontend-review": ROOT
     / "examples"
     / "team-frontend-review"

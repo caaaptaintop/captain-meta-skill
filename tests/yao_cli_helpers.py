@@ -103,7 +103,7 @@ def run_with_env(extra_env: dict[str, str], *args: str) -> dict:
 
 def assert_cli_module_contracts() -> None:
     assert yao_cli_config.resolve_target("root")["title"] == "Root Description Optimization"
-    assert yao_cli_config.resolve_promotion_target("root") == "yao-meta-skill"
+    assert yao_cli_config.resolve_promotion_target("root") == "captain-meta-skill"
     assert yao_cli_config.infer_archetype("Standardize team review workflow.", "")[0] == "production"
     assert yao_cli_config.infer_archetype("Govern release policy.", "")[0] == "governed"
     assert "--entry" in yao_cli_config.baseline_compare_args()

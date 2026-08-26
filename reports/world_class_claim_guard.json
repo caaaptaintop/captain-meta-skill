@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
   "ok": true,
-  "generated_at": "2026-08-17",
+  "generated_at": "2026-08-26",
   "skill_dir": ".",
   "summary": {
     "ledger_ready_to_claim_world_class": false,
     "ledger_pending_count": 4,
-    "claim_surface_count": 232,
-    "json_claim_surface_count": 114,
-    "metadata_claim_surface_count": 115,
+    "claim_surface_count": 240,
+    "json_claim_surface_count": 118,
+    "metadata_claim_surface_count": 119,
     "package_claim_surface_count": 17,
     "violation_count": 0,
     "overclaim_guard_active": true,
@@ -139,6 +139,10 @@
       "violation_count": 0
     },
     {
+      "path": "registry/examples/captain-meta-skill-0.0.0.json",
+      "violation_count": 0
+    },
+    {
       "path": "registry/examples/yao-meta-skill-1.0.0.json",
       "violation_count": 0
     },
@@ -155,7 +159,7 @@
       "violation_count": 0
     },
     {
-      "path": "registry/packages/yao-meta-skill.json",
+      "path": "registry/packages/captain-meta-skill.json",
       "violation_count": 0
     },
     {
@@ -400,6 +404,18 @@
     },
     {
       "path": "reports/iteration-directions.md",
+      "violation_count": 0
+    },
+    {
+      "path": "reports/iteration_bundles/captain-meta-skill/bundle.json",
+      "violation_count": 0
+    },
+    {
+      "path": "reports/iteration_bundles/captain-meta-skill/bundle.md",
+      "violation_count": 0
+    },
+    {
+      "path": "reports/iteration_bundles/captain-meta-skill/review.md",
       "violation_count": 0
     },
     {
@@ -799,6 +815,14 @@
       "violation_count": 0
     },
     {
+      "path": "reports/skillops/daily/2026-08-26.json",
+      "violation_count": 0
+    },
+    {
+      "path": "reports/skillops/daily/2026-08-26.md",
+      "violation_count": 0
+    },
+    {
       "path": "reports/skillops/weekly/2026-W25.json",
       "violation_count": 0
     },
@@ -836,6 +860,14 @@
     },
     {
       "path": "reports/skillops/weekly/2026-W34.md",
+      "violation_count": 0
+    },
+    {
+      "path": "reports/skillops/weekly/2026-W35.json",
+      "violation_count": 0
+    },
+    {
+      "path": "reports/skillops/weekly/2026-W35.md",
       "violation_count": 0
     },
     {

@@ -163,7 +163,7 @@ def main() -> None:
         json.dumps(
             {
                 "event": "skill_activation",
-                "skill": "yao-meta-skill",
+                "skill": "captain-meta-skill",
                 "version": "1.1.0",
                 "activation_type": "explicit",
                 "outcome": "accepted",
@@ -189,9 +189,9 @@ def main() -> None:
             ]
         )
         assert package["ok"], package
-        with zipfile.ZipFile(package_dir / "yao-meta-skill.zip") as archive:
+        with zipfile.ZipFile(package_dir / "captain-meta-skill.zip") as archive:
             names = archive.namelist()
-        assert "yao-meta-skill/reports/telemetry_events.jsonl" not in names, names
+        assert "captain-meta-skill/reports/telemetry_events.jsonl" not in names, names
     finally:
         if original_root_events is not None:
             root_events.write_text(original_root_events, encoding="utf-8")

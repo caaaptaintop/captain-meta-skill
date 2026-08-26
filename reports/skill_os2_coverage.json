@@ -1,28 +1,28 @@
 {
   "schema_version": "1.0",
   "ok": true,
-  "generated_at": "2026-08-17",
+  "generated_at": "2026-08-26",
   "skill_dir": ".",
   "summary": {
     "item_count": 21,
     "module_count": 8,
     "recommended_pr_count": 13,
-    "pass_count": 21,
-    "warn_count": 0,
+    "pass_count": 20,
+    "warn_count": 1,
     "missing_count": 0,
     "extension_track_count": 4,
     "extension_partial_count": 0,
     "extension_planned_count": 0,
     "extension_covered_count": 4,
     "adaptive_extension_ready": true,
-    "local_blueprint_ready": true,
+    "local_blueprint_ready": false,
     "public_world_class_ready": false,
     "world_class_evidence_pending_count": 4,
-    "decision": "local-blueprint-covered-evidence-pending"
+    "decision": "continue-implementation"
   },
   "status_counts": {
-    "pass": 21,
-    "warn": 0,
+    "pass": 20,
+    "warn": 1,
     "missing": 0
   },
   "extension_status_counts": {
@@ -204,7 +204,7 @@
       "label": "Registry Distribution",
       "status": "pass",
       "objective": "Skill packages are installable, versioned, checksumed, and upgrade-reviewable.",
-      "current": "archive entries 658; install failures 0",
+      "current": "archive entries 666; install failures 0",
       "command": "python3 scripts/yao.py package . --platform openai --platform claude --platform generic --platform vscode --output-dir dist --zip --self && python3 scripts/yao.py registry-audit . --self",
       "test": "python3 tests/verify_registry_audit.py",
       "evidence": [
@@ -217,7 +217,7 @@
           "exists": true
         },
         {
-          "path": "registry/packages/yao-meta-skill.json",
+          "path": "registry/packages/captain-meta-skill.json",
           "exists": true
         },
         {
@@ -611,7 +611,7 @@
       "key": "evidence-consistency",
       "category": "recommended-pr",
       "label": "Evidence Consistency",
-      "status": "pass",
+      "status": "warn",
       "objective": "Recommended Skill OS 2.0 implementation PR from the upgrade plan.",
       "current": "41 consistency checks",
       "command": "make ci-test",
@@ -749,11 +749,11 @@
           "exists": true
         },
         {
-          "path": "reports/skillops/daily/2026-08-17.json",
+          "path": "reports/skillops/daily/2026-08-26.json",
           "exists": true
         },
         {
-          "path": "reports/skillops/daily/2026-08-17.md",
+          "path": "reports/skillops/daily/2026-08-26.md",
           "exists": true
         }
       ],
@@ -776,11 +776,11 @@
           "exists": true
         },
         {
-          "path": "reports/skillops/weekly/2026-W34.json",
+          "path": "reports/skillops/weekly/2026-W35.json",
           "exists": true
         },
         {
-          "path": "reports/skillops/weekly/2026-W34.md",
+          "path": "reports/skillops/weekly/2026-W35.md",
           "exists": true
         }
       ],

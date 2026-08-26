@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "ok": true,
-  "generated_at": "2026-08-17",
+  "generated_at": "2026-08-26",
   "skill_dir": ".",
   "summary": {
     "check_count": 41,
@@ -62,7 +62,7 @@
           "python3 scripts/trust_check.py . --output-json reports/security_trust_report.json --output-md reports/security_trust_report.md": true,
           "python3 scripts/registry_audit.py . --generated-at \"$GENERATED_AT\"": true,
           "python3 scripts/verify_package.py . --package-dir dist --expectations evals/packaging_expectations.json --registry-json reports/registry_audit.json --output-json reports/package_verification.json --output-md reports/package_verification.md --require-zip --generated-at \"$GENERATED_AT\"": true,
-          "python3 scripts/upgrade_check.py . --previous-package-json registry/examples/yao-meta-skill-1.0.0.json --current-package-json reports/registry_audit.json --output-json reports/upgrade_check.json --output-md reports/upgrade_check.md --generated-at \"$GENERATED_AT\"": true,
+          "python3 scripts/upgrade_check.py . --previous-package-json registry/examples/captain-meta-skill-0.0.0.json --current-package-json reports/registry_audit.json --output-json reports/upgrade_check.json --output-md reports/upgrade_check.md --generated-at \"$GENERATED_AT\"": true,
           "python3 scripts/render_adoption_drift_report.py . --generated-at \"$GENERATED_AT\"": true,
           "python3 scripts/render_architecture_maintainability.py . --generated-at \"$GENERATED_AT\"": true,
           "python3 scripts/python_compat_check.py . --generated-at \"$GENERATED_AT\"": true,
@@ -113,7 +113,7 @@
           "python3 scripts/trust_check.py . --output-json reports/security_trust_report.json --output-md reports/security_trust_report.md": true,
           "python3 scripts/registry_audit.py . --generated-at \"$GENERATED_AT\"": true,
           "python3 scripts/verify_package.py . --package-dir dist --expectations evals/packaging_expectations.json --registry-json reports/registry_audit.json --output-json reports/package_verification.json --output-md reports/package_verification.md --require-zip --generated-at \"$GENERATED_AT\"": true,
-          "python3 scripts/upgrade_check.py . --previous-package-json registry/examples/yao-meta-skill-1.0.0.json --current-package-json reports/registry_audit.json --output-json reports/upgrade_check.json --output-md reports/upgrade_check.md --generated-at \"$GENERATED_AT\"": true,
+          "python3 scripts/upgrade_check.py . --previous-package-json registry/examples/captain-meta-skill-0.0.0.json --current-package-json reports/registry_audit.json --output-json reports/upgrade_check.json --output-md reports/upgrade_check.md --generated-at \"$GENERATED_AT\"": true,
           "python3 scripts/render_adoption_drift_report.py . --generated-at \"$GENERATED_AT\"": true,
           "python3 scripts/render_architecture_maintainability.py . --generated-at \"$GENERATED_AT\"": true,
           "python3 scripts/python_compat_check.py . --generated-at \"$GENERATED_AT\"": true,
@@ -396,16 +396,16 @@
       "label": "Release archive hash matches package, registry, and benchmark evidence",
       "status": "pass",
       "expected": {
-        "all_equal_to_actual_archive": "f5275f7471c04e62dfc862d714e5d752a688d66952277bee848364634c0046e7"
+        "all_equal_to_actual_archive": "c4ca51a4f545a4ac860bc685e2856ce6e735ad2469c8a8b1bd6ea9e91b7c2bd6"
       },
       "actual": {
-        "actual_archive": "f5275f7471c04e62dfc862d714e5d752a688d66952277bee848364634c0046e7",
-        "package_verification": "f5275f7471c04e62dfc862d714e5d752a688d66952277bee848364634c0046e7",
-        "registry": "f5275f7471c04e62dfc862d714e5d752a688d66952277bee848364634c0046e7",
-        "benchmark": "f5275f7471c04e62dfc862d714e5d752a688d66952277bee848364634c0046e7"
+        "actual_archive": "c4ca51a4f545a4ac860bc685e2856ce6e735ad2469c8a8b1bd6ea9e91b7c2bd6",
+        "package_verification": "c4ca51a4f545a4ac860bc685e2856ce6e735ad2469c8a8b1bd6ea9e91b7c2bd6",
+        "registry": "c4ca51a4f545a4ac860bc685e2856ce6e735ad2469c8a8b1bd6ea9e91b7c2bd6",
+        "benchmark": "c4ca51a4f545a4ac860bc685e2856ce6e735ad2469c8a8b1bd6ea9e91b7c2bd6"
       },
       "paths": [
-        "dist/yao-meta-skill.zip",
+        "dist/captain-meta-skill.zip",
         "reports/package_verification.json",
         "reports/registry_audit.json",
         "reports/benchmark_reproducibility.json"
@@ -437,12 +437,12 @@
       "status": "pass",
       "expected": {
         "status": "pass",
-        "detail": "initial load 945/1000; deferred 595301/120000; top deferred scripts 527937; resource governance governed; quality density 137.6",
+        "detail": "initial load 949/1000; deferred 596527/120000; top deferred scripts 527998; resource governance governed; quality density 137.0",
         "evidence": "reports/context_budget.json"
       },
       "actual": {
         "status": "pass",
-        "detail": "initial load 945/1000; deferred 595301/120000; top deferred scripts 527937; resource governance governed; quality density 137.6",
+        "detail": "initial load 949/1000; deferred 596527/120000; top deferred scripts 527998; resource governance governed; quality density 137.0",
         "evidence": "reports/context_budget.json"
       },
       "paths": [
@@ -455,8 +455,8 @@
       "key": "benchmark-release-lock-self-consistency",
       "label": "Benchmark release lock matches source dirty state",
       "status": "pass",
-      "expected": true,
-      "actual": true,
+      "expected": false,
+      "actual": false,
       "paths": [
         "reports/benchmark_reproducibility.json"
       ],
@@ -470,7 +470,7 @@
       "actual": {
         "available": true,
         "clean": false,
-        "changed_file_count": 24
+        "changed_file_count": 147
       },
       "paths": [
         "reports/benchmark_reproducibility.json"
@@ -511,8 +511,8 @@
       "key": "overview-benchmark-commit",
       "label": "overview embeds the benchmark commit",
       "status": "pass",
-      "expected": "4f77b8a6ee7e59284219d0adcbbceef4dcdcdca9",
-      "actual": "4f77b8a6ee7e59284219d0adcbbceef4dcdcdca9",
+      "expected": "f5d8f681372edae1915991e2de0c23dc306dd30f",
+      "actual": "f5d8f681372edae1915991e2de0c23dc306dd30f",
       "paths": [
         "reports/benchmark_reproducibility.json",
         "reports/skill-overview.json"
@@ -524,36 +524,36 @@
       "label": "overview embeds benchmark summary fields",
       "status": "pass",
       "expected": {
-        "release_lock_ready": true,
+        "release_lock_ready": false,
         "required_artifact_count": 25,
         "missing_artifact_count": 0,
-        "source_contract_sha256": "54d1fb49b5de9d73a5a312204ffdfad76937ed8e877571521c569139d9630bd8",
-        "archive_sha256": "f5275f7471c04e62dfc862d714e5d752a688d66952277bee848364634c0046e7",
+        "source_contract_sha256": "bb7dfe26d3279cfc6962d9467e7f5e8bf3e2da6dc411823fa8d7bf7d15bb183e",
+        "archive_sha256": "c4ca51a4f545a4ac860bc685e2856ce6e735ad2469c8a8b1bd6ea9e91b7c2bd6",
         "world_class_ledger_pending_count": 4,
         "world_class_source_check_count": 14,
         "world_class_source_pass_count": 11,
         "world_class_source_blocked_count": 3,
-        "beta_test_ready": true,
-        "beta_test_blocker_count": 0,
+        "beta_test_ready": false,
+        "beta_test_blocker_count": 1,
         "beta_test_deferred_evidence_count": 4,
         "public_claim_ready": false,
-        "public_claim_blocker_count": 3
+        "public_claim_blocker_count": 4
       },
       "actual": {
-        "release_lock_ready": true,
+        "release_lock_ready": false,
         "required_artifact_count": 25,
         "missing_artifact_count": 0,
-        "source_contract_sha256": "54d1fb49b5de9d73a5a312204ffdfad76937ed8e877571521c569139d9630bd8",
-        "archive_sha256": "f5275f7471c04e62dfc862d714e5d752a688d66952277bee848364634c0046e7",
+        "source_contract_sha256": "bb7dfe26d3279cfc6962d9467e7f5e8bf3e2da6dc411823fa8d7bf7d15bb183e",
+        "archive_sha256": "c4ca51a4f545a4ac860bc685e2856ce6e735ad2469c8a8b1bd6ea9e91b7c2bd6",
         "world_class_ledger_pending_count": 4,
         "world_class_source_check_count": 14,
         "world_class_source_pass_count": 11,
         "world_class_source_blocked_count": 3,
-        "beta_test_ready": true,
-        "beta_test_blocker_count": 0,
+        "beta_test_ready": false,
+        "beta_test_blocker_count": 1,
         "beta_test_deferred_evidence_count": 4,
         "public_claim_ready": false,
-        "public_claim_blocker_count": 3
+        "public_claim_blocker_count": 4
       },
       "paths": [
         "reports/benchmark_reproducibility.json",
@@ -655,8 +655,8 @@
       "key": "interpretation-benchmark-commit",
       "label": "interpretation embeds the benchmark commit",
       "status": "pass",
-      "expected": "4f77b8a6ee7e59284219d0adcbbceef4dcdcdca9",
-      "actual": "4f77b8a6ee7e59284219d0adcbbceef4dcdcdca9",
+      "expected": "f5d8f681372edae1915991e2de0c23dc306dd30f",
+      "actual": "f5d8f681372edae1915991e2de0c23dc306dd30f",
       "paths": [
         "reports/benchmark_reproducibility.json",
         "reports/skill-interpretation.json"
@@ -668,36 +668,36 @@
       "label": "interpretation embeds benchmark summary fields",
       "status": "pass",
       "expected": {
-        "release_lock_ready": true,
+        "release_lock_ready": false,
         "required_artifact_count": 25,
         "missing_artifact_count": 0,
-        "source_contract_sha256": "54d1fb49b5de9d73a5a312204ffdfad76937ed8e877571521c569139d9630bd8",
-        "archive_sha256": "f5275f7471c04e62dfc862d714e5d752a688d66952277bee848364634c0046e7",
+        "source_contract_sha256": "bb7dfe26d3279cfc6962d9467e7f5e8bf3e2da6dc411823fa8d7bf7d15bb183e",
+        "archive_sha256": "c4ca51a4f545a4ac860bc685e2856ce6e735ad2469c8a8b1bd6ea9e91b7c2bd6",
         "world_class_ledger_pending_count": 4,
         "world_class_source_check_count": 14,
         "world_class_source_pass_count": 11,
         "world_class_source_blocked_count": 3,
-        "beta_test_ready": true,
-        "beta_test_blocker_count": 0,
+        "beta_test_ready": false,
+        "beta_test_blocker_count": 1,
         "beta_test_deferred_evidence_count": 4,
         "public_claim_ready": false,
-        "public_claim_blocker_count": 3
+        "public_claim_blocker_count": 4
       },
       "actual": {
-        "release_lock_ready": true,
+        "release_lock_ready": false,
         "required_artifact_count": 25,
         "missing_artifact_count": 0,
-        "source_contract_sha256": "54d1fb49b5de9d73a5a312204ffdfad76937ed8e877571521c569139d9630bd8",
-        "archive_sha256": "f5275f7471c04e62dfc862d714e5d752a688d66952277bee848364634c0046e7",
+        "source_contract_sha256": "bb7dfe26d3279cfc6962d9467e7f5e8bf3e2da6dc411823fa8d7bf7d15bb183e",
+        "archive_sha256": "c4ca51a4f545a4ac860bc685e2856ce6e735ad2469c8a8b1bd6ea9e91b7c2bd6",
         "world_class_ledger_pending_count": 4,
         "world_class_source_check_count": 14,
         "world_class_source_pass_count": 11,
         "world_class_source_blocked_count": 3,
-        "beta_test_ready": true,
-        "beta_test_blocker_count": 0,
+        "beta_test_ready": false,
+        "beta_test_blocker_count": 1,
         "beta_test_deferred_evidence_count": 4,
         "public_claim_ready": false,
-        "public_claim_blocker_count": 3
+        "public_claim_blocker_count": 4
       },
       "paths": [
         "reports/benchmark_reproducibility.json",
@@ -836,7 +836,7 @@
           "label": "可维护性",
           "score": 100,
           "reasons": [
-            "SKILL.md 约 316 个词/字。",
+            "SKILL.md 约 308 个词/字。",
             "入口文件保持克制，可维护性较好。",
             "references/ 已承载扩展指导。",
             "scripts/ 已承载确定性逻辑。",
@@ -857,7 +857,7 @@
           "label": "上下文成本",
           "score": 42,
           "reasons": [
-            "入口约 316 个词/字，references 约 18854 个词/字。",
+            "入口约 308 个词/字，references 约 19344 个词/字。",
             "分数越高代表上下文成本越低。",
             "上下文成本偏高，建议压缩入口或拆分 references。"
           ]
@@ -900,7 +900,7 @@
           "label": "可维护性",
           "score": 100,
           "reasons": [
-            "SKILL.md 约 316 个词/字。",
+            "SKILL.md 约 308 个词/字。",
             "入口文件保持克制，可维护性较好。",
             "references/ 已承载扩展指导。",
             "scripts/ 已承载确定性逻辑。",
@@ -921,7 +921,7 @@
           "label": "上下文成本",
           "score": 42,
           "reasons": [
-            "入口约 316 个词/字，references 约 18854 个词/字。",
+            "入口约 308 个词/字，references 约 19344 个词/字。",
             "分数越高代表上下文成本越低。",
             "上下文成本偏高，建议压缩入口或拆分 references。"
           ]
@@ -1153,7 +1153,7 @@
           "已生成 Output Review Adjudication，可记录盲评决策、一致率和待评审项。"
         ],
         "gaps": [
-          "上下文成本需要补强：入口约 316 个词/字，references 约 18854 个词/字。"
+          "上下文成本需要补强：入口约 308 个词/字，references 约 19344 个词/字。"
         ],
         "recommendations": [
           "先改触发边界，再扩展工作流。",
@@ -1201,7 +1201,7 @@
           "已生成 Output Review Adjudication，可记录盲评决策、一致率和待评审项。"
         ],
         "gaps": [
-          "上下文成本需要补强：入口约 316 个词/字，references 约 18854 个词/字。"
+          "上下文成本需要补强：入口约 308 个词/字，references 约 19344 个词/字。"
         ],
         "recommendations": [
           "先改触发边界，再扩展工作流。",
@@ -1276,7 +1276,7 @@
             "name": "包体膨胀风险",
             "impact": 2,
             "probability": 1,
-            "signal": "SKILL.md 约 316 个词/字。",
+            "signal": "SKILL.md 约 308 个词/字。",
             "response": "先补证据和边界，再增加包体复杂度。"
           },
           {
@@ -1438,7 +1438,7 @@
             "name": "包体膨胀风险",
             "impact": 2,
             "probability": 1,
-            "signal": "SKILL.md 约 316 个词/字。",
+            "signal": "SKILL.md 约 308 个词/字。",
             "response": "先补证据和边界，再增加包体复杂度。"
           },
           {
@@ -2086,10 +2086,10 @@
       "label": "Benchmark separates beta testing from public claims",
       "status": "pass",
       "expected": {
-        "beta_test_ready": true,
+        "beta_test_ready": false,
         "public_claim_ready": false,
         "human_review_complete": false,
-        "beta_release_ready": true,
+        "beta_release_ready": false,
         "beta_release_scope": "beta/public test release without superiority, fully-reviewed, or world-class claims",
         "deferred_evidence_keys": [
           "human-adjudication",
@@ -2100,10 +2100,10 @@
         "deferred_human_review": true
       },
       "actual": {
-        "beta_test_ready": true,
+        "beta_test_ready": false,
         "public_claim_ready": false,
         "human_review_complete": false,
-        "beta_release_ready": true,
+        "beta_release_ready": false,
         "beta_release_scope": "beta/public test release without superiority, fully-reviewed, or world-class claims",
         "deferred_evidence_keys": [
           "human-adjudication",
@@ -3572,14 +3572,14 @@
         "`5` warnings",
         "`81` declared internal modules",
         "`93 / 93` CLI help smoke checks passing across `174` scripts",
-        "`658` zip entries",
-        "archive with `658` entries",
+        "`666` zip entries",
+        "archive with `666` entries",
         "`12` installer permission checks enforced",
         "`0` permission failures",
         "`25` required artifacts",
         "`23` reproduction commands",
-        "initial load `945/1000`",
-        "target count is `87`"
+        "initial load `949/1000`",
+        "target count is `88`"
       ],
       "actual": "all present",
       "paths": [

@@ -1,11 +1,11 @@
 ---
-name: yao-meta-skill
+name: captain-meta-skill
 description: Create, improve, or evaluate an existing skill from workflows, prompts, SOPs, scripts. Use for migration/release/package, routing, evals/tests, install/trust checks, 优化已有 skill, 补 trigger 评测. Exclude summary/translation/docs, brainstorming, one-off prompts, copy-only edits, outline-only requests.
 metadata:
-  author: Yao Team
+  author: Captain
 ---
 
-# Yao Meta Skill
+# Captain Meta Skill
 
 ## Router Rules
 
@@ -17,20 +17,18 @@ metadata:
 - `Scaffold`: exploratory; `Production`: team; `Library`: shared; `Governed`: release-critical.
 - Rules: [Method](references/skill-engineering-method.md), [Modes](references/operating-modes.md), [Boundaries](references/resource-boundaries.md).
 
+## Task Modes
+
+- Task modes: `A Root`, `B Design`, `C Generate`, `D Evaluate`, `E Reflect`, `F Evolve`; priority `F>E>D>C>B>A`; separate from maturity. [Rules](references/captain-task-modes.md).
+
 ## Compact Workflow
 
-1. Require `repeated use` + `reusable output contract`; skip one-offs.
-2. Lock target path + identity before writes; self-edits require `--self`.
-3. Capture job, output, exclusions, constraints, standards, mode.
-4. Scan `3-5` useful external/user/local references.
-5. Write `description` early; route edits need `trigger_eval.py`; release gates follow risk.
-6. Add deeper profiles only when earned.
+1. Require a reusable output contract; skip one-offs.
+2. Lock problem, success, tension, modes, target path, and identity before writes.
+3. Scan `3-5` references and assets; test `description`.
+4. Evolution: `evidence -> nearest asset -> create/merge/discard -> deployment -> retest/rollback`.
 
 Playbooks: [Target Safety](references/target-safety.md), [Intent](references/intent-dialogue.md), [Skill IR](references/skill-ir-method.md), [Output Eval](references/output-eval-method.md), [Review Studio](references/review-studio-method.md).
-
-## Updates
-
-Activation: `scripts/yao.py check-update --notice --self`; show `notice_text` if requested; continue. “更新”: `scripts/yao.py self-update --self --yes`.
 
 ## Skill OS 2.0 Gates
 
@@ -54,3 +52,5 @@ Builds: `SKILL.md`, aligned interface, justified assets, boundary/gate summary. 
 ## Reference Map
 
 Primary: [Method](references/skill-engineering-method.md), [Artifact Design](references/artifact-design-doctrine.md), [Systems](references/systems-thinking-doctrine.md), [Governance](references/governance.md), [SkillOps](references/skillops-decision-policy.md).
+
+Downstream: [Maintenance](references/downstream-maintenance.md).

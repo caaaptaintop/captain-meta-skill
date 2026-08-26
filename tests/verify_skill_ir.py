@@ -27,13 +27,13 @@ def main() -> None:
     )
     result = json.loads(proc.stdout)
     assert result["ok"], result
-    assert result["summary"]["name"] == "yao-meta-skill", result
+    assert result["summary"]["name"] == "captain-meta-skill", result
     assert result["summary"]["trigger_samples"] >= 3, result
     assert output_path.exists(), output_path
 
     payload = json.loads(output_path.read_text(encoding="utf-8"))
     assert payload["schema_version"] == "2.0.0", payload
-    assert payload["name"] == "yao-meta-skill", payload
+    assert payload["name"] == "captain-meta-skill", payload
     assert payload["job_to_be_done"], payload
     assert payload["trigger_surface"]["description"], payload
     assert payload["trigger_surface"]["should_trigger"], payload

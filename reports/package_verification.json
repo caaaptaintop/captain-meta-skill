@@ -1,15 +1,15 @@
 {
   "ok": true,
   "schema_version": "2.0",
-  "generated_at": "2026-08-17",
+  "generated_at": "2026-08-26",
   "skill_dir": ".",
   "package_dir": "dist",
   "summary": {
     "target_count": 4,
     "adapter_count": 4,
     "archive_present": true,
-    "archive_sha256": "f5275f7471c04e62dfc862d714e5d752a688d66952277bee848364634c0046e7",
-    "archive_entry_count": 658,
+    "archive_sha256": "c4ca51a4f545a4ac860bc685e2856ce6e735ad2469c8a8b1bd6ea9e91b7c2bd6",
+    "archive_entry_count": 666,
     "nested_skill_entry_count": 0,
     "failure_count": 0,
     "warning_count": 0
@@ -601,19 +601,19 @@
       "detail": "Archive has no absolute or parent-traversal entries"
     },
     {
-      "id": "archive-entry-yao-meta-skill/SKILL.md",
+      "id": "archive-entry-captain-meta-skill/SKILL.md",
       "status": "pass",
-      "detail": "Archive contains yao-meta-skill/SKILL.md"
+      "detail": "Archive contains captain-meta-skill/SKILL.md"
     },
     {
-      "id": "archive-entry-yao-meta-skill/manifest.json",
+      "id": "archive-entry-captain-meta-skill/manifest.json",
       "status": "pass",
-      "detail": "Archive contains yao-meta-skill/manifest.json"
+      "detail": "Archive contains captain-meta-skill/manifest.json"
     },
     {
-      "id": "archive-entry-yao-meta-skill/agents/interface.yaml",
+      "id": "archive-entry-captain-meta-skill/agents/interface.yaml",
       "status": "pass",
-      "detail": "Archive contains yao-meta-skill/agents/interface.yaml"
+      "detail": "Archive contains captain-meta-skill/agents/interface.yaml"
     },
     {
       "id": "archive-single-skill-entrypoint",
@@ -665,7 +665,7 @@
   "warnings": [],
   "artifacts": {
     "manifest": "dist/manifest.json",
-    "archive": "dist/yao-meta-skill.zip",
+    "archive": "dist/captain-meta-skill.zip",
     "json": "reports/package_verification.json",
     "markdown": "reports/package_verification.md"
   }

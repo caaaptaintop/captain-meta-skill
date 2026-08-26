@@ -1,6 +1,6 @@
 # Artifact Design Profile
 
-Skill: `yao-meta-skill`
+Skill: `captain-meta-skill`
 Design system: `metric editorial`
 
 ## Primary Artifact Direction

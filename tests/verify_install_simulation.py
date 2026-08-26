@@ -73,9 +73,9 @@ def simulate(package_dir: Path, output_json: Path, output_md: Path, skill_root: 
 
 
 def rewrite_archive_json(package_dir: Path, relative_path: str, transform) -> None:
-    archive_path = package_dir / "yao-meta-skill.zip"
-    rewritten_path = package_dir / "yao-meta-skill.rewritten.zip"
-    archive_member = f"yao-meta-skill/{relative_path}"
+    archive_path = package_dir / "captain-meta-skill.zip"
+    rewritten_path = package_dir / "captain-meta-skill.rewritten.zip"
+    archive_member = f"captain-meta-skill/{relative_path}"
     replaced = False
     with zipfile.ZipFile(archive_path) as archive_in, zipfile.ZipFile(rewritten_path, "w", compression=zipfile.ZIP_DEFLATED) as archive_out:
         for info in archive_in.infolist():
@@ -127,11 +127,11 @@ def main() -> None:
         renamed_dir = TMP / "renamed-dist"
         renamed_build = build_package(renamed_dir, renamed_root)
         assert renamed_build["ok"], renamed_build
-        assert (renamed_dir / "yao-meta-skill.zip").exists(), renamed_build
+        assert (renamed_dir / "captain-meta-skill.zip").exists(), renamed_build
         renamed_valid = simulate(renamed_dir, TMP / "renamed_install_simulation.json", TMP / "renamed_install_simulation.md", renamed_root)
         assert renamed_valid["ok"], renamed_valid
         assert renamed_valid["payload"]["summary"]["archive_extracted"], renamed_valid
-        assert renamed_valid["payload"]["installed_skill_dir"].endswith("simulate-yao-meta-skill/yao-meta-skill"), renamed_valid
+        assert renamed_valid["payload"]["installed_skill_dir"].endswith("simulate-captain-meta-skill/captain-meta-skill"), renamed_valid
 
     policy_gap_dir = TMP / "policy-gap-dist"
     shutil.copytree(valid_dir, policy_gap_dir)
@@ -151,8 +151,8 @@ def main() -> None:
 
     nested_skill_dir = TMP / "nested-skill-dist"
     shutil.copytree(valid_dir, nested_skill_dir)
-    with zipfile.ZipFile(nested_skill_dir / "yao-meta-skill.zip", "a", compression=zipfile.ZIP_DEFLATED) as archive:
-        archive.writestr("yao-meta-skill/tests/fixtures/broken/SKILL.md", "---\nname: broken\n---\n")
+    with zipfile.ZipFile(nested_skill_dir / "captain-meta-skill.zip", "a", compression=zipfile.ZIP_DEFLATED) as archive:
+        archive.writestr("captain-meta-skill/tests/fixtures/broken/SKILL.md", "---\nname: broken\n---\n")
     nested_skill = simulate(nested_skill_dir, TMP / "nested_skill.json", TMP / "nested_skill.md")
     nested_skill_payload = nested_skill["payload"]
     assert nested_skill["returncode"] == 2, nested_skill
@@ -162,7 +162,7 @@ def main() -> None:
 
     unsafe_dir = TMP / "unsafe-dist"
     shutil.copytree(valid_dir, unsafe_dir)
-    with zipfile.ZipFile(unsafe_dir / "yao-meta-skill.zip", "a", compression=zipfile.ZIP_DEFLATED) as archive:
+    with zipfile.ZipFile(unsafe_dir / "captain-meta-skill.zip", "a", compression=zipfile.ZIP_DEFLATED) as archive:
         archive.writestr("../evil.txt", "bad")
     unsafe = simulate(unsafe_dir, TMP / "unsafe.json", TMP / "unsafe.md")
     unsafe_payload = unsafe["payload"]

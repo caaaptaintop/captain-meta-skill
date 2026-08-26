@@ -190,10 +190,10 @@ def main() -> None:
     payload = valid["payload"]
     assert valid["ok"], valid
     assert payload["ok"], payload
-    with zipfile.ZipFile(valid_dir / "yao-meta-skill.zip") as archive:
+    with zipfile.ZipFile(valid_dir / "captain-meta-skill.zip") as archive:
         assert not any("/reports/release_snapshots/" in name for name in archive.namelist()), archive.namelist()
         assert not any("/registry/packages/" in name for name in archive.namelist()), archive.namelist()
-        assert "yao-meta-skill/registry/index.json" not in archive.namelist(), archive.namelist()
+        assert "captain-meta-skill/registry/index.json" not in archive.namelist(), archive.namelist()
     assert payload["summary"]["target_count"] == 4, payload
     assert payload["summary"]["adapter_count"] == 4, payload
     assert payload["summary"]["archive_present"], payload
@@ -201,10 +201,10 @@ def main() -> None:
     assert payload["summary"]["nested_skill_entry_count"] == 0, payload
     assert not payload["failures"], payload
     assert (TMP / "package_verification.md").exists(), TMP
-    with zipfile.ZipFile(valid_dir / "yao-meta-skill.zip") as archive:
+    with zipfile.ZipFile(valid_dir / "captain-meta-skill.zip") as archive:
         archive_names = archive.namelist()
         skill_entries = sorted(name for name in archive_names if name.endswith("/SKILL.md"))
-    assert skill_entries == ["yao-meta-skill/SKILL.md"], skill_entries
+    assert skill_entries == ["captain-meta-skill/SKILL.md"], skill_entries
     assert not [name for name in archive_names if "/geo-ranking-article-generator/" in name], archive_names
     assert not [name for name in archive_names if "/.yao/" in name], "local .yao state leaked into package"
     assert not [name for name in archive_names if "/evidence/world_class/submissions/" in name], "external submission draft leaked into package"
@@ -214,10 +214,10 @@ def main() -> None:
         if any(part in {".DS_Store", ".mypy_cache", ".pytest_cache", ".ruff_cache", "__pycache__"} for part in Path(name).parts)
         or Path(name).suffix in {".pyc", ".pyo"}
     ], "cache or platform noise leaked into package"
-    assert "yao-meta-skill/reports/.current-run.json" in archive_names, archive_names
-    assert "yao-meta-skill/reports/artifact-index.json" in archive_names, archive_names
-    with zipfile.ZipFile(valid_dir / "yao-meta-skill.zip") as archive:
-        portable_pointer = json.loads(archive.read("yao-meta-skill/reports/.current-run.json"))
+    assert "captain-meta-skill/reports/.current-run.json" in archive_names, archive_names
+    assert "captain-meta-skill/reports/artifact-index.json" in archive_names, archive_names
+    with zipfile.ZipFile(valid_dir / "captain-meta-skill.zip") as archive:
+        portable_pointer = json.loads(archive.read("captain-meta-skill/reports/.current-run.json"))
     assert portable_pointer["mode"] == "portable", portable_pointer
 
     first_hash = payload["summary"]["archive_sha256"]
@@ -227,7 +227,7 @@ def main() -> None:
         verification_report.write_text('{"archive_sha256":"excluded-consumer-change"}\n', encoding="utf-8")
         rebuilt = build_package(valid_dir)
         assert rebuilt["ok"], rebuilt
-        second_hash = __import__("hashlib").sha256((valid_dir / "yao-meta-skill.zip").read_bytes()).hexdigest()
+        second_hash = __import__("hashlib").sha256((valid_dir / "captain-meta-skill.zip").read_bytes()).hexdigest()
     finally:
         verification_report.write_bytes(original_verification)
     assert second_hash == first_hash, (first_hash, second_hash)
@@ -242,18 +242,18 @@ def main() -> None:
         renamed_dir = TMP / "renamed-dist"
         renamed_build = build_package(renamed_dir, renamed_root)
         assert renamed_build["ok"], renamed_build
-        assert (renamed_dir / "yao-meta-skill.zip").exists(), renamed_build
-        with zipfile.ZipFile(renamed_dir / "yao-meta-skill.zip") as archive:
+        assert (renamed_dir / "captain-meta-skill.zip").exists(), renamed_build
+        with zipfile.ZipFile(renamed_dir / "captain-meta-skill.zip") as archive:
             names = set(archive.namelist())
-        assert "yao-meta-skill/SKILL.md" in names, sorted(list(names))[:10]
-        assert not [name for name in names if name.endswith("/SKILL.md") and name != "yao-meta-skill/SKILL.md"], names
+        assert "captain-meta-skill/SKILL.md" in names, sorted(list(names))[:10]
+        assert not [name for name in names if name.endswith("/SKILL.md") and name != "captain-meta-skill/SKILL.md"], names
         renamed_valid = verify_package(renamed_dir, TMP / "renamed_package_verification.json", TMP / "renamed_package_verification.md", renamed_root)
         assert renamed_valid["ok"], renamed_valid
 
     nested_skill_dir = TMP / "nested-skill-dist"
     shutil.copytree(valid_dir, nested_skill_dir)
-    with zipfile.ZipFile(nested_skill_dir / "yao-meta-skill.zip", "a", compression=zipfile.ZIP_DEFLATED) as archive:
-        archive.writestr("yao-meta-skill/examples/demo/SKILL.md", "---\nname: demo\n---\n")
+    with zipfile.ZipFile(nested_skill_dir / "captain-meta-skill.zip", "a", compression=zipfile.ZIP_DEFLATED) as archive:
+        archive.writestr("captain-meta-skill/examples/demo/SKILL.md", "---\nname: demo\n---\n")
     nested = verify_package(nested_skill_dir, TMP / "nested_skill.json", TMP / "nested_skill.md")
     assert nested["returncode"] == 2, nested
     nested_payload = nested["payload"]
@@ -262,7 +262,7 @@ def main() -> None:
 
     unsafe_dir = TMP / "unsafe-dist"
     shutil.copytree(valid_dir, unsafe_dir)
-    with zipfile.ZipFile(unsafe_dir / "yao-meta-skill.zip", "a", compression=zipfile.ZIP_DEFLATED) as archive:
+    with zipfile.ZipFile(unsafe_dir / "captain-meta-skill.zip", "a", compression=zipfile.ZIP_DEFLATED) as archive:
         archive.writestr("../evil.txt", "bad")
     unsafe = verify_package(unsafe_dir, TMP / "unsafe.json", TMP / "unsafe.md")
     assert unsafe["returncode"] == 2, unsafe

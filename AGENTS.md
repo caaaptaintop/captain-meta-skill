@@ -2,7 +2,7 @@
 
 ## Project Map
 
-`yao-meta-skill` is the source repository for the Yao Meta Skill / Skill OS. Keep the root `SKILL.md` lean and route depth through the existing project layers:
+`captain-meta-skill` is the independent downstream source repository. It retains the Yao Engine / Skill OS internals and full upstream history. Keep the root `SKILL.md` lean and route depth through the existing project layers:
 
 - `SKILL.md`: public trigger surface, compact workflow, and Skill OS gates.
 - `references/`: stable method doctrine and operating guidance.
@@ -52,7 +52,7 @@ python3 scripts/trust_check.py . --output-json reports/security_trust_report.jso
 python3 scripts/registry_audit.py . --generated-at "$GENERATED_AT"
 python3 scripts/verify_package.py . --package-dir dist --expectations evals/packaging_expectations.json --registry-json reports/registry_audit.json --output-json reports/package_verification.json --output-md reports/package_verification.md --require-zip --generated-at "$GENERATED_AT"
 python3 scripts/registry_audit.py . --generated-at "$GENERATED_AT"
-python3 scripts/upgrade_check.py . --previous-package-json registry/examples/yao-meta-skill-1.0.0.json --current-package-json reports/registry_audit.json --output-json reports/upgrade_check.json --output-md reports/upgrade_check.md --generated-at "$GENERATED_AT"
+python3 scripts/upgrade_check.py . --previous-package-json registry/examples/captain-meta-skill-0.0.0.json --current-package-json reports/registry_audit.json --output-json reports/upgrade_check.json --output-md reports/upgrade_check.md --generated-at "$GENERATED_AT"
 python3 scripts/render_adoption_drift_report.py . --generated-at "$GENERATED_AT"
 python3 scripts/render_architecture_maintainability.py . --generated-at "$GENERATED_AT"
 python3 scripts/python_compat_check.py . --generated-at "$GENERATED_AT"
@@ -99,13 +99,13 @@ python3 scripts/render_evidence_consistency.py . --generated-at "$GENERATED_AT"
 
 If `reports/benchmark_reproducibility.json` reports `release_lock_ready: false`, do not commit that benchmark as release evidence. Restore the transient dirty-lock reports, commit the source/generated evidence that caused the dirty state, and regenerate the clean-lock reports on the resulting clean tree.
 
-Local sync into `~/.agents/skills.disabled/yao-meta-skill` or `~/.agents/skills/yao-meta-skill` must keep the install preflight enabled unless the user explicitly requests a diagnostic bypass. Build and verify the archive before invoking `make sync-local-install` or `make sync-active-install`. The sync targets preserve the attested archive. `scripts/sync_local_install.py` checks the archive bytes against `reports/package_verification.json`, installs those exact bytes, and refuses the copy when the hash, install simulation, or installer permission enforcement fails.
+Local sync into `~/.agents/skills.disabled/captain-meta-skill` or `~/.agents/skills/captain-meta-skill` must keep the install preflight enabled unless the user explicitly requests a diagnostic bypass. Build and verify the archive before invoking `make sync-local-install` or `make sync-active-install`. The sync targets preserve the attested archive. `scripts/sync_local_install.py` checks the archive bytes against `reports/package_verification.json`, installs those exact bytes, and refuses the copy when the hash, install simulation, or installer permission enforcement fails.
 
 Clean test-only scratch directories after verification with `find tests -maxdepth 1 \( -name 'tmp' -o -name 'tmp_*' \) -type d -exec rm -rf {} +`. Do not clean unrelated untracked files.
 
 ## Boundaries
 
-- Agent-facing authoring must use `scripts/yao.py` with an explicit target path. Resolve the canonical target before writing, require `--self` for Yao Meta Skill source or identity, and keep runtime cache/telemetry outside source and installed Skill directories. Standalone writer scripts must require an explicit `skill_dir`.
+- Agent-facing authoring must use `scripts/yao.py` with an explicit target path. Resolve the canonical target before writing, require `--self` for Captain source or identity, and keep runtime cache/telemetry outside source and installed Skill directories. Standalone writer scripts must require an explicit `skill_dir`.
 - Packaging may recursively replace only a recognized generated output directory. Refuse non-empty unmanaged destinations, and preserve Git-governed source selection for Skills located at repository roots or nested inside larger repositories.
 - Do not expand root `SKILL.md` with long method text. Add durable guidance to `references/` or executable behavior to `scripts/`.
 - Do not commit private customer work, one-off business skills, or local research reports unless the user explicitly promotes them into examples, fixtures, or public evidence.

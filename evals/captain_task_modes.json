@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "cases": [
+    {
+      "id": "captain-root",
+      "mode": "A",
+      "prompt": "I have a vague idea for an agent skill but cannot define the real problem yet.",
+      "must": ["root problem", "success condition", "smallest next step", "no file writes"]
+    },
+    {
+      "id": "captain-design",
+      "mode": "B",
+      "prompt": "Design this skill and its validation loop, but do not implement it.",
+      "must": ["positioning", "workflow", "boundary", "artifacts", "verification", "no file writes"]
+    },
+    {
+      "id": "captain-generate",
+      "mode": "C",
+      "prompt": "Generate the skill in the explicit target directory and verify it.",
+      "must": ["target lock", "files", "verification", "rollback boundary"]
+    },
+    {
+      "id": "captain-evaluate",
+      "mode": "D",
+      "prompt": "Evaluate this SKILL.md using static checks only.",
+      "must": ["E1", "Trust Gate", "no runtime-proof claim"]
+    },
+    {
+      "id": "captain-evolve",
+      "mode": "F",
+      "prompt": "This skill failed in production; evolve it safely from the evidence.",
+      "must": ["evidence packet", "nearest asset", "create/merge/discard", "deployment status", "retest", "rollback"]
+    }
+  ]
+}

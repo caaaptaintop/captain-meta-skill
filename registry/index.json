@@ -1,13 +1,13 @@
 {
   "schema_version": "2.0",
-  "generated_at": "2026-08-17",
+  "generated_at": "2026-08-26",
   "package_count": 1,
   "packages": [
     {
-      "name": "yao-meta-skill",
-      "version": "2.1.0",
+      "name": "captain-meta-skill",
+      "version": "0.1.0",
       "maturity": "governed",
-      "owner": "Yao Team",
+      "owner": "Captain",
       "targets": [
         "openai",
         "claude",
@@ -15,8 +15,8 @@
         "agent-skills-compatible",
         "vscode"
       ],
-      "package_metadata": "registry/packages/yao-meta-skill.json",
-      "package_sha256": "54d1fb49b5de9d73a5a312204ffdfad76937ed8e877571521c569139d9630bd8"
+      "package_metadata": "registry/packages/captain-meta-skill.json",
+      "package_sha256": "bb7dfe26d3279cfc6962d9467e7f5e8bf3e2da6dc411823fa8d7bf7d15bb183e"
     }
   ]
 }

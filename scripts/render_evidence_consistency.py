@@ -116,7 +116,7 @@ def build_report(skill_dir: Path, generated_at: str) -> dict[str, Any]:
     package_summary = nested(package_verification, ["summary"], {})
     archive_path = skill_dir / "dist" / f"{skill_dir.name.removesuffix('-trusted-generation-core-v1')}.zip"
     if not archive_path.exists():
-        archive_path = skill_dir / "dist" / "yao-meta-skill.zip"
+        archive_path = skill_dir / "dist" / "captain-meta-skill.zip"
     actual_archive_sha = hashlib.sha256(archive_path.read_bytes()).hexdigest() if archive_path.is_file() else ""
     archive_hashes = {
         "actual_archive": actual_archive_sha,
@@ -137,7 +137,7 @@ def build_report(skill_dir: Path, generated_at: str) -> dict[str, Any]:
         expected={"all_equal_to_actual_archive": actual_archive_sha},
         actual=archive_hashes,
         paths=[
-            "dist/yao-meta-skill.zip",
+            "dist/captain-meta-skill.zip",
             REQUIRED_REPORTS["package_verification"],
             REQUIRED_REPORTS["registry"],
             REQUIRED_REPORTS["benchmark"],

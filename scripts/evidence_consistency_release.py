@@ -16,7 +16,7 @@ SOURCE_REFRESH_REPORT_COMMANDS = [
     "python3 scripts/trust_check.py . --output-json reports/security_trust_report.json --output-md reports/security_trust_report.md",
     'python3 scripts/registry_audit.py . --generated-at "$GENERATED_AT"',
     'python3 scripts/verify_package.py . --package-dir dist --expectations evals/packaging_expectations.json --registry-json reports/registry_audit.json --output-json reports/package_verification.json --output-md reports/package_verification.md --require-zip --generated-at "$GENERATED_AT"',
-    'python3 scripts/upgrade_check.py . --previous-package-json registry/examples/yao-meta-skill-1.0.0.json --current-package-json reports/registry_audit.json --output-json reports/upgrade_check.json --output-md reports/upgrade_check.md --generated-at "$GENERATED_AT"',
+    'python3 scripts/upgrade_check.py . --previous-package-json registry/examples/captain-meta-skill-0.0.0.json --current-package-json reports/registry_audit.json --output-json reports/upgrade_check.json --output-md reports/upgrade_check.md --generated-at "$GENERATED_AT"',
     'python3 scripts/render_adoption_drift_report.py . --generated-at "$GENERATED_AT"',
     'python3 scripts/render_architecture_maintainability.py . --generated-at "$GENERATED_AT"',
     'python3 scripts/python_compat_check.py . --generated-at "$GENERATED_AT"',

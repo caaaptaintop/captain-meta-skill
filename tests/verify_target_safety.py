@@ -433,9 +433,9 @@ def main() -> None:
         )
         assert package_proc.returncode == 0, package_proc.stderr
         install_root = tmp_root / "installed"
-        with zipfile.ZipFile(package_dir / "yao-meta-skill.zip") as archive:
+        with zipfile.ZipFile(package_dir / "captain-meta-skill.zip") as archive:
             archive.extractall(install_root)
-        installed_skill = install_root / "yao-meta-skill"
+        installed_skill = install_root / "captain-meta-skill"
         installed_cli = installed_skill / "scripts" / "yao.py"
         assert installed_cli.is_file(), installed_cli
         installed_before = file_tree_hash(installed_skill)

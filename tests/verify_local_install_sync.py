@@ -44,7 +44,7 @@ def build_package(out_dir: Path) -> dict:
 
 
 def write_verification(package_dir: Path) -> Path:
-    archive = package_dir / "yao-meta-skill.zip"
+    archive = package_dir / "captain-meta-skill.zip"
     path = package_dir / "package_verification.json"
     path.write_text(
         json.dumps(
@@ -64,9 +64,9 @@ def write_verification(package_dir: Path) -> Path:
 
 
 def rewrite_archive_json(package_dir: Path, relative_path: str, transform) -> None:
-    archive_path = package_dir / "yao-meta-skill.zip"
-    rewritten_path = package_dir / "yao-meta-skill.rewritten.zip"
-    archive_member = f"yao-meta-skill/{relative_path}"
+    archive_path = package_dir / "captain-meta-skill.zip"
+    rewritten_path = package_dir / "captain-meta-skill.rewritten.zip"
+    archive_member = f"captain-meta-skill/{relative_path}"
     replaced = False
     with zipfile.ZipFile(archive_path) as archive_in, zipfile.ZipFile(rewritten_path, "w", compression=zipfile.ZIP_DEFLATED) as archive_out:
         for info in archive_in.infolist():
@@ -148,7 +148,7 @@ def main() -> None:
     install_dir = TMP / "installed-skill"
     install_dir.mkdir(parents=True)
     (install_dir / "SKILL.md").write_text(
-        "---\nname: yao-meta-skill\ndescription: local install fixture\n---\n",
+        "---\nname: captain-meta-skill\ndescription: local install fixture\n---\n",
         encoding="utf-8",
     )
     stale_file = install_dir / "stale.txt"
@@ -162,8 +162,8 @@ def main() -> None:
     source_readme = ROOT / "README.md"
     original_readme = source_readme.read_bytes()
     archive_readme = None
-    with zipfile.ZipFile(package_dir / "yao-meta-skill.zip") as archive:
-        archive_readme = archive.read("yao-meta-skill/README.md")
+    with zipfile.ZipFile(package_dir / "captain-meta-skill.zip") as archive:
+        archive_readme = archive.read("captain-meta-skill/README.md")
     source_readme.write_bytes(original_readme + b"\nsource changed after package verification\n")
     try:
         result = run_sync(install_dir, package_dir)
@@ -182,7 +182,7 @@ def main() -> None:
     refused_install_dir = TMP / "preflight-refused-install"
     refused_install_dir.mkdir(parents=True)
     (refused_install_dir / "SKILL.md").write_text(
-        "---\nname: yao-meta-skill\ndescription: local install fixture\n---\n",
+        "---\nname: captain-meta-skill\ndescription: local install fixture\n---\n",
         encoding="utf-8",
     )
     refused_stale = refused_install_dir / "stale.txt"
@@ -191,12 +191,12 @@ def main() -> None:
 
     unattested_dir = TMP / "unattested-dist"
     shutil.copytree(package_dir, unattested_dir)
-    with (unattested_dir / "yao-meta-skill.zip").open("ab") as archive:
+    with (unattested_dir / "captain-meta-skill.zip").open("ab") as archive:
         archive.write(b"tampered")
     unattested_install_dir = TMP / "unattested-install"
     unattested_install_dir.mkdir(parents=True)
     (unattested_install_dir / "SKILL.md").write_text(
-        "---\nname: yao-meta-skill\ndescription: local install fixture\n---\n",
+        "---\nname: captain-meta-skill\ndescription: local install fixture\n---\n",
         encoding="utf-8",
     )
     unattested_result = run_sync_raw(unattested_install_dir, unattested_dir, refresh_verification=False)
@@ -232,11 +232,11 @@ def main() -> None:
         "ordinary_dir_refused": refused.returncode != 0,
         "ordinary_dir_preserved": ordinary_file.exists(),
         "makefile_target_present": "sync-local-install" in makefile_text,
-        "makefile_defaults_disabled": "LOCAL_SKILL_INSTALL_DIR ?= $(HOME)/.agents/skills.disabled/yao-meta-skill"
+        "makefile_defaults_disabled": "LOCAL_SKILL_INSTALL_DIR ?= $(HOME)/.agents/skills.disabled/captain-meta-skill"
         in makefile_text,
         "makefile_active_opt_in_present": "sync-active-install" in makefile_text,
         "readme_names_development_source": "Development source" in readme_text,
-        "readme_names_disabled_mirror": "~/.agents/skills.disabled/yao-meta-skill" in readme_text,
+        "readme_names_disabled_mirror": "~/.agents/skills.disabled/captain-meta-skill" in readme_text,
     }
     report = {
         "ok": all(checks.values()),

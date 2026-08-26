@@ -15,13 +15,13 @@ from yao_runtime_paths import default_cache_dir
 
 
 ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_VERSION_URL = "https://raw.githubusercontent.com/yaojingang/yao-meta-skill/main/VERSION"
-DEFAULT_MANIFEST_URL = "https://raw.githubusercontent.com/yaojingang/yao-meta-skill/main/manifest.json"
+DEFAULT_VERSION_URL = "https://raw.githubusercontent.com/caaaptaintop/captain-meta-skill/main/VERSION"
+DEFAULT_MANIFEST_URL = "https://raw.githubusercontent.com/caaaptaintop/captain-meta-skill/main/manifest.json"
 CACHE_DIR = default_cache_dir()
 CACHE_PATH = CACHE_DIR / "update-check.json"
 ALLOWED_UPDATE_HOST = "raw.githubusercontent.com"
-ALLOWED_UPDATE_PATH_PREFIX = "/yaojingang/yao-meta-skill/"
-UPDATE_DETAILS_URL = "https://github.com/yaojingang/yao-meta-skill/commits/main"
+ALLOWED_UPDATE_PATH_PREFIX = "/caaaptaintop/captain-meta-skill/"
+UPDATE_DETAILS_URL = "https://github.com/caaaptaintop/captain-meta-skill/commits/main"
 SEMVER_RE = re.compile(r"^v?(\d+)\.(\d+)\.(\d+)$")
 
 
@@ -68,7 +68,7 @@ def is_newer(remote: str, local: str) -> bool:
 
 
 def fetch_text(url: str, timeout: float) -> str:
-    request = Request(url, headers={"User-Agent": "yao-meta-skill-update-check"})
+    request = Request(url, headers={"User-Agent": "captain-meta-skill-update-check"})
     with urlopen(request, timeout=timeout) as response:
         return response.read().decode("utf-8").strip()
 
@@ -294,7 +294,7 @@ def check_update(
         cache_payload["notified_at"] = checked_now.isoformat().replace("+00:00", "Z")
         result["notify_user"] = True
         result["notice_text"] = (
-            f"发现 Yao Meta Skill {local_version} → {remote_version}，"
+            f"发现 Captain Meta Skill {local_version} → {remote_version}，"
             "回复“更新”即可升级；当前任务可以继续。"
         )
 
@@ -314,7 +314,7 @@ def check_update(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Check whether yao-meta-skill has a newer GitHub version.")
+    parser = argparse.ArgumentParser(description="Check whether captain-meta-skill has a newer GitHub version.")
     parser.add_argument("--root", default=str(ROOT))
     parser.add_argument("--cache-path", default=str(CACHE_PATH))
     parser.add_argument("--version-url", default=os.environ.get("YAO_UPDATE_VERSION_URL", DEFAULT_VERSION_URL))

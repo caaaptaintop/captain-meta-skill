@@ -56,9 +56,9 @@
         "python3",
         "scripts/yao.py",
         "telemetry-emit",
-        "/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill",
+        "/Users/imac/Documents/GitHub/captain-meta-skill",
         "--output-jsonl",
-        "/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill/.yao/telemetry_spool/external_events.jsonl",
+        "/Users/imac/Documents/GitHub/captain-meta-skill/.yao/telemetry_spool/external_events.jsonl",
         "--event",
         "skill_activation",
         "--activation-type",
@@ -71,14 +71,14 @@
         "browser-extension",
         "--self"
       ],
-      "emit_command": "python3 scripts/yao.py telemetry-emit '/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill' --output-jsonl '/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill/.yao/telemetry_spool/external_events.jsonl' --event skill_activation --activation-type explicit --outcome accepted --failure-type none --command browser-extension --self",
+      "emit_command": "python3 scripts/yao.py telemetry-emit /Users/imac/Documents/GitHub/captain-meta-skill --output-jsonl /Users/imac/Documents/GitHub/captain-meta-skill/.yao/telemetry_spool/external_events.jsonl --event skill_activation --activation-type explicit --outcome accepted --failure-type none --command browser-extension --self",
       "dry_run_argv": [
         "python3",
         "scripts/yao.py",
         "telemetry-emit",
-        "/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill",
+        "/Users/imac/Documents/GitHub/captain-meta-skill",
         "--output-jsonl",
-        "/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill/.yao/telemetry_spool/external_events.jsonl",
+        "/Users/imac/Documents/GitHub/captain-meta-skill/.yao/telemetry_spool/external_events.jsonl",
         "--event",
         "skill_activation",
         "--activation-type",
@@ -92,7 +92,7 @@
         "--self",
         "--dry-run"
       ],
-      "dry_run_command": "python3 scripts/yao.py telemetry-emit '/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill' --output-jsonl '/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill/.yao/telemetry_spool/external_events.jsonl' --event skill_activation --activation-type explicit --outcome accepted --failure-type none --command browser-extension --self --dry-run"
+      "dry_run_command": "python3 scripts/yao.py telemetry-emit /Users/imac/Documents/GitHub/captain-meta-skill --output-jsonl /Users/imac/Documents/GitHub/captain-meta-skill/.yao/telemetry_spool/external_events.jsonl --event skill_activation --activation-type explicit --outcome accepted --failure-type none --command browser-extension --self --dry-run"
     },
     {
       "id": "chrome-extension",
@@ -114,9 +114,9 @@
         "python3",
         "scripts/yao.py",
         "telemetry-emit",
-        "/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill",
+        "/Users/imac/Documents/GitHub/captain-meta-skill",
         "--output-jsonl",
-        "/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill/.yao/telemetry_spool/external_events.jsonl",
+        "/Users/imac/Documents/GitHub/captain-meta-skill/.yao/telemetry_spool/external_events.jsonl",
         "--event",
         "skill_output",
         "--activation-type",
@@ -129,14 +129,14 @@
         "chrome-extension",
         "--self"
       ],
-      "emit_command": "python3 scripts/yao.py telemetry-emit '/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill' --output-jsonl '/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill/.yao/telemetry_spool/external_events.jsonl' --event skill_output --activation-type manual --outcome edited --failure-type none --command chrome-extension --self",
+      "emit_command": "python3 scripts/yao.py telemetry-emit /Users/imac/Documents/GitHub/captain-meta-skill --output-jsonl /Users/imac/Documents/GitHub/captain-meta-skill/.yao/telemetry_spool/external_events.jsonl --event skill_output --activation-type manual --outcome edited --failure-type none --command chrome-extension --self",
       "dry_run_argv": [
         "python3",
         "scripts/yao.py",
         "telemetry-emit",
-        "/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill",
+        "/Users/imac/Documents/GitHub/captain-meta-skill",
         "--output-jsonl",
-        "/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill/.yao/telemetry_spool/external_events.jsonl",
+        "/Users/imac/Documents/GitHub/captain-meta-skill/.yao/telemetry_spool/external_events.jsonl",
         "--event",
         "skill_output",
         "--activation-type",
@@ -150,7 +150,7 @@
         "--self",
         "--dry-run"
       ],
-      "dry_run_command": "python3 scripts/yao.py telemetry-emit '/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill' --output-jsonl '/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill/.yao/telemetry_spool/external_events.jsonl' --event skill_output --activation-type manual --outcome edited --failure-type none --command chrome-extension --self --dry-run"
+      "dry_run_command": "python3 scripts/yao.py telemetry-emit /Users/imac/Documents/GitHub/captain-meta-skill --output-jsonl /Users/imac/Documents/GitHub/captain-meta-skill/.yao/telemetry_spool/external_events.jsonl --event skill_output --activation-type manual --outcome edited --failure-type none --command chrome-extension --self --dry-run"
     },
     {
       "id": "vscode-extension",
@@ -172,9 +172,9 @@
         "python3",
         "scripts/yao.py",
         "telemetry-emit",
-        "/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill",
+        "/Users/imac/Documents/GitHub/captain-meta-skill",
         "--output-jsonl",
-        "/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill/.yao/telemetry_spool/external_events.jsonl",
+        "/Users/imac/Documents/GitHub/captain-meta-skill/.yao/telemetry_spool/external_events.jsonl",
         "--event",
         "skill_activation",
         "--activation-type",
@@ -187,14 +187,14 @@
         "vscode-extension",
         "--self"
       ],
-      "emit_command": "python3 scripts/yao.py telemetry-emit '/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill' --output-jsonl '/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill/.yao/telemetry_spool/external_events.jsonl' --event skill_activation --activation-type implicit --outcome accepted --failure-type none --command vscode-extension --self",
+      "emit_command": "python3 scripts/yao.py telemetry-emit /Users/imac/Documents/GitHub/captain-meta-skill --output-jsonl /Users/imac/Documents/GitHub/captain-meta-skill/.yao/telemetry_spool/external_events.jsonl --event skill_activation --activation-type implicit --outcome accepted --failure-type none --command vscode-extension --self",
       "dry_run_argv": [
         "python3",
         "scripts/yao.py",
         "telemetry-emit",
-        "/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill",
+        "/Users/imac/Documents/GitHub/captain-meta-skill",
         "--output-jsonl",
-        "/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill/.yao/telemetry_spool/external_events.jsonl",
+        "/Users/imac/Documents/GitHub/captain-meta-skill/.yao/telemetry_spool/external_events.jsonl",
         "--event",
         "skill_activation",
         "--activation-type",
@@ -208,7 +208,7 @@
         "--self",
         "--dry-run"
       ],
-      "dry_run_command": "python3 scripts/yao.py telemetry-emit '/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill' --output-jsonl '/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill/.yao/telemetry_spool/external_events.jsonl' --event skill_activation --activation-type implicit --outcome accepted --failure-type none --command vscode-extension --self --dry-run"
+      "dry_run_command": "python3 scripts/yao.py telemetry-emit /Users/imac/Documents/GitHub/captain-meta-skill --output-jsonl /Users/imac/Documents/GitHub/captain-meta-skill/.yao/telemetry_spool/external_events.jsonl --event skill_activation --activation-type implicit --outcome accepted --failure-type none --command vscode-extension --self --dry-run"
     },
     {
       "id": "cli-wrapper",
@@ -230,9 +230,9 @@
         "python3",
         "scripts/yao.py",
         "telemetry-emit",
-        "/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill",
+        "/Users/imac/Documents/GitHub/captain-meta-skill",
         "--output-jsonl",
-        "/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill/.yao/telemetry_spool/external_events.jsonl",
+        "/Users/imac/Documents/GitHub/captain-meta-skill/.yao/telemetry_spool/external_events.jsonl",
         "--event",
         "script_run",
         "--activation-type",
@@ -245,14 +245,14 @@
         "cli-wrapper",
         "--self"
       ],
-      "emit_command": "python3 scripts/yao.py telemetry-emit '/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill' --output-jsonl '/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill/.yao/telemetry_spool/external_events.jsonl' --event script_run --activation-type manual --outcome unknown --failure-type none --command cli-wrapper --self",
+      "emit_command": "python3 scripts/yao.py telemetry-emit /Users/imac/Documents/GitHub/captain-meta-skill --output-jsonl /Users/imac/Documents/GitHub/captain-meta-skill/.yao/telemetry_spool/external_events.jsonl --event script_run --activation-type manual --outcome unknown --failure-type none --command cli-wrapper --self",
       "dry_run_argv": [
         "python3",
         "scripts/yao.py",
         "telemetry-emit",
-        "/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill",
+        "/Users/imac/Documents/GitHub/captain-meta-skill",
         "--output-jsonl",
-        "/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill/.yao/telemetry_spool/external_events.jsonl",
+        "/Users/imac/Documents/GitHub/captain-meta-skill/.yao/telemetry_spool/external_events.jsonl",
         "--event",
         "script_run",
         "--activation-type",
@@ -266,7 +266,7 @@
         "--self",
         "--dry-run"
       ],
-      "dry_run_command": "python3 scripts/yao.py telemetry-emit '/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill' --output-jsonl '/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill/.yao/telemetry_spool/external_events.jsonl' --event script_run --activation-type manual --outcome unknown --failure-type none --command cli-wrapper --self --dry-run"
+      "dry_run_command": "python3 scripts/yao.py telemetry-emit /Users/imac/Documents/GitHub/captain-meta-skill --output-jsonl /Users/imac/Documents/GitHub/captain-meta-skill/.yao/telemetry_spool/external_events.jsonl --event script_run --activation-type manual --outcome unknown --failure-type none --command cli-wrapper --self --dry-run"
     },
     {
       "id": "provider-adapter",
@@ -288,9 +288,9 @@
         "python3",
         "scripts/yao.py",
         "telemetry-emit",
-        "/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill",
+        "/Users/imac/Documents/GitHub/captain-meta-skill",
         "--output-jsonl",
-        "/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill/.yao/telemetry_spool/external_events.jsonl",
+        "/Users/imac/Documents/GitHub/captain-meta-skill/.yao/telemetry_spool/external_events.jsonl",
         "--event",
         "skill_output",
         "--activation-type",
@@ -303,14 +303,14 @@
         "provider-adapter",
         "--self"
       ],
-      "emit_command": "python3 scripts/yao.py telemetry-emit '/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill' --output-jsonl '/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill/.yao/telemetry_spool/external_events.jsonl' --event skill_output --activation-type manual --outcome accepted --failure-type none --command provider-adapter --self",
+      "emit_command": "python3 scripts/yao.py telemetry-emit /Users/imac/Documents/GitHub/captain-meta-skill --output-jsonl /Users/imac/Documents/GitHub/captain-meta-skill/.yao/telemetry_spool/external_events.jsonl --event skill_output --activation-type manual --outcome accepted --failure-type none --command provider-adapter --self",
       "dry_run_argv": [
         "python3",
         "scripts/yao.py",
         "telemetry-emit",
-        "/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill",
+        "/Users/imac/Documents/GitHub/captain-meta-skill",
         "--output-jsonl",
-        "/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill/.yao/telemetry_spool/external_events.jsonl",
+        "/Users/imac/Documents/GitHub/captain-meta-skill/.yao/telemetry_spool/external_events.jsonl",
         "--event",
         "skill_output",
         "--activation-type",
@@ -324,21 +324,21 @@
         "--self",
         "--dry-run"
       ],
-      "dry_run_command": "python3 scripts/yao.py telemetry-emit '/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill' --output-jsonl '/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill/.yao/telemetry_spool/external_events.jsonl' --event skill_output --activation-type manual --outcome accepted --failure-type none --command provider-adapter --self --dry-run"
+      "dry_run_command": "python3 scripts/yao.py telemetry-emit /Users/imac/Documents/GitHub/captain-meta-skill --output-jsonl /Users/imac/Documents/GitHub/captain-meta-skill/.yao/telemetry_spool/external_events.jsonl --event skill_output --activation-type manual --outcome accepted --failure-type none --command provider-adapter --self --dry-run"
     }
   ],
   "artifacts": {
     "json": "reports/telemetry_hook_recipes.json",
     "markdown": "reports/telemetry_hook_recipes.md",
     "spool_jsonl": ".yao/telemetry_spool/external_events.jsonl",
-    "import_command": "python3 scripts/yao.py telemetry-import '/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill' --input-jsonl '/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill/.yao/telemetry_spool/external_events.jsonl' --self",
+    "import_command": "python3 scripts/yao.py telemetry-import /Users/imac/Documents/GitHub/captain-meta-skill --input-jsonl /Users/imac/Documents/GitHub/captain-meta-skill/.yao/telemetry_spool/external_events.jsonl --self",
     "import_argv": [
       "python3",
       "scripts/yao.py",
       "telemetry-import",
-      "/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill",
+      "/Users/imac/Documents/GitHub/captain-meta-skill",
       "--input-jsonl",
-      "/Users/laoyao/AI Coding/03-Development/Skills/yao-meta-skill/.yao/telemetry_spool/external_events.jsonl",
+      "/Users/imac/Documents/GitHub/captain-meta-skill/.yao/telemetry_spool/external_events.jsonl",
       "--self"
     ]
   },

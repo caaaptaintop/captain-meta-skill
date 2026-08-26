@@ -1,11 +1,11 @@
 {
   "skill_summary": {
-    "name": "yao-meta-skill",
-    "title": "Yao Meta Skill",
-    "display_name": "Yao Meta Skill",
+    "name": "captain-meta-skill",
+    "title": "Captain Meta Skill",
+    "display_name": "Captain Meta Skill",
     "description": "Create, improve, or evaluate an existing skill from workflows, prompts, SOPs, scripts. Use for migration/release/package, routing, evals/tests, install/trust checks, 优化已有 skill, 补 trigger 评测. Exclude summary/translation/docs, brainstorming, one-off prompts, copy-only edits, outline-only requests.",
     "maturity": "governed",
-    "updated_at": "2026-08-17",
+    "updated_at": "2026-08-26",
     "core_value": "把一次性经验沉淀为可复用、可评估、可迁移的 Skill 包体。",
     "audience": "Skill 作者、复用团队和后续 reviewer。",
     "deliverables": [
@@ -81,7 +81,7 @@
       "label": "可维护性",
       "score": 100,
       "reasons": [
-        "SKILL.md 约 316 个词/字。",
+        "SKILL.md 约 308 个词/字。",
         "入口文件保持克制，可维护性较好。",
         "references/ 已承载扩展指导。",
         "scripts/ 已承载确定性逻辑。",
@@ -102,7 +102,7 @@
       "label": "上下文成本",
       "score": 42,
       "reasons": [
-        "入口约 316 个词/字，references 约 18854 个词/字。",
+        "入口约 308 个词/字，references 约 19344 个词/字。",
         "分数越高代表上下文成本越低。",
         "上下文成本偏高，建议压缩入口或拆分 references。"
       ]
@@ -206,7 +206,7 @@
       "已生成 Output Review Adjudication，可记录盲评决策、一致率和待评审项。"
     ],
     "gaps": [
-      "上下文成本需要补强：入口约 316 个词/字，references 约 18854 个词/字。"
+      "上下文成本需要补强：入口约 308 个词/字，references 约 19344 个词/字。"
     ],
     "recommendations": [
       "先改触发边界，再扩展工作流。",
@@ -271,7 +271,7 @@
         "name": "包体膨胀风险",
         "impact": 2,
         "probability": 1,
-        "signal": "SKILL.md 约 316 个词/字。",
+        "signal": "SKILL.md 约 308 个词/字。",
         "response": "先补证据和边界，再增加包体复杂度。"
       },
       {
@@ -634,19 +634,18 @@
     "json_report": "reports/skill-interpretation.json",
     "purpose": "Explain the generated skill's role, principles, usage scenarios, trigger contract, inputs, outputs, quality evidence, risks, assets, highlights, and next upgrade directions."
   },
-  "name": "yao-meta-skill",
-  "title": "Yao Meta Skill",
-  "display_name": "Yao Meta Skill",
+  "name": "captain-meta-skill",
+  "title": "Captain Meta Skill",
+  "display_name": "Captain Meta Skill",
   "description": "Create, improve, or evaluate an existing skill from workflows, prompts, SOPs, scripts. Use for migration/release/package, routing, evals/tests, install/trust checks, 优化已有 skill, 补 trigger 评测. Exclude summary/translation/docs, brainstorming, one-off prompts, copy-only edits, outline-only requests.",
   "logic_steps": [
-    "Require `repeated use` + `reusable output contract`; skip one-offs.",
-    "Lock target path + identity before writes; self-edits require `--self`.",
-    "Capture job, output, exclusions, constraints, standards, mode.",
-    "Scan `3-5` useful external/user/local references.",
-    "Write `description` early; route edits need `trigger_eval.py`; release gates follow risk."
+    "Require a reusable output contract; skip one-offs.",
+    "Lock problem, success, tension, modes, target path, and identity before writes.",
+    "Scan `3-5` references and assets; test `description`.",
+    "Evolution: `evidence -> nearest asset -> create/merge/discard -> deployment -> retest/rollback`."
   ],
   "usage_steps": [
-    "Use $yao-meta-skill on an explicit target; use --self for Yao itself.",
+    "Use $captain-meta-skill on an explicit target; use --self for Captain itself.",
     "Use this skill when the request matches: Create, improve, or evaluate an existing skill from workflows, prompts, SOPs, scripts. Use for migration/release/package, routing, evals/tests, install/trust checks, 优化已有 skill, 补 trigger 评测. Exclude summary/translation/docs, brainstorming, one-off prompts, copy-only edits, outline-only requests."
   ],
   "package_map": [
@@ -711,7 +710,7 @@
     "把重复流程沉淀为可复用的 agent skill。",
     "把分散提示词、对话记录或操作规范整理为稳定能力。",
     "团队复用前，需要明确触发边界、质量证据和维护责任。",
-    "用户说出类似需求时：Use $yao-meta-skill on an explicit target; use --self for Yao itself."
+    "用户说出类似需求时：Use $captain-meta-skill on an explicit target; use --self for Captain itself."
   ],
   "trigger_contract": {
     "description": "Create, improve, or evaluate an existing skill from workflows, prompts, SOPs, scripts. Use for migration/release/package, routing, evals/tests, install/trust checks, 优化已有 skill, 补 trigger 评测. Exclude summary/translation/docs, brainstorming, one-off prompts, copy-only edits, outline-only requests.",
@@ -1016,13 +1015,13 @@
     "ok": true,
     "summary": {
       "reproducibility_ready": true,
-      "release_lock_ready": true,
+      "release_lock_ready": false,
       "methodology_complete": true,
       "required_artifact_count": 25,
       "missing_artifact_count": 0,
-      "evidence_bundle_sha256": "ec52890423f7cb86c63078e55f4df33df8728efe5f84807902ba8b178fa436dd",
-      "source_contract_sha256": "54d1fb49b5de9d73a5a312204ffdfad76937ed8e877571521c569139d9630bd8",
-      "archive_sha256": "f5275f7471c04e62dfc862d714e5d752a688d66952277bee848364634c0046e7",
+      "evidence_bundle_sha256": "f8cd082d36ab00c406d8de4ff9a3d774aaa7d5fb3e015bc5e0a531d75c495aa8",
+      "source_contract_sha256": "bb7dfe26d3279cfc6962d9467e7f5e8bf3e2da6dc411823fa8d7bf7d15bb183e",
+      "archive_sha256": "c4ca51a4f545a4ac860bc685e2856ce6e735ad2469c8a8b1bd6ea9e91b7c2bd6",
       "output_case_count": 5,
       "failure_disclosure_count": 3,
       "command_count": 23,
@@ -1043,19 +1042,19 @@
       "world_class_source_check_count": 14,
       "world_class_source_pass_count": 11,
       "world_class_source_blocked_count": 3,
-      "beta_test_ready": true,
-      "beta_test_blocker_count": 0,
+      "beta_test_ready": false,
+      "beta_test_blocker_count": 1,
       "beta_test_deferred_evidence_count": 4,
       "public_claim_ready": false,
-      "public_claim_blocker_count": 3,
+      "public_claim_blocker_count": 4,
       "working_tree_dirty": true,
-      "changed_file_count": 24,
-      "source_tree_dirty": false,
-      "source_changed_file_count": 0,
+      "changed_file_count": 147,
+      "source_tree_dirty": true,
+      "source_changed_file_count": 53,
       "generated_tree_dirty": true,
-      "generated_changed_file_count": 24
+      "generated_changed_file_count": 94
     },
-    "commit": "4f77b8a6ee7e59284219d0adcbbceef4dcdcdca9",
+    "commit": "f5d8f681372edae1915991e2de0c23dc306dd30f",
     "missing_artifacts": [],
     "limitations": [
       "The git commit and dirty flags are generation-time context; release lock is blocked by source changes, while generated evidence artifacts are tracked separately.",
@@ -1140,7 +1139,7 @@
     "failures": []
   },
   "trust_security": {
-    "scanned_files": 277,
+    "scanned_files": 280,
     "script_count": 174,
     "internal_module_count": 81,
     "secret_findings": 0,
@@ -1160,8 +1159,8 @@
     "help_smoke_failed_count": 0,
     "interactive_script_count": 0,
     "package_hash_scope": "source-contract-without-generated-reports",
-    "package_hash_file_count": 277,
-    "package_sha256": "54d1fb49b5de9d73a5a312204ffdfad76937ed8e877571521c569139d9630bd8"
+    "package_hash_file_count": 280,
+    "package_sha256": "bb7dfe26d3279cfc6962d9467e7f5e8bf3e2da6dc411823fa8d7bf7d15bb183e"
   },
   "skill_atlas": {
     "skill_count": 11,
@@ -1183,8 +1182,8 @@
     "ok": true,
     "package": {
       "schema_version": "2.0",
-      "name": "yao-meta-skill",
-      "version": "2.1.0",
+      "name": "captain-meta-skill",
+      "version": "0.1.0",
       "description": "Create, improve, or evaluate an existing skill from workflows, prompts, SOPs, scripts. Use for migration/release/package, routing, evals/tests, install/trust checks, 优化已有 skill, 补 trigger 评测. Exclude summary/translation/docs, brainstorming, one-off prompts, copy-only edits, outline-only requests.",
       "targets": [
         "openai",
@@ -1194,13 +1193,13 @@
         "vscode"
       ],
       "maturity": "governed",
-      "owner": "Yao Team",
+      "owner": "Captain",
       "review_cadence": "quarterly",
       "trust_level": "local",
       "license": "MIT",
       "checksums": {
-        "package_sha256": "54d1fb49b5de9d73a5a312204ffdfad76937ed8e877571521c569139d9630bd8",
-        "archive_sha256": "f5275f7471c04e62dfc862d714e5d752a688d66952277bee848364634c0046e7"
+        "package_sha256": "bb7dfe26d3279cfc6962d9467e7f5e8bf3e2da6dc411823fa8d7bf7d15bb183e",
+        "archive_sha256": "c4ca51a4f545a4ac860bc685e2856ce6e735ad2469c8a8b1bd6ea9e91b7c2bd6"
       },
       "compatibility": {
         "openai": "pass",
@@ -1227,16 +1226,16 @@
         "adoption_drift": "reports/adoption_drift_report.md",
         "review_waivers": "reports/review_waivers.md",
         "review_annotations": "reports/review_annotations.md",
-        "package_metadata": "registry/packages/yao-meta-skill.json"
+        "package_metadata": "registry/packages/captain-meta-skill.json"
       },
       "distribution": {
         "archive_verified": true,
-        "archive_sha256": "f5275f7471c04e62dfc862d714e5d752a688d66952277bee848364634c0046e7",
+        "archive_sha256": "c4ca51a4f545a4ac860bc685e2856ce6e735ad2469c8a8b1bd6ea9e91b7c2bd6",
         "package_verification": "reports/package_verification.json",
         "install_simulated": true,
         "install_simulation": "reports/install_simulation.json"
       },
-      "generated_at": "2026-08-17"
+      "generated_at": "2026-08-26"
     },
     "failures": [],
     "warnings": []
@@ -1247,8 +1246,8 @@
       "target_count": 4,
       "adapter_count": 4,
       "archive_present": true,
-      "archive_sha256": "f5275f7471c04e62dfc862d714e5d752a688d66952277bee848364634c0046e7",
-      "archive_entry_count": 658,
+      "archive_sha256": "c4ca51a4f545a4ac860bc685e2856ce6e735ad2469c8a8b1bd6ea9e91b7c2bd6",
+      "archive_entry_count": 666,
       "nested_skill_entry_count": 0,
       "failure_count": 0,
       "warning_count": 0
@@ -1260,7 +1259,7 @@
     "ok": true,
     "summary": {
       "archive_present": true,
-      "archive_entry_count": 658,
+      "archive_entry_count": 666,
       "nested_skill_entry_count": 0,
       "archive_extracted": true,
       "entrypoint_loaded": true,
@@ -1281,7 +1280,7 @@
   "upgrade_check": {
     "ok": true,
     "summary": {
-      "declared_bump": "major",
+      "declared_bump": "minor",
       "recommended_bump": "minor",
       "breaking_change_count": 0,
       "added_target_count": 2,
@@ -1320,7 +1319,7 @@
       "metadata_changes": [
         {
           "field": "description",
-          "from": "Create, refactor, evaluate, and package agent skills from workflows, prompts, transcripts, docs, or notes.",
+          "from": "Build governed agent skills from reusable workflows.",
           "to": "Create, improve, or evaluate an existing skill from workflows, prompts, SOPs, scripts. Use for migration/release/package, routing, evals/tests, install/trust checks, 优化已有 skill, 补 trigger 评测. Exclude summary/translation/docs, brainstorming, one-off prompts, copy-only edits, outline-only requests."
         }
       ],
@@ -1328,12 +1327,12 @@
         {
           "field": "archive_sha256",
           "from": "",
-          "to": "f5275f7471c04e62dfc862d714e5d752a688d66952277bee848364634c0046e7"
+          "to": "c4ca51a4f545a4ac860bc685e2856ce6e735ad2469c8a8b1bd6ea9e91b7c2bd6"
         },
         {
           "field": "package_sha256",
           "from": "0000000000000000000000000000000000000000000000000000000000000000",
-          "to": "54d1fb49b5de9d73a5a312204ffdfad76937ed8e877571521c569139d9630bd8"
+          "to": "bb7dfe26d3279cfc6962d9467e7f5e8bf3e2da6dc411823fa8d7bf7d15bb183e"
         }
       ]
     },
@@ -2203,7 +2202,7 @@
     ],
     "maturity_tier": "governed",
     "skill_archetype": "governed",
-    "updated_at": "2026-08-17"
+    "updated_at": "2026-08-26"
   },
   "interpretation_contract": {
     "schema_version": "2.0",

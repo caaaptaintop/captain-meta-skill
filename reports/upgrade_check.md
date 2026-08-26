@@ -1,9 +1,9 @@
 # Upgrade Check
 
 - OK: `True`
-- Previous: `yao-meta-skill 1.0.0`
-- Current: `yao-meta-skill 2.1.0`
-- Declared bump: `major`
+- Previous: `captain-meta-skill 0.0.0`
+- Current: `captain-meta-skill 0.1.0`
+- Declared bump: `minor`
 - Recommended bump: `minor`
 - Breaking changes: `0`
 

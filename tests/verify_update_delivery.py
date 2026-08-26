@@ -187,37 +187,37 @@ def test_cache_notice_and_offline_degradation() -> None:
     assert not malformed["ok"] and "Invalid stable semantic version" in malformed["error"], malformed
 
 
-def install_skills_fixture(home: Path, *, source: str = "yaojingang/yao-meta-skill", version: str = "1.0.0") -> None:
+def install_skills_fixture(home: Path, *, source: str = "caaaptaintop/captain-meta-skill", version: str = "1.0.0") -> None:
     lock_path = home / ".agents" / ".skill-lock.json"
     lock_path.parent.mkdir(parents=True, exist_ok=True)
     lock_path.write_text(
-        json.dumps({"skills": {"yao-meta-skill": {"source": source}}}) + "\n",
+        json.dumps({"skills": {"captain-meta-skill": {"source": source}}}) + "\n",
         encoding="utf-8",
     )
-    install = home / ".agents" / "skills" / "yao-meta-skill"
+    install = home / ".agents" / "skills" / "captain-meta-skill"
     write_version(install, version)
-    (install / "SKILL.md").write_text("---\nname: yao-meta-skill\n---\n", encoding="utf-8")
+    (install / "SKILL.md").write_text("---\nname: captain-meta-skill\n---\n", encoding="utf-8")
 
 
 def install_plugin_fixture(home: Path, version: str = "1.0.0") -> dict:
-    plugin = home / "marketplaces" / "yao" / "plugins" / "yao-meta-skill"
+    plugin = home / "marketplaces" / "captain" / "plugins" / "captain-meta-skill"
     manifest_path = plugin / ".codex-plugin" / "plugin.json"
     manifest_path.parent.mkdir(parents=True, exist_ok=True)
     manifest_path.write_text(
         json.dumps(
             {
-                "name": "yao-meta-skill",
+                "name": "captain-meta-skill",
                 "version": version,
-                "repository": "https://github.com/yaojingang/yao-meta-skill",
+                "repository": "https://github.com/caaaptaintop/captain-meta-skill",
             }
         )
         + "\n",
         encoding="utf-8",
     )
     return {
-        "pluginId": "yao-meta-skill@yao-meta-skill",
-        "name": "yao-meta-skill",
-        "marketplaceName": "yao-meta-skill",
+        "pluginId": "captain-meta-skill@captain-meta-skill",
+        "name": "captain-meta-skill",
+        "marketplaceName": "captain-meta-skill",
         "version": version,
         "installed": True,
         "source": {"source": "local", "path": str(plugin)},
@@ -232,7 +232,7 @@ def test_installation_channels_and_safe_commands() -> None:
     assert skills["summary"]["managed_channels"] == ["skills-cli"], skills
     skills_plan = build_update_plan(skills)
     assert skills_plan["argv"] == [
-        "/opt/tools/npx", "-y", "skills", "update", "yao-meta-skill", "-g", "-y"
+        "/opt/tools/npx", "-y", "skills", "update", "captain-meta-skill", "-g", "-y"
     ], skills_plan
 
     untrusted_plan = build_update_plan(
@@ -240,7 +240,7 @@ def test_installation_channels_and_safe_commands() -> None:
             "managed": [
                 {
                     "name": "skills-cli",
-                    "source": "attacker/yao-meta-skill",
+                    "source": "attacker/captain-meta-skill",
                     "executable": "/opt/tools/npx",
                 }
             ],
@@ -250,7 +250,7 @@ def test_installation_channels_and_safe_commands() -> None:
     assert untrusted_plan["error"] == "untrusted-source", untrusted_plan
 
     untrusted_home = TMP / "untrusted-home"
-    install_skills_fixture(untrusted_home, source="attacker/yao-meta-skill")
+    install_skills_fixture(untrusted_home, source="attacker/captain-meta-skill")
     untrusted = detect_installation_channels(TMP / "plain-root", home=untrusted_home, which=which_skills)
     assert untrusted["summary"]["managed_count"] == 0, untrusted
     assert build_update_plan(untrusted)["error"] == "no-managed-channel", untrusted
@@ -268,7 +268,7 @@ def test_installation_channels_and_safe_commands() -> None:
     )
     plugin_plan = build_update_plan(plugin)
     assert plugin_plan["argv"] == [
-        "/opt/tools/codex", "plugin", "marketplace", "upgrade", "yao-meta-skill"
+        "/opt/tools/codex", "plugin", "marketplace", "upgrade", "captain-meta-skill"
     ], plugin_plan
 
     multiple_home = TMP / "multiple-home"
@@ -300,7 +300,7 @@ def test_installation_channels_and_safe_commands() -> None:
 
     copied_root = TMP / "copied-skill"
     write_version(copied_root, "1.0.0")
-    (copied_root / "SKILL.md").write_text("---\nname: yao-meta-skill\n---\n", encoding="utf-8")
+    (copied_root / "SKILL.md").write_text("---\nname: captain-meta-skill\n---\n", encoding="utf-8")
     copied = detect_installation_channels(copied_root, home=TMP / "copy-home", which=lambda _name: None)
     assert build_update_plan(copied)["error"] == "unmanaged-source-copy", copied
 
@@ -314,12 +314,12 @@ def test_confirmation_execution_and_post_verification() -> None:
         "source": DEFAULT_VERSION_URL,
     }
     before = {
-        "managed": [{"name": "skills-cli", "version": "1.0.0", "source": "yaojingang/yao-meta-skill", "executable": "/opt/tools/npx"}],
+        "managed": [{"name": "skills-cli", "version": "1.0.0", "source": "caaaptaintop/captain-meta-skill", "executable": "/opt/tools/npx"}],
         "blocked": [],
         "warnings": [],
     }
     after = {
-        "managed": [{"name": "skills-cli", "version": "1.1.0", "source": "yaojingang/yao-meta-skill", "executable": "/opt/tools/npx"}],
+        "managed": [{"name": "skills-cli", "version": "1.1.0", "source": "caaaptaintop/captain-meta-skill", "executable": "/opt/tools/npx"}],
         "blocked": [],
         "warnings": [],
     }
@@ -368,7 +368,7 @@ def test_confirmation_execution_and_post_verification() -> None:
     crafted = {
         "ok": True,
         "channel": "skills-cli",
-        "source": "yaojingang/yao-meta-skill",
+        "source": "caaaptaintop/captain-meta-skill",
         "argv": ["/bin/sh", "-c", "touch", "/tmp/unsafe", "-g", "-y"],
     }
     rejected = execute_update_plan(crafted, runner=argv_runner)
@@ -386,7 +386,7 @@ def test_confirmation_execution_and_post_verification() -> None:
 
 
 def test_cli_stream_contract() -> None:
-    notice_text = "发现 Yao Meta Skill 1.0.0 → 1.1.0，回复“更新”即可升级；当前任务可以继续。"
+    notice_text = "发现 Captain Meta Skill 1.0.0 → 1.1.0，回复“更新”即可升级；当前任务可以继续。"
     args = Namespace(
         force=False,
         no_cache=False,

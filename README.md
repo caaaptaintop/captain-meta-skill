@@ -1,12 +1,18 @@
-# Yao Meta Skill
+# Captain Meta Skill
 
-[![CI](https://github.com/yaojingang/yao-meta-skill/actions/workflows/test.yml/badge.svg)](https://github.com/yaojingang/yao-meta-skill/actions/workflows/test.yml)
+[![CI](https://github.com/caaaptaintop/captain-meta-skill/actions/workflows/test.yml/badge.svg)](https://github.com/caaaptaintop/captain-meta-skill/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](LICENSE)
 [![English](https://img.shields.io/badge/Docs-English-black)](README.md)
 [![中文](https://img.shields.io/badge/Docs-%E4%B8%AD%E6%96%87-red)](docs/README.zh-CN.md)
 [![日本語](https://img.shields.io/badge/Docs-%E6%97%A5%E6%9C%AC%E8%AA%9E-blue)](docs/README.ja-JP.md)
 [![Français](https://img.shields.io/badge/Docs-Fran%C3%A7ais-green)](docs/README.fr-FR.md)
 [![Русский](https://img.shields.io/badge/Docs-%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9-purple)](docs/README.ru-RU.md)
+
+`captain-meta-skill` is an independently released downstream distribution of [Yao Meta Skill](https://github.com/yaojingang/yao-meta-skill). It keeps Yao's Skill OS engine and adds task-intent modes, root-problem diagnosis, evidence-led evolution, and explicit upstream maintenance boundaries informed by [Dao Skill](https://github.com/gnipbao/dao-skill).
+
+Captain and its two source baselines are pinned in [`upstream.lock.json`](upstream.lock.json). See [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) for attribution. Captain users update from Captain releases; maintainers absorb Yao through reviewed upstream merges.
+
+The inherited documentation below retains the Yao Engine name where it describes the underlying CLI, reports, tests, and historical evidence.
 
 `YAO` stands for `Yielding AI Outcomes`: the goal is not to generate more prompt text, but to produce reusable AI assets and real operational outcomes.
 
@@ -261,7 +267,7 @@ python3 scripts/yao.py skill-atlas --workspace-root . --self
 python3 scripts/yao.py registry-audit . --self
 python3 scripts/yao.py package-verify . --package-dir dist --require-zip --self
 python3 scripts/yao.py install-simulate . --package-dir dist --self
-python3 scripts/yao.py upgrade-check . --previous-package-json registry/examples/yao-meta-skill-1.0.0.json --self
+python3 scripts/yao.py upgrade-check . --previous-package-json registry/examples/captain-meta-skill-0.0.0.json --self
 python3 scripts/yao.py world-class-evidence . --self
 SUBMISSIONS_DIR="${SUBMISSIONS_DIR:-evidence/world_class/submissions}"
 python3 scripts/yao.py world-class-preflight . --submissions-dir "$SUBMISSIONS_DIR" --self
@@ -297,7 +303,7 @@ If `python3` points to an older system interpreter, pass the interpreter explici
 make PYTHON=python3.11 ci-test
 ```
 
-Disabled mirror: `~/.agents/skills.disabled/yao-meta-skill` is the local backup mirror for this source. Keeping the mirror outside `~/.agents/skills` prevents Codex from showing a duplicate `Yao Meta Skill` while this repository is also visible in the active workspace.
+Disabled mirror: `~/.agents/skills.disabled/captain-meta-skill` is the local backup mirror for this source. Keeping the mirror outside `~/.agents/skills` prevents Codex from showing a duplicate `Captain Meta Skill` while this repository is also visible in the active workspace.
 
 Sync the current source into the disabled mirror:
 
@@ -305,7 +311,7 @@ Sync the current source into the disabled mirror:
 make sync-local-install
 ```
 
-The sync command first rebuilds the package and runs install preflight against `dist/yao-meta-skill.zip`. It refuses to sync when package extraction, adapter readability, or installer permission enforcement fails. After the preflight passes, it copies Git-tracked files plus new source files in code and guidance directories such as `scripts/`, `tests/`, `references/`, and `docs/`. It skips untracked business-skill folders and untracked private reports by default, so local experiments do not leak into the mirror.
+The sync command first rebuilds the package and runs install preflight against `dist/captain-meta-skill.zip`. It refuses to sync when package extraction, adapter readability, or installer permission enforcement fails. After the preflight passes, it copies Git-tracked files plus new source files in code and guidance directories such as `scripts/`, `tests/`, `references/`, and `docs/`. It skips untracked business-skill folders and untracked private reports by default, so local experiments do not leak into the mirror.
 
 Restore an active global Codex install only when you intentionally want this skill discoverable outside the development workspace:
 
@@ -313,7 +319,7 @@ Restore an active global Codex install only when you intentionally want this ski
 make sync-active-install
 ```
 
-That active install writes to `~/.agents/skills/yao-meta-skill` and can make Codex show a second `Yao Meta Skill` entry while this repository is open as a skills workspace.
+That active install writes to `~/.agents/skills/captain-meta-skill` and can make Codex show a second `Captain Meta Skill` entry while this repository is open as a skills workspace.
 
 ## Generated Artifact Boundaries
 

@@ -67,10 +67,10 @@ def main() -> None:
     shutil.rmtree(TMP, ignore_errors=True)
     TMP.mkdir(parents=True, exist_ok=True)
 
-    root_ir, root_path = find_skill_ir(ROOT, "yao-meta-skill", require_schema=True)
+    root_ir, root_path = find_skill_ir(ROOT, "captain-meta-skill", require_schema=True)
     assert root_path == "skill-ir/examples/yao-meta-skill.json", root_path
     assert root_ir["schema_version"] == "2.0.0", root_ir
-    assert find_skill_ir_path(ROOT, "yao-meta-skill", require_schema=True) == root_path
+    assert find_skill_ir_path(ROOT, "captain-meta-skill", require_schema=True) == root_path
     root_manifest = json.loads((ROOT / "manifest.json").read_text(encoding="utf-8"))
     manifest_schema = json.loads((ROOT / "schemas" / "manifest.schema.json").read_text(encoding="utf-8"))
     assert root_manifest["skill_ir_source"] == root_path, root_manifest

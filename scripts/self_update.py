@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Safely update a verified managed yao-meta-skill installation."""
+"""Safely update a verified managed captain-meta-skill installation."""
 
 from __future__ import annotations
 
@@ -174,7 +174,7 @@ def run_self_update(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Update a verified managed yao-meta-skill installation.")
+    parser = argparse.ArgumentParser(description="Update a verified managed captain-meta-skill installation.")
     parser.add_argument("--yes", action="store_true", help="Apply the verified update plan.")
     parser.add_argument("--timeout", type=float, default=3.0)
     args = parser.parse_args()

@@ -13,7 +13,7 @@ from simulate_install import simulate_install
 
 
 ROOT = Path(__file__).resolve().parent.parent
-SKILL_NAME = "yao-meta-skill"
+SKILL_NAME = "captain-meta-skill"
 SENTINEL_NAME = ".yao-local-install.json"
 DEFAULT_INSTALL_DIR = Path.home() / ".agents" / "skills.disabled" / SKILL_NAME
 ACTIVE_INSTALL_DIR = Path.home() / ".agents" / "skills" / SKILL_NAME
@@ -138,7 +138,7 @@ def write_sentinel(root: Path, install_dir: Path, dry_run: bool) -> None:
     if dry_run:
         return
     payload = {
-        "managed_by": "yao-meta-skill sync_local_install.py",
+        "managed_by": "captain-meta-skill sync_local_install.py",
         "skill_name": SKILL_NAME,
         "source_root": str(root),
     }
@@ -283,7 +283,7 @@ def sync_local_install(
     if not skip_install_preflight:
         preflight = install_preflight(root, resolved_package_dir, generated_at or str(date.today()))
     _, skipped_untracked = candidate_files(root)
-    with tempfile.TemporaryDirectory(prefix="yao-local-install-archive-") as temp_dir:
+    with tempfile.TemporaryDirectory(prefix="captain-local-install-archive-") as temp_dir:
         archive_root, files = extract_archive_source(resolved_package_dir, Path(temp_dir))
         desired_files = set(files)
         desired_files.add(Path(SENTINEL_NAME))
@@ -312,7 +312,7 @@ def sync_local_install(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Sync the current yao-meta-skill source into a managed local skill mirror.")
+    parser = argparse.ArgumentParser(description="Sync the current captain-meta-skill source into a managed local skill mirror.")
     parser.add_argument("--root", default=str(ROOT))
     parser.add_argument("--install-dir", default=str(DEFAULT_INSTALL_DIR))
     parser.add_argument("--package-dir", default=str(DEFAULT_PACKAGE_DIR))

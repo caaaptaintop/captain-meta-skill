@@ -1,14 +1,14 @@
 {
   "ok": true,
   "schema_version": "2.0",
-  "generated_at": "2026-08-17",
+  "generated_at": "2026-08-26",
   "skill_dir": ".",
   "package_dir": "dist",
-  "install_root": "dist/install-simulation/simulate-yao-meta-skill",
-  "installed_skill_dir": "dist/install-simulation/simulate-yao-meta-skill/yao-meta-skill",
+  "install_root": "dist/install-simulation/simulate-captain-meta-skill",
+  "installed_skill_dir": "dist/install-simulation/simulate-captain-meta-skill/captain-meta-skill",
   "summary": {
     "archive_present": true,
-    "archive_entry_count": 658,
+    "archive_entry_count": 666,
     "nested_skill_entry_count": 0,
     "archive_extracted": true,
     "entrypoint_loaded": true,
@@ -27,7 +27,7 @@
     {
       "id": "archive-present",
       "status": "pass",
-      "detail": "Package archive exists: dist/yao-meta-skill.zip"
+      "detail": "Package archive exists: dist/captain-meta-skill.zip"
     },
     {
       "id": "archive-safe-paths",
@@ -42,7 +42,7 @@
     {
       "id": "single-top-level",
       "status": "pass",
-      "detail": "Archive top-level directory is yao-meta-skill"
+      "detail": "Archive top-level directory is captain-meta-skill"
     },
     {
       "id": "entrypoint-load",
@@ -278,7 +278,7 @@
   "failures": [],
   "warnings": [],
   "artifacts": {
-    "archive": "dist/yao-meta-skill.zip",
+    "archive": "dist/captain-meta-skill.zip",
     "package_manifest": "dist/manifest.json",
     "json": "reports/install_simulation.json",
     "markdown": "reports/install_simulation.md"

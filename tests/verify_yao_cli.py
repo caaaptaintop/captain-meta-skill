@@ -312,7 +312,7 @@ def main() -> None:
         "2026-06-13",
     )
     assert registry_result["ok"], registry_result
-    assert registry_result["payload"]["package"]["name"] == "yao-meta-skill", registry_result
+    assert registry_result["payload"]["package"]["name"] == "captain-meta-skill", registry_result
     assert registry_result["payload"]["package"]["checksums"]["package_sha256"], registry_result
 
     reference_scan_result = run(
@@ -528,7 +528,7 @@ def main() -> None:
     assert promote_result["payload"]["summary"]["blocked"] == 0, promote_result
     review_result = run("review", "--target", "root")
     assert review_result["ok"], review_result
-    assert review_result["payload"]["artifacts"]["review_md"].endswith("reports/iteration_bundles/yao-meta-skill/review.md")
+    assert review_result["payload"]["artifacts"]["review_md"].endswith("reports/iteration_bundles/captain-meta-skill/review.md")
 
     snapshot_result = run("release-snapshot", "--target", "root", "--label", "cli-smoke")
     assert snapshot_result["ok"], snapshot_result
@@ -665,7 +665,7 @@ def main() -> None:
         "upgrade-check",
         ".",
         "--previous-package-json",
-        str(ROOT / "registry" / "examples" / "yao-meta-skill-1.0.0.json"),
+        str(ROOT / "registry" / "examples" / "captain-meta-skill-0.0.0.json"),
         "--current-package-json",
         str(ROOT / "reports" / "registry_audit.json"),
         "--output-json",

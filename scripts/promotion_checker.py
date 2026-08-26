@@ -7,7 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 OPTIMIZATION_REPORTS = {
-    "yao-meta-skill": ROOT / "reports" / "description_optimization.json",
+    "captain-meta-skill": ROOT / "reports" / "description_optimization.json",
     "team-frontend-review": ROOT / "examples" / "team-frontend-review" / "optimization" / "reports" / "description_optimization.json",
     "governed-incident-command": ROOT
     / "examples"
@@ -18,7 +18,7 @@ OPTIMIZATION_REPORTS = {
 }
 
 SKILL_PATHS = {
-    "yao-meta-skill": ROOT / "SKILL.md",
+    "captain-meta-skill": ROOT / "SKILL.md",
     "team-frontend-review": ROOT / "examples" / "team-frontend-review" / "generated-skill" / "SKILL.example.md",
     "governed-incident-command": ROOT / "examples" / "governed-incident-command" / "generated-skill" / "SKILL.example.md",
 }

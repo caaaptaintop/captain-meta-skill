@@ -274,7 +274,7 @@ def build_coverage(skill_dir: Path, generated_at: str) -> dict[str, Any]:
             category="core-module",
             label="Registry Distribution",
             objective="Skill packages are installable, versioned, checksumed, and upgrade-reviewable.",
-            artifact_paths=["registry/index.schema.json", "registry/package.schema.json", "registry/packages/yao-meta-skill.json", "scripts/registry_audit.py", "reports/package_verification.json", "reports/install_simulation.json", "tests/verify_registry_audit.py"],
+            artifact_paths=["registry/index.schema.json", "registry/package.schema.json", "registry/packages/captain-meta-skill.json", "scripts/registry_audit.py", "reports/package_verification.json", "reports/install_simulation.json", "tests/verify_registry_audit.py"],
             command="python3 scripts/yao.py package . --platform openai --platform claude --platform generic --platform vscode --output-dir dist --zip --self && python3 scripts/yao.py registry-audit . --self",
             test="python3 tests/verify_registry_audit.py",
             current=f"archive entries {package_entries}; install failures {install_failures}",

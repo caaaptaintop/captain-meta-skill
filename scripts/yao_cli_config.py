@@ -51,7 +51,7 @@ TARGETS = {
 }
 
 PROMOTION_TARGETS = {
-    "root": "yao-meta-skill",
+    "root": "captain-meta-skill",
     "team-frontend-review": "team-frontend-review",
     "governed-incident-command": "governed-incident-command",
 }

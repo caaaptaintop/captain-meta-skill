@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0.0",
-  "name": "yao-meta-skill",
-  "title": "Yao Meta Skill",
+  "name": "captain-meta-skill",
+  "title": "Captain Meta Skill",
   "job_to_be_done": "Turn repeated workflows, prompts, transcripts, runbooks, documents, or existing skill packages into routeable, evaluable, packageable, and governable agent skills for personal, team, library, or governed reuse.",
   "trigger_surface": {
     "description": "Create, improve, or evaluate an existing skill from workflows, prompts, SOPs, scripts. Use for migration/release/package, routing, evals/tests, install/trust checks, 优化已有 skill, 补 trigger 评测. Exclude summary/translation/docs, brainstorming, one-off prompts, copy-only edits, outline-only requests.",
@@ -40,12 +40,10 @@
   },
   "workflow": {
     "steps": [
-      "Require `repeated use` + `reusable output contract`; skip one-offs.",
-      "Lock target path + identity before writes; self-edits require `--self`.",
-      "Capture job, output, exclusions, constraints, standards, mode.",
-      "Scan `3-5` useful external/user/local references.",
-      "Write `description` early; route edits need `trigger_eval.py`; release gates follow risk.",
-      "Add deeper profiles only when earned."
+      "Require a reusable output contract; skip one-offs.",
+      "Lock problem, success, tension, modes, target path, and identity before writes.",
+      "Scan `3-5` references and assets; test `description`.",
+      "Evolution: `evidence -> nearest asset -> create/merge/discard -> deployment -> retest/rollback`."
     ],
     "decision_points": [
       "Route by frontmatter `description` using the lightest mode.",
@@ -74,7 +72,9 @@
       "references/artifact-design-doctrine.md",
       "references/authoring-discipline.md",
       "references/autonomous-adaptation.md",
+      "references/captain-task-modes.md",
       "references/distribution-registry-method.md",
+      "references/downstream-maintenance.md",
       "references/eval-playbook.md",
       "references/evidence-publication.md",
       "references/gate-selection.md",
@@ -349,6 +349,7 @@
       "evals/blind_holdout/trigger_cases.json",
       "evals/blind_holdout/trigger_cases_v2.json",
       "evals/blind_holdout/trigger_cases_v2.lock.json",
+      "evals/captain_task_modes.json",
       "evals/confusion/route_cases.json",
       "evals/dev/trigger_cases.json",
       "evals/failure-cases.md",
@@ -395,10 +396,10 @@
     "trust_boundary": "external"
   },
   "governance": {
-    "owner": "Yao Team",
+    "owner": "Captain",
     "maturity": "governed",
     "review_cadence": "quarterly",
-    "review_due": "2026-11-15"
+    "review_due": "2026-11-26"
   },
   "targets": [
     "openai",

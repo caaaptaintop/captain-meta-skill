@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SCRIPT = ROOT / "scripts" / "upgrade_check.py"
-PREVIOUS = ROOT / "registry" / "examples" / "yao-meta-skill-1.0.0.json"
+PREVIOUS = ROOT / "registry" / "examples" / "captain-meta-skill-0.0.0.json"
 
 
 def run(cmd: list[str]) -> dict:
@@ -49,7 +49,7 @@ def main() -> None:
     payload = result["payload"]
     assert result["ok"], result
     assert payload["ok"], payload
-    assert payload["summary"]["declared_bump"] == "major", payload
+    assert payload["summary"]["declared_bump"] == "minor", payload
     assert payload["summary"]["recommended_bump"] == "minor", payload
     assert "agent-skills-compatible" in payload["upgrade_diff"]["added_targets"], payload
     assert "vscode" in payload["upgrade_diff"]["added_targets"], payload
@@ -58,7 +58,7 @@ def main() -> None:
 
     previous = json.loads(PREVIOUS.read_text(encoding="utf-8"))
     current = json.loads((ROOT / "reports" / "registry_audit.json").read_text(encoding="utf-8"))["package"]
-    current["version"] = "1.1.0"
+    current["version"] = "0.0.1"
     current["targets"] = ["openai", "claude"]
     current["compatibility"] = {"openai": "pass", "claude": "fail"}
     bad_current = tmp_root / "bad-current.json"

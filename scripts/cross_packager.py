@@ -257,7 +257,7 @@ ARCHIVE_ATTESTATION_MARKERS = (
     b'"archive_sha256"',
     b"Archive SHA256",
     "归档哈希".encode("utf-8"),
-    b"yao-meta-skill.zip",
+    b"captain-meta-skill.zip",
 )
 def is_archive_attestation_consumer(rel_path: Path, path: Path) -> bool:
     if rel_path == Path("registry/index.json") or rel_path.parts[:2] == ("registry", "packages"):

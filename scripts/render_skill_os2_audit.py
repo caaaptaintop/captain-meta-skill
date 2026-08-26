@@ -314,7 +314,7 @@ def build_audit(skill_dir: Path, generated_at: str) -> dict[str, Any]:
                 f"permission failures {install_summary.get('installer_permission_failure_count', 0)}"
             ),
             "Package metadata, archive checksum, package verification, and install simulation pass",
-            evidence(skill_dir, "registry/packages/yao-meta-skill.json", "reports/package_verification.json", "reports/install_simulation.json"),
+            evidence(skill_dir, "registry/packages/captain-meta-skill.json", "reports/package_verification.json", "reports/install_simulation.json"),
             "Regenerate registry after package verification so checksums stay aligned.",
         ),
         audit_item(

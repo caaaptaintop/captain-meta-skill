@@ -1,13 +1,13 @@
 # Registry Audit
 
 - OK: `True`
-- Package: `yao-meta-skill`
-- Version: `2.1.0`
+- Package: `captain-meta-skill`
+- Version: `0.1.0`
 - Maturity: `governed`
-- Owner: `Yao Team`
+- Owner: `Captain`
 - License: `MIT`
-- Package SHA256: `54d1fb49b5de9d73a5a312204ffdfad76937ed8e877571521c569139d9630bd8`
-- Archive SHA256: `f5275f7471c04e62dfc862d714e5d752a688d66952277bee848364634c0046e7`
+- Package SHA256: `bb7dfe26d3279cfc6962d9467e7f5e8bf3e2da6dc411823fa8d7bf7d15bb183e`
+- Archive SHA256: `c4ca51a4f545a4ac860bc685e2856ce6e735ad2469c8a8b1bd6ea9e91b7c2bd6`
 - Install simulated: `True`
 
 ## Compatibility
@@ -32,6 +32,6 @@
 ## Artifacts
 
 - index: `registry/index.json`
-- package: `registry/packages/yao-meta-skill.json`
+- package: `registry/packages/captain-meta-skill.json`
 - json: `reports/registry_audit.json`
 - markdown: `reports/registry_audit.md`

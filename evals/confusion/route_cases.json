@@ -2,7 +2,7 @@
   "margin_warning_threshold": 0.08,
   "routes": [
     {
-      "name": "yao-meta-skill",
+      "name": "captain-meta-skill",
       "description_file": "SKILL.md",
       "semantic_config": "evals/semantic_config.json",
       "threshold": 0.33
@@ -23,17 +23,17 @@
   "cases": [
     {
       "family": "meta_create",
-      "expected_route": "yao-meta-skill",
+      "expected_route": "captain-meta-skill",
       "text": "Create a reusable skill from this workflow and add evals before sharing it with the team."
     },
     {
       "family": "meta_iterate",
-      "expected_route": "yao-meta-skill",
+      "expected_route": "captain-meta-skill",
       "text": "Refactor this existing skill description, tighten the trigger boundary, and package it for reuse."
     },
     {
       "family": "meta_operationalize",
-      "expected_route": "yao-meta-skill",
+      "expected_route": "captain-meta-skill",
       "text": "Turn these prompts, notes, and transcripts into a maintained skill package with references and scripts."
     },
     {

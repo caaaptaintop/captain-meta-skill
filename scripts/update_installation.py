@@ -14,9 +14,9 @@ from typing import Any, Callable
 SCRIPT_INTERFACE = "internal-module"
 SCRIPT_INTERFACE_REASON = "Imported by update check and self-update entrypoints for safe installation discovery and command execution."
 
-SKILL_NAME = "yao-meta-skill"
-OFFICIAL_REPOSITORY = "yaojingang/yao-meta-skill"
-OFFICIAL_REPOSITORY_URL = "https://github.com/yaojingang/yao-meta-skill"
+SKILL_NAME = "captain-meta-skill"
+OFFICIAL_REPOSITORY = "caaaptaintop/captain-meta-skill"
+OFFICIAL_REPOSITORY_URL = "https://github.com/caaaptaintop/captain-meta-skill"
 CommandRunner = Callable[[list[str], Path | None], subprocess.CompletedProcess[str]]
 Which = Callable[[str], str | None]
 MARKETPLACE_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]*$")

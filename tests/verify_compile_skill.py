@@ -66,7 +66,7 @@ def main() -> None:
         item = by_target[target]
         assert item["compiler"]["name"] == "yao-skill-ir-compiler", item
         assert item["compiler"]["source"] == "skill-ir", item
-        assert item["compiled_contract"]["name"] == "yao-meta-skill", item
+        assert item["compiled_contract"]["name"] == "captain-meta-skill", item
         assert item["compiled_contract"]["target"] == target, item
         assert item["compiled_contract"]["trigger"]["description"], item
         assert item["compiled_contract"]["resources"]["counts"]["references"] > 0, item

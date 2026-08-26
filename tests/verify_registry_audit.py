@@ -38,8 +38,8 @@ def main() -> None:
     package = payload["package"]
     assert payload["ok"], payload
     assert payload["schema_version"] == "2.0", payload
-    assert package["name"] == "yao-meta-skill", package
-    assert package["version"] == "2.1.0", package
+    assert package["name"] == "captain-meta-skill", package
+    assert package["version"] == "0.1.0", package
     assert package["license"] == "MIT", package
     assert package["checksums"]["package_sha256"], package
     assert package["source"]["ir_schema_version"] == "2.0.0", package
@@ -61,7 +61,7 @@ def main() -> None:
     assert package["compatibility"]["generic"] == "pass", package
     assert package["compatibility"]["vscode"] == "pass", package
     assert (registry_dir / "index.json").exists(), registry_dir
-    assert (registry_dir / "packages" / "yao-meta-skill.json").exists(), registry_dir
+    assert (registry_dir / "packages" / "captain-meta-skill.json").exists(), registry_dir
     assert output_json.exists(), output_json
     assert output_md.exists(), output_md
     assert "Registry Audit" in output_md.read_text(encoding="utf-8")

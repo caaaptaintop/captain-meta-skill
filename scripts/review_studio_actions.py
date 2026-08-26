@@ -254,7 +254,7 @@ ACTION_GUIDANCE: dict[str, dict[str, Any]] = {
         "why": "分发元数据不完整时，团队无法安全安装、升级或追溯包体来源。",
         "source_fix": "registry/ + reports/registry_audit.md",
         "source_paths": [
-            {"path": "registry/packages/yao-meta-skill.json", "label": "registry package", "kind": "registry", "patterns": ["version"]},
+            {"path": "registry/packages/captain-meta-skill.json", "label": "registry package", "kind": "registry", "patterns": ["version"]},
             {"path": "reports/registry_audit.md", "label": "registry audit", "kind": "report", "patterns": ["# Registry"]},
             {"path": "reports/install_simulation.md", "label": "install simulation", "kind": "report", "patterns": ["# Install"]},
         ],
@@ -269,7 +269,7 @@ ACTION_GUIDANCE: dict[str, dict[str, Any]] = {
             {"path": "docs/migration-v2.md", "label": "migration guide", "kind": "docs", "patterns": ["# Migration"]},
             {"path": "reports/promotion_decisions.md", "label": "promotion decisions", "kind": "report", "patterns": ["# Promotion"]},
         ],
-        "verification": "python3 scripts/upgrade_check.py . --previous-package-json registry/examples/yao-meta-skill-1.0.0.json",
+        "verification": "python3 scripts/upgrade_check.py . --previous-package-json registry/examples/captain-meta-skill-0.0.0.json",
     },
 }
 

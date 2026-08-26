@@ -1,15 +1,15 @@
 # Skill OS 2.0 Blueprint Coverage
 
-Generated at: `2026-08-17`
+Generated at: `2026-08-26`
 
 ## Summary
 
-- decision: `local-blueprint-covered-evidence-pending`
-- local blueprint ready: `true`
+- decision: `continue-implementation`
+- local blueprint ready: `false`
 - public world-class ready: `false`
-- pass: `21` / `21`
+- pass: `20` / `21`
 - missing: `0`
-- warn: `0`
+- warn: `1`
 - reference extensions: `4`
 - extension covered: `4`
 - extension partial: `0`
@@ -28,7 +28,7 @@ This report maps the Skill OS 2.0 upgrade blueprint to concrete local artifacts,
 | Runtime Conformance | `pass` | 5/5 targets pass | `python3 scripts/yao.py conformance . --self` | `python3 tests/verify_conformance_suite.py` |
 | Trust Security | `pass` | 174 scripts; secrets 0; help failures 0 | `python3 scripts/yao.py trust . --self` | `python3 tests/verify_trust_check.py` |
 | Skill Atlas | `pass` | 11 scanned skills; actionable collisions 0 | `python3 scripts/yao.py skill-atlas --workspace-root . --self` | `python3 tests/verify_skill_atlas.py` |
-| Registry Distribution | `pass` | archive entries 658; install failures 0 | `python3 scripts/yao.py package . --platform openai --platform claude --platform generic --platform vscode --output-dir dist --zip --self && python3 scripts/yao.py registry-audit . --self` | `python3 tests/verify_registry_audit.py` |
+| Registry Distribution | `pass` | archive entries 666; install failures 0 | `python3 scripts/yao.py package . --platform openai --platform claude --platform generic --platform vscode --output-dir dist --zip --self && python3 scripts/yao.py registry-audit . --self` | `python3 tests/verify_registry_audit.py` |
 | Review Studio | `pass` | 16 gates; decision review; warnings 5 | `python3 scripts/yao.py review-studio . --self` | `python3 tests/verify_review_studio.py` |
 | Telemetry Drift | `pass` | events 0; recipes 5; risk no-data | `python3 scripts/yao.py telemetry-hooks . --self && python3 scripts/yao.py adoption-drift . --self` | `python3 tests/verify_telemetry_hooks.py` |
 
@@ -48,7 +48,7 @@ This report maps the Skill OS 2.0 upgrade blueprint to concrete local artifacts,
 | Registry Package Format | `pass` | registry ok True | `make ci-test` | `tests/verify_registry_audit.py` |
 | Review Studio 2.0 | `pass` | 16 review gates | `make ci-test` | `tests/verify_review_studio.py` |
 | Migration V2 Docs | `pass` | migration guide present | `make ci-test` | `docs review` |
-| Evidence Consistency | `pass` | 41 consistency checks | `make ci-test` | `tests/verify_evidence_consistency.py` |
+| Evidence Consistency | `warn` | 41 consistency checks | `make ci-test` | `tests/verify_evidence_consistency.py` |
 
 ## Reference Extension Tracks
 
@@ -109,7 +109,7 @@ These extension tracks come from the user-supplied 2.0 reference plan. They are 
 
 - objective: Skill packages are installable, versioned, checksumed, and upgrade-reviewable.
 - status: `pass`
-- existing evidence: `registry/index.schema.json`, `registry/package.schema.json`, `registry/packages/yao-meta-skill.json`, `scripts/registry_audit.py`, `reports/package_verification.json`, `reports/install_simulation.json`, `tests/verify_registry_audit.py`
+- existing evidence: `registry/index.schema.json`, `registry/package.schema.json`, `registry/packages/captain-meta-skill.json`, `scripts/registry_audit.py`, `reports/package_verification.json`, `reports/install_simulation.json`, `tests/verify_registry_audit.py`
 - next action: Regenerate registry metadata after package verification so source and archive checksums stay aligned.
 
 ### Review Studio
@@ -213,7 +213,7 @@ These extension tracks come from the user-supplied 2.0 reference plan. They are 
 ### Evidence Consistency
 
 - objective: Recommended Skill OS 2.0 implementation PR from the upgrade plan.
-- status: `pass`
+- status: `warn`
 - existing evidence: `scripts/render_evidence_consistency.py`, `reports/evidence_consistency.json`, `tests/verify_evidence_consistency.py`
 - next action: Keep this item covered as the implementation evolves.
 
@@ -235,12 +235,12 @@ These extension tracks come from the user-supplied 2.0 reference plan. They are 
 
 - objective: Daily operations layer summarizes explicit-source conversation patterns, proposal-only adaptation work, approval state, release locks, and world-class evidence gaps.
 - status: `covered`
-- existing evidence: `scripts/render_daily_skillops_report.py`, `tests/verify_daily_skillops.py`, `reports/skillops/daily/2026-08-17.json`, `reports/skillops/daily/2026-08-17.md`
+- existing evidence: `scripts/render_daily_skillops_report.py`, `tests/verify_daily_skillops.py`, `reports/skillops/daily/2026-08-26.json`, `reports/skillops/daily/2026-08-26.md`
 - next action: Keep Daily SkillOps report aligned with proposal, approval, coverage, and world-class ledger contracts as the operations layer evolves.
 
 ### Weekly Curator Report
 
 - objective: Weekly curator layer aggregates Daily SkillOps opportunities, Skill Atlas portfolio signals, release locks, and world-class evidence gaps into a maintenance queue.
 - status: `covered`
-- existing evidence: `scripts/render_weekly_curator_report.py`, `tests/verify_weekly_curator.py`, `reports/skillops/weekly/2026-W34.json`, `reports/skillops/weekly/2026-W34.md`
+- existing evidence: `scripts/render_weekly_curator_report.py`, `tests/verify_weekly_curator.py`, `reports/skillops/weekly/2026-W35.json`, `reports/skillops/weekly/2026-W35.md`
 - next action: Use weekly curator output as the Skill Librarian maintenance queue before approving any durable skill-library changes.

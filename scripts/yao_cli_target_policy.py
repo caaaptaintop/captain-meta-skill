@@ -23,7 +23,8 @@ GLOBAL_COMMANDS = {
     "pr-review-report",
 }
 WORKSPACE_COMMANDS = {"skill-atlas"}
-SELF_SKILL_NAME = "yao-meta-skill"
+SELF_SKILL_NAME = "captain-meta-skill"
+SELF_SKILL_NAMES = {SELF_SKILL_NAME, "yao-meta-skill"}
 WRITE_PATH_DESTINATIONS = {
     "events_jsonl",
     "install_root",
@@ -87,7 +88,7 @@ def _add_self_authorization(command_parser: argparse.ArgumentParser) -> None:
             "--self",
             dest="self_authorized",
             action="store_true",
-            help="Explicitly authorize this command to target yao-meta-skill itself.",
+            help="Explicitly authorize this command to target the meta-skill engine itself.",
         )
 
 
@@ -151,7 +152,7 @@ def is_self_skill(skill_dir: Path, engine_root: Path, *, skill_name: str | None 
     target = skill_dir.expanduser().resolve()
     engine = engine_root.expanduser().resolve()
     identity = skill_name if skill_name is not None else _skill_identity(target)
-    return target == engine or engine in target.parents or identity == SELF_SKILL_NAME
+    return target == engine or engine in target.parents or identity in SELF_SKILL_NAMES
 
 
 def _resolve_existing_target(raw_target: str, command: str) -> Path:
@@ -178,7 +179,7 @@ def _require_self_authorization(
         raise TargetPolicyError(
             "self-target-blocked",
             command,
-            f"Command '{command}' resolves to yao-meta-skill. Re-run with --self to authorize modifying it.",
+            f"Command '{command}' resolves to the meta-skill engine. Re-run with --self to authorize modifying it.",
         )
 
 
@@ -215,7 +216,7 @@ def _bind_declared_write_paths(
             raise TargetPolicyError(
                 "self-target-blocked",
                 command,
-                f"Command '{command}' would write inside yao-meta-skill at {resolved}. Re-run with --self to authorize it.",
+                f"Command '{command}' would write inside the meta-skill engine at {resolved}. Re-run with --self to authorize it.",
             )
         setattr(args, destination, str(resolved))
 
@@ -270,7 +271,7 @@ def prepare_target_context(engine_root: Path, args: argparse.Namespace) -> Targe
             raise TargetPolicyError(
                 "self-target-blocked",
                 command,
-                f"Command '{command}' operates on yao-meta-skill. Re-run with --self to authorize modifying it.",
+                f"Command '{command}' operates on the meta-skill engine. Re-run with --self to authorize modifying it.",
             )
         context = TargetContext(command, policy, engine_root, engine_root, SELF_SKILL_NAME, True)
     elif policy == "new":
