@@ -18,7 +18,7 @@ Generated at: `2026-08-26`
 - coordination pending keys: `human-adjudication, native-client-telemetry, native-permission-enforcement, provider-holdout`
 - coordination counts as completion: `false`
 - release gate ready: `false`
-- release gate blocked checks: `5` / `5`
+- release gate blocked checks: `4` / `5`
 - release gate counts as completion: `false`
 
 This runbook coordinates evidence collection only. It does not accept submissions or make world-class completion true.
@@ -373,7 +373,7 @@ This runbook coordinates evidence collection only. It does not accept submission
 
 - decision: `blocked-until-evidence-accepted`
 - ready: `false`
-- blocked checks: `5` / `5`
+- blocked checks: `4` / `5`
 - counts as completion: `false`
 - final manual check: Run make ci-test in a clean worktree and verify GitHub Actions before converting the PR out of Draft.
 
@@ -383,7 +383,7 @@ This runbook coordinates evidence collection only. It does not accept submission
 | Claim guard clean | `violations 0; ledger ready False` | `violation_count == 0 and ledger_ready_to_claim_world_class == true` | `blocked` | `reports/world_class_claim_guard.json` |
 | Benchmark public claim ready | `public_claim_ready False` | `public_claim_ready == true` | `blocked` | `reports/benchmark_reproducibility.json` |
 | Review Studio clean | `blockers 0; warnings 5` | `blocker_count == 0 and warning_count == 0` | `blocked` | `reports/review-studio.json` |
-| Evidence consistency clean | `evidence-drift-detected` | `decision == consistent and fail_count == 0` | `blocked` | `reports/evidence_consistency.json` |
+| Evidence consistency clean | `consistent` | `decision == consistent and fail_count == 0` | `pass` | `reports/evidence_consistency.json` |
 
 ## Boundary
 

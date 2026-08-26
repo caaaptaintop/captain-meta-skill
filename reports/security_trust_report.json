@@ -2535,7 +2535,7 @@
         "timed_out": false,
         "passed": true,
         "has_help_text": true,
-        "stdout_excerpt": "usage: adjudicate_multi_reviewer.py [-h] --answer-key ANSWER_KEY\n                                    --decisions DECISIONS\n                                    --reviewer-registry REVIEWER_REGISTRY\n                                    [--outp",
+        "stdout_excerpt": "usage: adjudicate_multi_reviewer.py [-h] --answer-key ANSWER_KEY --decisions\n                                    DECISIONS --reviewer-registry\n                                    REVIEWER_REGISTRY\n                                    [--outp",
         "stderr_excerpt": ""
       },
       {
@@ -2685,7 +2685,7 @@
         "timed_out": false,
         "passed": true,
         "has_help_text": true,
-        "stdout_excerpt": "usage: finalize_provider_review.py [-h] --source-run SOURCE_RUN\n                                   --decisions DECISIONS\n                                   --reviewer-registry REVIEWER_REGISTRY\n                                   [--run-id R",
+        "stdout_excerpt": "usage: finalize_provider_review.py [-h] --source-run SOURCE_RUN --decisions\n                                   DECISIONS --reviewer-registry\n                                   REVIEWER_REGISTRY [--run-id RUN_ID]\n                            ",
         "stderr_excerpt": ""
       },
       {

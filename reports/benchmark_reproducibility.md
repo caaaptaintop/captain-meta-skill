@@ -1,21 +1,21 @@
 # Benchmark Reproducibility
 
 Generated at: `2026-08-26`
-Commit: `f5d8f681372edae1915991e2de0c23dc306dd30f`
+Commit: `e66a53c284e09f2546c24006608aafb4a9ec0ab2`
 Working tree dirty at generation: `true`
-Source tree dirty at generation: `true`
+Source tree dirty at generation: `false`
 Generated evidence dirty at generation: `true`
-Evidence bundle SHA256: `f8cd082d36ab00c406d8de4ff9a3d774aaa7d5fb3e015bc5e0a531d75c495aa8`
+Evidence bundle SHA256: `feba239c21a21291df0692cfc36374e0abf35214b9d829623a0d1500e3f030fe`
 
 ## Summary
 
 - reproducibility ready: `true`
-- release lock ready: `false`
+- release lock ready: `true`
 - methodology complete: `true`
 - required artifacts: `25`
 - missing artifacts: `0`
 - source contract sha256: `bb7dfe26d327`
-- archive sha256: `c4ca51a4f545`
+- archive sha256: `45bb94d8874f`
 - output cases: `5`
 - disclosed failure cases: `3`
 - reproduction commands: `23`
@@ -26,27 +26,27 @@ Evidence bundle SHA256: `f8cd082d36ab00c406d8de4ff9a3d774aaa7d5fb3e015bc5e0a531d
 - human review complete: `false`
 - world-class ready: `false`
 - world-class source checks: `11` pass / `14` total; `3` blocked
-- beta test ready: `false`
-- beta test blockers: `1`
+- beta test ready: `true`
+- beta test blockers: `0`
 - beta deferred evidence: `4`
 - public claim ready: `false`
-- public claim blockers: `4`
-- changed files at generation: `147`
-- source changed files at generation: `53`
-- generated changed files at generation: `94`
+- public claim blockers: `3`
+- changed files at generation: `35`
+- source changed files at generation: `0`
+- generated changed files at generation: `35`
 
 This report proves local benchmark reproducibility only. It keeps external provider and human-review gaps visible instead of counting them as complete. The git commit and dirty samples are generation-time context; the evidence bundle SHA is the durable anchor for the artifacts listed below.
 
 ## Beta Test Boundary
 
-- ready: `false`
+- ready: `true`
 - scope: beta/public test release without superiority, fully-reviewed, or world-class claims
 - policy: Human blind-review, native permission enforcement, real client telemetry, and ledger acceptance may be deferred for beta/public testing, but public claims must remain blocked until those evidence entries are accepted.
 - required wording: Use beta, public test, or technical preview wording; do not claim world-class readiness, fully reviewed quality, or proven superiority over baseline.
 
 | Blocker |
 | --- |
-| release lock is not clean or commit is unavailable |
+| none |
 
 | Deferred evidence | Reason |
 | --- | --- |
@@ -63,22 +63,21 @@ This report proves local benchmark reproducibility only. It keeps external provi
 
 | Blocker |
 | --- |
-| release lock is not clean or commit is unavailable |
 | human blind-review adjudication is incomplete |
 | world-class evidence is not accepted yet (2 open gaps, 4 ledger pending) |
 | world-class source checks are not all accepted (11/14 pass, 3 blocked) |
 
 ## Release Lock
 
-- ready: `false`
-- reason: source files were dirty at generation time
+- ready: `true`
+- reason: only generated evidence artifacts were dirty at generation time
 - status scope: generation-time status before this report is written
 
 ## Evidence Bundle
 
 - algorithm: `sha256(path,label,exists,artifact_sha256)`
 - artifacts: `25` / `25`
-- sha256: `f8cd082d36ab00c406d8de4ff9a3d774aaa7d5fb3e015bc5e0a531d75c495aa8`
+- sha256: `feba239c21a21291df0692cfc36374e0abf35214b9d829623a0d1500e3f030fe`
 
 ## Methodology Sections
 
@@ -105,20 +104,20 @@ This report proves local benchmark reproducibility only. It keeps external provi
 | review_adjudication | `reports/output_review_adjudication.json` | present | `510fc207bf20` |
 | trigger_scorecard | `reports/route_scorecard.json` | present | `44aeaf7c6ed6` |
 | runtime_conformance | `reports/conformance_matrix.json` | present | `de8093861e68` |
-| trust_report | `reports/security_trust_report.json` | present | `4ad2682b290a` |
-| python_compatibility | `reports/python_compatibility.json` | present | `d6d95615ee85` |
-| registry_audit | `reports/registry_audit.json` | present | `7d72cf4c25d3` |
-| package_verification | `reports/package_verification.json` | present | `373ae8e5b4ac` |
-| install_simulation | `reports/install_simulation.json` | present | `a1872c27d6c4` |
-| skill_os2_audit | `reports/skill_os2_audit.json` | present | `ceb24a6bea90` |
+| trust_report | `reports/security_trust_report.json` | present | `59ce3d3d363c` |
+| python_compatibility | `reports/python_compatibility.json` | present | `50f53de0b589` |
+| registry_audit | `reports/registry_audit.json` | present | `31b11acfe6a9` |
+| package_verification | `reports/package_verification.json` | present | `644525676a1e` |
+| install_simulation | `reports/install_simulation.json` | present | `cddc122a1891` |
+| skill_os2_audit | `reports/skill_os2_audit.json` | present | `6466f0548190` |
 | world_class_evidence_plan | `reports/world_class_evidence_plan.json` | present | `52faad678d5d` |
 | world_class_evidence_ledger | `reports/world_class_evidence_ledger.json` | present | `5bb4cf226eab` |
 | world_class_evidence_intake | `reports/world_class_evidence_intake.json` | present | `ab5663ee72c9` |
 | world_class_evidence_preflight | `reports/world_class_evidence_preflight.json` | present | `6ea3957f81e2` |
 | world_class_submission_review | `reports/world_class_submission_review.json` | present | `1c6f6a8dfd65` |
-| world_class_operator_runbook | `reports/world_class_operator_runbook.json` | present | `8fd69b928cf2` |
-| world_class_operator_runbook_markdown | `reports/world_class_operator_runbook.md` | present | `54f19b6c1fdb` |
-| world_class_operator_runbook_html | `reports/world_class_operator_runbook.html` | present | `1cd9e110326c` |
+| world_class_operator_runbook | `reports/world_class_operator_runbook.json` | present | `9af502ff4545` |
+| world_class_operator_runbook_markdown | `reports/world_class_operator_runbook.md` | present | `968a1f09e7c2` |
+| world_class_operator_runbook_html | `reports/world_class_operator_runbook.html` | present | `d74c2c7a918d` |
 | world_class_claim_guard | `reports/world_class_claim_guard.json` | present | `a694c3d12a1f` |
 
 ## Reproduction Commands
