@@ -21,8 +21,8 @@
     "trust_level": "local",
     "license": "MIT",
     "checksums": {
-      "package_sha256": "bb7dfe26d3279cfc6962d9467e7f5e8bf3e2da6dc411823fa8d7bf7d15bb183e",
-      "archive_sha256": "45bb94d8874f9c999bc6f6d5fe16780d541837a5bc9c94f824e87e11debb17c6"
+      "package_sha256": "2bdbcef3d845fe221f3f1aca9c5c0ff1565242d1239208160f3f47c5df3e8d9b",
+      "archive_sha256": "e4202c69a9bec72041d14ba403bcd87943fa97e219e8fc9ed56422d8601a2961"
     },
     "compatibility": {
       "openai": "pass",
@@ -53,7 +53,7 @@
     },
     "distribution": {
       "archive_verified": true,
-      "archive_sha256": "45bb94d8874f9c999bc6f6d5fe16780d541837a5bc9c94f824e87e11debb17c6",
+      "archive_sha256": "e4202c69a9bec72041d14ba403bcd87943fa97e219e8fc9ed56422d8601a2961",
       "package_verification": "reports/package_verification.json",
       "install_simulated": true,
       "install_simulation": "reports/install_simulation.json"
@@ -78,7 +78,7 @@
           "vscode"
         ],
         "package_metadata": "registry/packages/captain-meta-skill.json",
-        "package_sha256": "bb7dfe26d3279cfc6962d9467e7f5e8bf3e2da6dc411823fa8d7bf7d15bb183e"
+        "package_sha256": "2bdbcef3d845fe221f3f1aca9c5c0ff1565242d1239208160f3f47c5df3e8d9b"
       }
     ]
   },

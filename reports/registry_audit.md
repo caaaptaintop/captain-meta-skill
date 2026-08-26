@@ -6,8 +6,8 @@
 - Maturity: `governed`
 - Owner: `Captain`
 - License: `MIT`
-- Package SHA256: `bb7dfe26d3279cfc6962d9467e7f5e8bf3e2da6dc411823fa8d7bf7d15bb183e`
-- Archive SHA256: `45bb94d8874f9c999bc6f6d5fe16780d541837a5bc9c94f824e87e11debb17c6`
+- Package SHA256: `2bdbcef3d845fe221f3f1aca9c5c0ff1565242d1239208160f3f47c5df3e8d9b`
+- Archive SHA256: `e4202c69a9bec72041d14ba403bcd87943fa97e219e8fc9ed56422d8601a2961`
 - Install simulated: `True`
 
 ## Compatibility

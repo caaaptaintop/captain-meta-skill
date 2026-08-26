@@ -1015,9 +1015,9 @@
         "methodology_complete": true,
         "required_artifact_count": 25,
         "missing_artifact_count": 0,
-        "evidence_bundle_sha256": "feba239c21a21291df0692cfc36374e0abf35214b9d829623a0d1500e3f030fe",
-        "source_contract_sha256": "bb7dfe26d3279cfc6962d9467e7f5e8bf3e2da6dc411823fa8d7bf7d15bb183e",
-        "archive_sha256": "45bb94d8874f9c999bc6f6d5fe16780d541837a5bc9c94f824e87e11debb17c6",
+        "evidence_bundle_sha256": "31c5d3e9b06faae8e1e12e41475cfebfcf36a103f775a71e2334e54642628143",
+        "source_contract_sha256": "2bdbcef3d845fe221f3f1aca9c5c0ff1565242d1239208160f3f47c5df3e8d9b",
+        "archive_sha256": "e4202c69a9bec72041d14ba403bcd87943fa97e219e8fc9ed56422d8601a2961",
         "output_case_count": 5,
         "failure_disclosure_count": 3,
         "command_count": 23,
@@ -1044,13 +1044,13 @@
         "public_claim_ready": false,
         "public_claim_blocker_count": 3,
         "working_tree_dirty": true,
-        "changed_file_count": 35,
+        "changed_file_count": 26,
         "source_tree_dirty": false,
         "source_changed_file_count": 0,
         "generated_tree_dirty": true,
-        "generated_changed_file_count": 35
+        "generated_changed_file_count": 26
       },
-      "commit": "e66a53c284e09f2546c24006608aafb4a9ec0ab2",
+      "commit": "4ebb72b56220ae0b09726bdf83bd535eb8f84334",
       "missing_artifacts": [],
       "limitations": [
         "The git commit and dirty flags are generation-time context; release lock is blocked by source changes, while generated evidence artifacts are tracked separately.",
@@ -1156,7 +1156,7 @@
       "interactive_script_count": 0,
       "package_hash_scope": "source-contract-without-generated-reports",
       "package_hash_file_count": 280,
-      "package_sha256": "bb7dfe26d3279cfc6962d9467e7f5e8bf3e2da6dc411823fa8d7bf7d15bb183e"
+      "package_sha256": "2bdbcef3d845fe221f3f1aca9c5c0ff1565242d1239208160f3f47c5df3e8d9b"
     },
     "skill_atlas": {
       "skill_count": 11,
@@ -1194,8 +1194,8 @@
         "trust_level": "local",
         "license": "MIT",
         "checksums": {
-          "package_sha256": "bb7dfe26d3279cfc6962d9467e7f5e8bf3e2da6dc411823fa8d7bf7d15bb183e",
-          "archive_sha256": "45bb94d8874f9c999bc6f6d5fe16780d541837a5bc9c94f824e87e11debb17c6"
+          "package_sha256": "2bdbcef3d845fe221f3f1aca9c5c0ff1565242d1239208160f3f47c5df3e8d9b",
+          "archive_sha256": "e4202c69a9bec72041d14ba403bcd87943fa97e219e8fc9ed56422d8601a2961"
         },
         "compatibility": {
           "openai": "pass",
@@ -1226,7 +1226,7 @@
         },
         "distribution": {
           "archive_verified": true,
-          "archive_sha256": "45bb94d8874f9c999bc6f6d5fe16780d541837a5bc9c94f824e87e11debb17c6",
+          "archive_sha256": "e4202c69a9bec72041d14ba403bcd87943fa97e219e8fc9ed56422d8601a2961",
           "package_verification": "reports/package_verification.json",
           "install_simulated": true,
           "install_simulation": "reports/install_simulation.json"
@@ -1242,7 +1242,7 @@
         "target_count": 4,
         "adapter_count": 4,
         "archive_present": true,
-        "archive_sha256": "45bb94d8874f9c999bc6f6d5fe16780d541837a5bc9c94f824e87e11debb17c6",
+        "archive_sha256": "e4202c69a9bec72041d14ba403bcd87943fa97e219e8fc9ed56422d8601a2961",
         "archive_entry_count": 672,
         "nested_skill_entry_count": 0,
         "failure_count": 0,
@@ -1323,12 +1323,12 @@
           {
             "field": "archive_sha256",
             "from": "",
-            "to": "45bb94d8874f9c999bc6f6d5fe16780d541837a5bc9c94f824e87e11debb17c6"
+            "to": "e4202c69a9bec72041d14ba403bcd87943fa97e219e8fc9ed56422d8601a2961"
           },
           {
             "field": "package_sha256",
             "from": "0000000000000000000000000000000000000000000000000000000000000000",
-            "to": "bb7dfe26d3279cfc6962d9467e7f5e8bf3e2da6dc411823fa8d7bf7d15bb183e"
+            "to": "2bdbcef3d845fe221f3f1aca9c5c0ff1565242d1239208160f3f47c5df3e8d9b"
           }
         ]
       },

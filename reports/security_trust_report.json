@@ -23,7 +23,7 @@
     "interactive_script_count": 0,
     "package_hash_scope": "source-contract-without-generated-reports",
     "package_hash_file_count": 280,
-    "package_sha256": "bb7dfe26d3279cfc6962d9467e7f5e8bf3e2da6dc411823fa8d7bf7d15bb183e"
+    "package_sha256": "2bdbcef3d845fe221f3f1aca9c5c0ff1565242d1239208160f3f47c5df3e8d9b"
   },
   "failures": [],
   "warnings": [],
@@ -2535,7 +2535,7 @@
         "timed_out": false,
         "passed": true,
         "has_help_text": true,
-        "stdout_excerpt": "usage: adjudicate_multi_reviewer.py [-h] --answer-key ANSWER_KEY --decisions\n                                    DECISIONS --reviewer-registry\n                                    REVIEWER_REGISTRY\n                                    [--outp",
+        "stdout_excerpt": "usage: adjudicate_multi_reviewer.py [-h] --answer-key ANSWER_KEY\n                                    --decisions DECISIONS\n                                    --reviewer-registry REVIEWER_REGISTRY\n                                    [--outp",
         "stderr_excerpt": ""
       },
       {
@@ -2685,7 +2685,7 @@
         "timed_out": false,
         "passed": true,
         "has_help_text": true,
-        "stdout_excerpt": "usage: finalize_provider_review.py [-h] --source-run SOURCE_RUN --decisions\n                                   DECISIONS --reviewer-registry\n                                   REVIEWER_REGISTRY [--run-id RUN_ID]\n                            ",
+        "stdout_excerpt": "usage: finalize_provider_review.py [-h] --source-run SOURCE_RUN\n                                   --decisions DECISIONS\n                                   --reviewer-registry REVIEWER_REGISTRY\n                                   [--run-id R",
         "stderr_excerpt": ""
       },
       {

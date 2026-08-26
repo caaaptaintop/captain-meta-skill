@@ -2471,9 +2471,9 @@
           "methodology_complete": true,
           "required_artifact_count": 25,
           "missing_artifact_count": 0,
-          "evidence_bundle_sha256": "feba239c21a21291df0692cfc36374e0abf35214b9d829623a0d1500e3f030fe",
-          "source_contract_sha256": "bb7dfe26d3279cfc6962d9467e7f5e8bf3e2da6dc411823fa8d7bf7d15bb183e",
-          "archive_sha256": "45bb94d8874f9c999bc6f6d5fe16780d541837a5bc9c94f824e87e11debb17c6",
+          "evidence_bundle_sha256": "31c5d3e9b06faae8e1e12e41475cfebfcf36a103f775a71e2334e54642628143",
+          "source_contract_sha256": "2bdbcef3d845fe221f3f1aca9c5c0ff1565242d1239208160f3f47c5df3e8d9b",
+          "archive_sha256": "e4202c69a9bec72041d14ba403bcd87943fa97e219e8fc9ed56422d8601a2961",
           "output_case_count": 5,
           "failure_disclosure_count": 3,
           "command_count": 23,
@@ -2500,13 +2500,13 @@
           "public_claim_ready": false,
           "public_claim_blocker_count": 3,
           "working_tree_dirty": true,
-          "changed_file_count": 35,
+          "changed_file_count": 26,
           "source_tree_dirty": false,
           "source_changed_file_count": 0,
           "generated_tree_dirty": true,
-          "generated_changed_file_count": 35
+          "generated_changed_file_count": 26
         },
-        "commit": "e66a53c284e09f2546c24006608aafb4a9ec0ab2",
+        "commit": "4ebb72b56220ae0b09726bdf83bd535eb8f84334",
         "missing_artifacts": [],
         "limitations": [
           "The git commit and dirty flags are generation-time context; release lock is blocked by source changes, while generated evidence artifacts are tracked separately.",
@@ -2612,7 +2612,7 @@
         "interactive_script_count": 0,
         "package_hash_scope": "source-contract-without-generated-reports",
         "package_hash_file_count": 280,
-        "package_sha256": "bb7dfe26d3279cfc6962d9467e7f5e8bf3e2da6dc411823fa8d7bf7d15bb183e"
+        "package_sha256": "2bdbcef3d845fe221f3f1aca9c5c0ff1565242d1239208160f3f47c5df3e8d9b"
       },
       "skill_atlas": {
         "skill_count": 11,
@@ -2650,8 +2650,8 @@
           "trust_level": "local",
           "license": "MIT",
           "checksums": {
-            "package_sha256": "bb7dfe26d3279cfc6962d9467e7f5e8bf3e2da6dc411823fa8d7bf7d15bb183e",
-            "archive_sha256": "45bb94d8874f9c999bc6f6d5fe16780d541837a5bc9c94f824e87e11debb17c6"
+            "package_sha256": "2bdbcef3d845fe221f3f1aca9c5c0ff1565242d1239208160f3f47c5df3e8d9b",
+            "archive_sha256": "e4202c69a9bec72041d14ba403bcd87943fa97e219e8fc9ed56422d8601a2961"
           },
           "compatibility": {
             "openai": "pass",
@@ -2682,7 +2682,7 @@
           },
           "distribution": {
             "archive_verified": true,
-            "archive_sha256": "45bb94d8874f9c999bc6f6d5fe16780d541837a5bc9c94f824e87e11debb17c6",
+            "archive_sha256": "e4202c69a9bec72041d14ba403bcd87943fa97e219e8fc9ed56422d8601a2961",
             "package_verification": "reports/package_verification.json",
             "install_simulated": true,
             "install_simulation": "reports/install_simulation.json"
@@ -2698,7 +2698,7 @@
           "target_count": 4,
           "adapter_count": 4,
           "archive_present": true,
-          "archive_sha256": "45bb94d8874f9c999bc6f6d5fe16780d541837a5bc9c94f824e87e11debb17c6",
+          "archive_sha256": "e4202c69a9bec72041d14ba403bcd87943fa97e219e8fc9ed56422d8601a2961",
           "archive_entry_count": 672,
           "nested_skill_entry_count": 0,
           "failure_count": 0,
@@ -2779,12 +2779,12 @@
             {
               "field": "archive_sha256",
               "from": "",
-              "to": "45bb94d8874f9c999bc6f6d5fe16780d541837a5bc9c94f824e87e11debb17c6"
+              "to": "e4202c69a9bec72041d14ba403bcd87943fa97e219e8fc9ed56422d8601a2961"
             },
             {
               "field": "package_sha256",
               "from": "0000000000000000000000000000000000000000000000000000000000000000",
-              "to": "bb7dfe26d3279cfc6962d9467e7f5e8bf3e2da6dc411823fa8d7bf7d15bb183e"
+              "to": "2bdbcef3d845fe221f3f1aca9c5c0ff1565242d1239208160f3f47c5df3e8d9b"
             }
           ]
         },
@@ -7718,16 +7718,17 @@
       "ok": true,
       "generated_at": "2026-08-26",
       "skill_dir": ".",
-      "commit": "e66a53c284e09f2546c24006608aafb4a9ec0ab2",
+      "commit": "4ebb72b56220ae0b09726bdf83bd535eb8f84334",
       "git_status": {
         "available": true,
         "dirty": true,
-        "changed_file_count": 35,
+        "changed_file_count": 26,
         "generated_dirty": true,
-        "generated_changed_file_count": 35,
+        "generated_changed_file_count": 26,
         "source_dirty": false,
         "source_changed_file_count": 0,
         "sample": [
+          " M registry/index.json",
           " M registry/packages/captain-meta-skill.json",
           " M reports/adaptation_proposals.json",
           " M reports/adaptation_proposals.md",
@@ -7735,7 +7736,6 @@
           " M reports/benchmark_reproducibility.md",
           " M reports/context_budget.json",
           " M reports/evidence_consistency.json",
-          " M reports/install_simulation.json",
           " M reports/package_verification.json",
           " M reports/package_verification.md",
           " M reports/python_compatibility.json",
@@ -7743,6 +7743,7 @@
         ],
         "source_sample": [],
         "generated_sample": [
+          " M registry/index.json",
           " M registry/packages/captain-meta-skill.json",
           " M reports/adaptation_proposals.json",
           " M reports/adaptation_proposals.md",
@@ -7750,7 +7751,6 @@
           " M reports/benchmark_reproducibility.md",
           " M reports/context_budget.json",
           " M reports/evidence_consistency.json",
-          " M reports/install_simulation.json",
           " M reports/package_verification.json",
           " M reports/package_verification.md",
           " M reports/python_compatibility.json",
@@ -7772,9 +7772,9 @@
         "methodology_complete": true,
         "required_artifact_count": 25,
         "missing_artifact_count": 0,
-        "evidence_bundle_sha256": "feba239c21a21291df0692cfc36374e0abf35214b9d829623a0d1500e3f030fe",
-        "source_contract_sha256": "bb7dfe26d3279cfc6962d9467e7f5e8bf3e2da6dc411823fa8d7bf7d15bb183e",
-        "archive_sha256": "45bb94d8874f9c999bc6f6d5fe16780d541837a5bc9c94f824e87e11debb17c6",
+        "evidence_bundle_sha256": "31c5d3e9b06faae8e1e12e41475cfebfcf36a103f775a71e2334e54642628143",
+        "source_contract_sha256": "2bdbcef3d845fe221f3f1aca9c5c0ff1565242d1239208160f3f47c5df3e8d9b",
+        "archive_sha256": "e4202c69a9bec72041d14ba403bcd87943fa97e219e8fc9ed56422d8601a2961",
         "output_case_count": 5,
         "failure_disclosure_count": 3,
         "command_count": 23,
@@ -7801,11 +7801,11 @@
         "public_claim_ready": false,
         "public_claim_blocker_count": 3,
         "working_tree_dirty": true,
-        "changed_file_count": 35,
+        "changed_file_count": 26,
         "source_tree_dirty": false,
         "source_changed_file_count": 0,
         "generated_tree_dirty": true,
-        "generated_changed_file_count": 35
+        "generated_changed_file_count": 26
       },
       "beta_test_release": {
         "ready": true,
@@ -7848,10 +7848,10 @@
       },
       "release_lock": {
         "ready": true,
-        "commit": "e66a53c284e09f2546c24006608aafb4a9ec0ab2",
+        "commit": "4ebb72b56220ae0b09726bdf83bd535eb8f84334",
         "status_scope": "generation-time status before this report is written",
         "source_changed_file_count": 0,
-        "generated_changed_file_count": 35,
+        "generated_changed_file_count": 26,
         "reason": "only generated evidence artifacts were dirty at generation time"
       },
       "evidence_bundle": {
@@ -7860,7 +7860,7 @@
         "existing_count": 25,
         "missing_count": 0,
         "missing_paths": [],
-        "sha256": "feba239c21a21291df0692cfc36374e0abf35214b9d829623a0d1500e3f030fe"
+        "sha256": "31c5d3e9b06faae8e1e12e41475cfebfcf36a103f775a71e2334e54642628143"
       },
       "methodology": {
         "path": "reports/benchmark_methodology.md",
@@ -7969,28 +7969,28 @@
           "path": "reports/security_trust_report.json",
           "exists": true,
           "bytes": 154499,
-          "sha256": "59ce3d3d363cd6162ecf194de7591647c4eb052a9500bf6b1b749634ac7c2048"
+          "sha256": "735da7ad4c6aaf77f0ff19916f5683cb6929ae0bc15b974ab418530b8f7aa4ec"
         },
         {
           "label": "python_compatibility",
           "path": "reports/python_compatibility.json",
           "exists": true,
           "bytes": 34019,
-          "sha256": "50f53de0b5897bd53ee8a4aaec15f2cba899dd1098abc5729a40937834a62636"
+          "sha256": "d6d95615ee853b6b6270c871bd3189c8168856ed1ca5a4d97af1d166853186bd"
         },
         {
           "label": "registry_audit",
           "path": "reports/registry_audit.json",
           "exists": true,
           "bytes": 3252,
-          "sha256": "31b11acfe6a98cb8becb7342315da636d7ed116a43174b89bbb76b9dfca691ad"
+          "sha256": "7f6dc7c34ed914236cde25b404628e4c1f9c885c905b7ee1a4095a0ddfe81da5"
         },
         {
           "label": "package_verification",
           "path": "reports/package_verification.json",
           "exists": true,
           "bytes": 19733,
-          "sha256": "644525676a1e2bd1a1a69ffccd25ad0c25d280ec733f0dd52466928016d742e9"
+          "sha256": "df27022973b45d3a7fedc9f020b08218a27a2cc48ebef4466e2bfa246551526a"
         },
         {
           "label": "install_simulation",
@@ -14732,7 +14732,7 @@
         "interactive_script_count": 0,
         "package_hash_scope": "source-contract-without-generated-reports",
         "package_hash_file_count": 280,
-        "package_sha256": "bb7dfe26d3279cfc6962d9467e7f5e8bf3e2da6dc411823fa8d7bf7d15bb183e"
+        "package_sha256": "2bdbcef3d845fe221f3f1aca9c5c0ff1565242d1239208160f3f47c5df3e8d9b"
       },
       "failures": [],
       "warnings": [],
@@ -17244,7 +17244,7 @@
             "timed_out": false,
             "passed": true,
             "has_help_text": true,
-            "stdout_excerpt": "usage: adjudicate_multi_reviewer.py [-h] --answer-key ANSWER_KEY --decisions\n                                    DECISIONS --reviewer-registry\n                                    REVIEWER_REGISTRY\n                                    [--outp",
+            "stdout_excerpt": "usage: adjudicate_multi_reviewer.py [-h] --answer-key ANSWER_KEY\n                                    --decisions DECISIONS\n                                    --reviewer-registry REVIEWER_REGISTRY\n                                    [--outp",
             "stderr_excerpt": ""
           },
           {
@@ -17394,7 +17394,7 @@
             "timed_out": false,
             "passed": true,
             "has_help_text": true,
-            "stdout_excerpt": "usage: finalize_provider_review.py [-h] --source-run SOURCE_RUN --decisions\n                                   DECISIONS --reviewer-registry\n                                   REVIEWER_REGISTRY [--run-id RUN_ID]\n                            ",
+            "stdout_excerpt": "usage: finalize_provider_review.py [-h] --source-run SOURCE_RUN\n                                   --decisions DECISIONS\n                                   --reviewer-registry REVIEWER_REGISTRY\n                                   [--run-id R",
             "stderr_excerpt": ""
           },
           {
@@ -18701,7 +18701,7 @@
     "python_compatibility": {
       "schema_version": "1.0",
       "ok": true,
-      "generated_at": "2026-06-13",
+      "generated_at": "2026-08-26",
       "root": ".",
       "summary": {
         "target_python": "3.11",
@@ -20504,9 +20504,9 @@
         "context_budget_tier": "production",
         "context_budget_limit": 1000,
         "skill_body_tokens": 767,
-        "other_text_tokens": 1378827,
+        "other_text_tokens": 1378811,
         "estimated_initial_load_tokens": 949,
-        "estimated_total_text_tokens": 1379594,
+        "estimated_total_text_tokens": 1379578,
         "deferred_resource_tokens": 596527,
         "deferred_resource_warn_threshold": 120000,
         "deferred_resource_dirs": [
@@ -22550,7 +22550,7 @@
     "daily_skillops": {
       "schema_version": "1.0",
       "ok": true,
-      "generated_at": "2026-08-26T15:05:52Z",
+      "generated_at": "2026-08-26",
       "skill_dir": ".",
       "decision": "proposal-review",
       "source_supplied": false,
@@ -23064,7 +23064,7 @@
     "weekly_curator": {
       "schema_version": "1.0",
       "ok": true,
-      "generated_at": "2026-08-26T15:05:52Z",
+      "generated_at": "2026-08-26",
       "skill_dir": ".",
       "decision": "curator-review",
       "week_id": "2026-W35",
@@ -23543,7 +23543,7 @@
     "adaptation_proposals": {
       "schema_version": "1.0",
       "ok": true,
-      "generated_at": "2026-08-26T15:05:52Z",
+      "generated_at": "2026-08-26",
       "skill_dir": ".",
       "source_patterns": "reports/user_patterns.json",
       "pattern_count": 5,
@@ -29223,8 +29223,8 @@
         "trust_level": "local",
         "license": "MIT",
         "checksums": {
-          "package_sha256": "bb7dfe26d3279cfc6962d9467e7f5e8bf3e2da6dc411823fa8d7bf7d15bb183e",
-          "archive_sha256": "45bb94d8874f9c999bc6f6d5fe16780d541837a5bc9c94f824e87e11debb17c6"
+          "package_sha256": "2bdbcef3d845fe221f3f1aca9c5c0ff1565242d1239208160f3f47c5df3e8d9b",
+          "archive_sha256": "e4202c69a9bec72041d14ba403bcd87943fa97e219e8fc9ed56422d8601a2961"
         },
         "compatibility": {
           "openai": "pass",
@@ -29255,7 +29255,7 @@
         },
         "distribution": {
           "archive_verified": true,
-          "archive_sha256": "45bb94d8874f9c999bc6f6d5fe16780d541837a5bc9c94f824e87e11debb17c6",
+          "archive_sha256": "e4202c69a9bec72041d14ba403bcd87943fa97e219e8fc9ed56422d8601a2961",
           "package_verification": "reports/package_verification.json",
           "install_simulated": true,
           "install_simulation": "reports/install_simulation.json"
@@ -29280,7 +29280,7 @@
               "vscode"
             ],
             "package_metadata": "registry/packages/captain-meta-skill.json",
-            "package_sha256": "bb7dfe26d3279cfc6962d9467e7f5e8bf3e2da6dc411823fa8d7bf7d15bb183e"
+            "package_sha256": "2bdbcef3d845fe221f3f1aca9c5c0ff1565242d1239208160f3f47c5df3e8d9b"
           }
         ]
       },
@@ -29303,7 +29303,7 @@
         "target_count": 4,
         "adapter_count": 4,
         "archive_present": true,
-        "archive_sha256": "45bb94d8874f9c999bc6f6d5fe16780d541837a5bc9c94f824e87e11debb17c6",
+        "archive_sha256": "e4202c69a9bec72041d14ba403bcd87943fa97e219e8fc9ed56422d8601a2961",
         "archive_entry_count": 672,
         "nested_skill_entry_count": 0,
         "failure_count": 0,
@@ -30323,12 +30323,12 @@
           {
             "field": "archive_sha256",
             "from": "",
-            "to": "45bb94d8874f9c999bc6f6d5fe16780d541837a5bc9c94f824e87e11debb17c6"
+            "to": "e4202c69a9bec72041d14ba403bcd87943fa97e219e8fc9ed56422d8601a2961"
           },
           {
             "field": "package_sha256",
             "from": "0000000000000000000000000000000000000000000000000000000000000000",
-            "to": "bb7dfe26d3279cfc6962d9467e7f5e8bf3e2da6dc411823fa8d7bf7d15bb183e"
+            "to": "2bdbcef3d845fe221f3f1aca9c5c0ff1565242d1239208160f3f47c5df3e8d9b"
           }
         ]
       },
