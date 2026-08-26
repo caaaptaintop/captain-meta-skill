@@ -7,7 +7,7 @@ Task mode describes what the user needs now. Maturity tier describes how much en
 - `A Root`: turn a fuzzy idea into a provisional root problem, success condition, core tension, and one smallest next step. Do not write files unless asked.
 - `B Design`: define positioning, workflow, boundaries, artifacts, and verification. Stop before implementation when the user asks for design only.
 - `C Generate`: create or refactor the explicitly locked target, verify it, and report the rollback boundary.
-- `D Evaluate`: state the evidence level and Trust Gate before scoring. Static review and dry runs are E1 evidence, never runtime proof.
+- `D Evaluate`: state the evidence level and evaluation boundary before scoring. Static review and dry runs are E1 evidence, never runtime proof.
 - `E Reflect`: build an evidence packet from failures or feedback, identify the nearest existing asset, and recommend `create`, `merge`, or `discard`.
 - `F Evolve`: apply only an approved change, keep deployment status separate from source status, retest, and roll back on failed verification.
 
@@ -37,4 +37,4 @@ Use this sequence:
 6. Retest the failing case and the nearest regression case.
 7. Roll back failed verified changes.
 
-Do not add a second SkillBank, hidden background evolution engine, raw trajectory store, or implicit installer. Reuse Yao's existing adaptation, approval, registry, packaging, and rollback machinery.
+Do not add a hidden background evolution engine, raw trajectory store, second registry, or implicit installer. Add machinery only when a current Captain requirement and a runnable check justify it.

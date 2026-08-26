@@ -23,7 +23,13 @@
       "id": "captain-evaluate",
       "mode": "D",
       "prompt": "Evaluate this SKILL.md using static checks only.",
-      "must": ["E1", "Trust Gate", "no runtime-proof claim"]
+      "must": ["E1", "evaluation boundary", "no runtime-proof claim"]
+    },
+    {
+      "id": "captain-reflect",
+      "mode": "E",
+      "prompt": "Review these repeated failures and recommend whether to create, merge, or discard a Skill change.",
+      "must": ["redacted evidence packet", "nearest asset", "create/merge/discard", "no automatic writes"]
     },
     {
       "id": "captain-evolve",

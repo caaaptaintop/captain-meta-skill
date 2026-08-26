@@ -1,17 +1,15 @@
 interface:
   display_name: "Captain Meta Skill"
-  short_description: "Build and evolve governed agent skills"
-  default_prompt: "Use $captain-meta-skill on an explicit target; use --self for Captain itself."
+  short_description: "Design and evolve reusable agent skills"
+  default_prompt: "Use $captain-meta-skill to design, create, evaluate, or evolve the explicitly named Skill."
 compatibility:
   canonical_format: "agent-skills"
   adapter_targets:
     - "openai"
     - "claude"
     - "generic"
-    - "vscode"
   activation:
     mode: "manual"
-    paths: []
   execution:
     context: "inline"
     shell: "bash"
@@ -20,7 +18,6 @@ compatibility:
     remote_inline_execution: "forbid"
     remote_metadata_policy: "allow-metadata-only"
   degradation:
-    openai: "metadata-adapter"
-    claude: "neutral-source-plus-adapter"
-    generic: "neutral-source"
-    vscode: "agent-skills-source-with-vscode-notes"
+    openai: "agent-skills-source"
+    claude: "agent-skills-source"
+    generic: "agent-skills-source"

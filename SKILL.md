@@ -1,56 +1,68 @@
 ---
 name: captain-meta-skill
-description: Create, improve, or evaluate an existing skill from workflows, prompts, SOPs, scripts. Use for migration/release/package, routing, evals/tests, install/trust checks, 优化已有 skill, 补 trigger 评测. Exclude summary/translation/docs, brainstorming, one-off prompts, copy-only edits, outline-only requests.
+description: Design, create, evaluate, or safely evolve reusable agent skills from workflows, prompts, SOPs, scripts, or failure evidence. Use for skill architecture, trigger boundaries, minimal packaging, validation, and upstream-aware maintenance. Do not use for one-off prompts, ordinary documentation, summaries, or translation.
 metadata:
   author: Captain
 ---
 
 # Captain Meta Skill
 
-## Router Rules
+Build the smallest reusable Skill that solves the recurring problem and leaves evidence that it works.
 
-- Route by frontmatter `description` using the lightest mode.
-- Keep `SKILL.md` lean: guidance in `references/`, logic in `scripts/`, evidence in `reports/`.
+## Route the task
 
-## Modes
+Choose the highest required mode when a request spans several modes:
 
-- `Scaffold`: exploratory; `Production`: team; `Library`: shared; `Governed`: release-critical.
-- Rules: [Method](references/skill-engineering-method.md), [Modes](references/operating-modes.md), [Boundaries](references/resource-boundaries.md).
+`F Evolve > E Reflect > D Evaluate > C Generate > B Design > A Root`
 
-## Task Modes
+- **A Root** — clarify a vague idea into a root problem, success condition, core tension, and smallest next step. Do not write files.
+- **B Design** — define positioning, workflow, boundaries, artifacts, and verification. Stop before implementation when design only is requested.
+- **C Generate** — create or refactor the explicitly locked target, then verify it and state the rollback boundary.
+- **D Evaluate** — declare the evidence level before scoring; static inspection is not runtime proof.
+- **E Reflect** — convert failures or feedback into a redacted evidence packet and decide `create`, `merge`, or `discard`.
+- **F Evolve** — apply an approved change, keep source and deployment status separate, retest, and roll back failed changes.
 
-- Task modes: `A Root`, `B Design`, `C Generate`, `D Evaluate`, `E Reflect`, `F Evolve`; priority `F>E>D>C>B>A`; separate from maturity. [Rules](references/captain-task-modes.md).
+Full mode rules: [Captain task modes](references/captain-task-modes.md).
 
-## Compact Workflow
+## Working method
 
-1. Require a reusable output contract; skip one-offs.
-2. Lock problem, success, tension, modes, target path, and identity before writes.
-3. Scan `3-5` references and assets; test `description`.
-4. Evolution: `evidence -> nearest asset -> create/merge/discard -> deployment -> retest/rollback`.
+1. Confirm the problem repeats and needs a Skill. For a one-off task, solve it directly without creating files.
+2. Lock the target directory, package name, intended users, observable success, exclusions, and write boundary.
+3. Inspect the nearest existing Skill or reusable asset before creating new structure.
+4. Choose the minimum package:
+   - always: `SKILL.md`;
+   - when the host needs metadata: `agents/interface.yaml`;
+   - only when instructions would otherwise bloat the entrypoint: `references/`;
+   - only for deterministic reusable logic: `scripts/`;
+   - only for repeatable behavioral checks: `evals/` or `tests/`.
+5. Keep frontmatter triggers concrete. State what the Skill handles and what it excludes.
+6. Validate structure, referenced paths, representative trigger cases, and the requested output contract.
+7. Report files changed, evidence level, verification result, remaining risk, and rollback point.
 
-Playbooks: [Target Safety](references/target-safety.md), [Intent](references/intent-dialogue.md), [Skill IR](references/skill-ir-method.md), [Output Eval](references/output-eval-method.md), [Review Studio](references/review-studio-method.md).
+## Evaluation boundary
 
-## Skill OS 2.0 Gates
+Use the lowest honest evidence label:
 
-For production/library/governed releases, run Skill IR, compiler, trigger/output eval, Atlas, conformance, trust, package/install, upgrade, drift, waiver, Review Studio.
+- **E1 Static** — files, links, metadata, and rules inspected.
+- **E2 Simulated** — deterministic fixtures or dry runs passed.
+- **E3 Runtime** — executed in the intended host with recorded results.
+- **E4 Operational** — repeated real use with reviewed outcomes.
 
-## Governed Package Boundary
+Never promote planned checks, generated reports, or missing telemetry into proof.
 
-Governed/file-backed packages: label `input_files` a `file-backed fixture`; include `owner`, `review cadence`, `output contract`, `rollback boundary`; require `trust report` and `reports/output_quality_scorecard.md`; mark unavailable telemetry/approvals/metrics/benchmarks as `missing evidence`; never fabricate evidence.
+## Evolution boundary
 
-Preserve labels literally when they apply: `file-backed fixture`, `input_files`, `output contract`, `rollback boundary`, `trust report`, `reports/output_quality_scorecard.md`, `missing evidence`.
+For failure-led work:
 
-## First-Turn Style
+1. Redact sensitive material and preserve the failing input, expected result, actual result, and environment.
+2. Find the nearest approved asset.
+3. Choose `create`, `merge`, or `discard`; prefer merging into an existing boundary.
+4. Apply one attributable change.
+5. Retest the failure and the nearest regression case.
+6. Record source status and deployment status independently.
 
-- Infer non-core gaps; ask one core-fork question per round, max two, then use recorded preferred inference.
-- In Chinese, sound soft and companion-like; use [Intent Dialogue](references/intent-dialogue.md).
+Do not create hidden background updaters, raw trajectory stores, a second Skill registry, or an implicit installer.
 
-## Output Contract
+## Captain maintenance
 
-Builds: `SKILL.md`, aligned interface, justified assets, boundary/gate summary. Audits: findings + fixes; edit only when asked. No-skill: no files.
-
-## Reference Map
-
-Primary: [Method](references/skill-engineering-method.md), [Artifact Design](references/artifact-design-doctrine.md), [Systems](references/systems-thinking-doctrine.md), [Governance](references/governance.md), [SkillOps](references/skillops-decision-policy.md).
-
-Downstream: [Maintenance](references/downstream-maintenance.md).
+Captain is an independent distribution. Users update from Captain releases. Maintainers may review and integrate Yao upstream changes, but upstream content is not copied wholesale into each Captain release. See [downstream maintenance](references/downstream-maintenance.md) and [`upstream.lock.json`](upstream.lock.json).
