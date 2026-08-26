@@ -8,9 +8,29 @@
 [![Français](https://img.shields.io/badge/Docs-Fran%C3%A7ais-green)](docs/README.fr-FR.md)
 [![Русский](https://img.shields.io/badge/Docs-%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9-purple)](docs/README.ru-RU.md)
 
-`captain-meta-skill` is an independently released downstream distribution of [Yao Meta Skill](https://github.com/yaojingang/yao-meta-skill). It keeps Yao's Skill OS engine and adds task-intent modes, root-problem diagnosis, evidence-led evolution, and explicit upstream maintenance boundaries informed by [Dao Skill](https://github.com/gnipbao/dao-skill).
+## 中文
 
-Captain and its two source baselines are pinned in [`upstream.lock.json`](upstream.lock.json). See [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) for attribution. Captain users update from Captain releases; maintainers absorb Yao through reviewed upstream merges.
+`captain-meta-skill` 是一个独立发布的 Agent Skill 工程与演化系统，用于设计、生成、评估、维护和发布可复用的生产级技能。
+
+本项目参考并吸收了两个开源技能的优势：
+
+- [Yao Meta Skill](https://github.com/yaojingang/yao-meta-skill)：作为核心上游，Captain 保留其完整 Git 历史、Skill OS 引擎、CLI、评测、打包和治理体系；当前基线为 `2.1.0`，commit `f5d8f681372edae1915991e2de0c23dc306dd30f`。
+- [Dao Skill](https://github.com/gnipbao/dao-skill)：作为机制参考，Captain 吸收其任务意图路由、根问题诊断和证据驱动演化思路；当前参考 commit `1cae835995c0ff4d9a33a6fec82cca0a54b7cd05`。本项目没有复制 Dao 代码，也没有合并其 Git 历史。
+
+Captain 使用独立名称、版本和发布通道。用户只从 Captain Releases 更新；维护者通过审阅后的上游合并持续吸收 Yao 更新。精确来源锁定见 [`upstream.lock.json`](upstream.lock.json)，版权与许可证说明见 [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md)。完整中文文档见 [`docs/README.zh-CN.md`](docs/README.zh-CN.md)。
+
+## English
+
+`captain-meta-skill` is an independently released agent-skill engineering and evolution system for designing, generating, evaluating, maintaining, and shipping reusable production-ready skills.
+
+This project combines strengths from two open-source skills:
+
+- [Yao Meta Skill](https://github.com/yaojingang/yao-meta-skill): the core upstream. Captain preserves its complete Git history, Skill OS engine, CLI, evaluation, packaging, and governance system. The current baseline is `2.1.0`, commit `f5d8f681372edae1915991e2de0c23dc306dd30f`.
+- [Dao Skill](https://github.com/gnipbao/dao-skill): a mechanism reference for task-intent routing, root-problem diagnosis, and evidence-led evolution. The current reference is commit `1cae835995c0ff4d9a33a6fec82cca0a54b7cd05`. Captain does not copy Dao code or merge its Git history.
+
+Captain has its own name, version, and release channel. Users update only from Captain Releases; maintainers absorb Yao changes through reviewed upstream merges. Exact source pins are recorded in [`upstream.lock.json`](upstream.lock.json), with attribution and license details in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
+
+## Yao Engine Documentation / Yao 引擎文档
 
 The inherited documentation below retains the Yao Engine name where it describes the underlying CLI, reports, tests, and historical evidence.
 
