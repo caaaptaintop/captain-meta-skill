@@ -31,7 +31,8 @@ evidence/world_class/submission-kit/
 evidence/world_class/submissions/
 registry/index.json
 registry/packages/
-skill_atlas/
+skill_atlas/*
+!skill_atlas/policy.json
 
 # Local business-skill experiments belong outside this meta-skill repo unless promoted intentionally.
 geo-ranking-article-generator/
