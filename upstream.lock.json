@@ -1,11 +1,11 @@
 {
   "distribution": "captain-meta-skill",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "yao": {
     "repository": "https://github.com/yaojingang/yao-meta-skill",
     "version": "2.1.0",
     "commit": "f5d8f681372edae1915991e2de0c23dc306dd30f",
-    "integration": "history-and-reviewed-foundations"
+    "integration": "engine-source-and-history"
   },
   "dao": {
     "repository": "https://github.com/gnipbao/dao-skill",

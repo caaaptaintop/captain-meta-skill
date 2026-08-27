@@ -5,7 +5,7 @@
       "id": "captain-root",
       "mode": "A",
       "prompt": "I have a vague idea for an agent skill but cannot define the real problem yet.",
-      "must": ["root problem", "success condition", "smallest next step", "no file writes"]
+      "must": ["surface request", "root problem", "first principle", "success condition", "core tension", "constraints and assumptions", "smallest next step", "no file writes"]
     },
     {
       "id": "captain-design",
@@ -23,19 +23,19 @@
       "id": "captain-evaluate",
       "mode": "D",
       "prompt": "Evaluate this SKILL.md using static checks only.",
-      "must": ["E1", "evaluation boundary", "no runtime-proof claim"]
+      "must": ["Yao evidence and trust gates", "E1", "evaluation boundary", "no runtime-proof claim"]
     },
     {
       "id": "captain-reflect",
       "mode": "E",
       "prompt": "Review these repeated failures and recommend whether to create, merge, or discard a Skill change.",
-      "must": ["redacted evidence packet", "nearest asset", "create/merge/discard", "no automatic writes"]
+      "must": ["Yao-compatible redacted evidence packet", "nearest asset", "create/merge/discard", "no file writes"]
     },
     {
       "id": "captain-evolve",
       "mode": "F",
       "prompt": "This skill failed in production; evolve it safely from the evidence.",
-      "must": ["evidence packet", "nearest asset", "create/merge/discard", "deployment status", "retest", "rollback"]
+      "must": ["explicit authorization", "active agent", "locked target", "Yao engine", "evidence packet", "nearest asset", "create/merge/discard", "deployment status", "retest", "rollback", "no background mutation"]
     }
   ]
 }

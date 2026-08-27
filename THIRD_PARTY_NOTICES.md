@@ -2,7 +2,7 @@
 
 ## Yao Meta Skill
 
-Captain Meta Skill began from the Git history and selected engineering foundations of [yaojingang/yao-meta-skill](https://github.com/yaojingang/yao-meta-skill). The reviewed baseline is pinned in `upstream.lock.json`. Yao Meta Skill is distributed under the MIT License; its history and copyright notices remain available in this repository's Git history and upstream repository.
+Captain Meta Skill inherits the engineering engine and Git history of [yaojingang/yao-meta-skill](https://github.com/yaojingang/yao-meta-skill). The reviewed baseline is pinned in `upstream.lock.json`. Yao Meta Skill is distributed under the MIT License; its copyright notices remain available in this repository's Git history and upstream repository.
 
 ## Dao Skill
 

@@ -1,22 +1,33 @@
 # Downstream Maintenance
 
-Captain is an independent distribution. Users update from Captain releases; Yao is a fetch-only source for maintainer review.
+Captain is an independent downstream distribution. Users update from Captain releases; Yao is a fetch-only engineering upstream.
 
 ## Remote contract
 
 - `origin`: `caaaptaintop/captain-meta-skill`, Captain's release source.
 - `upstream`: `yaojingang/yao-meta-skill`, fetch-only.
-- Dao: a pinned mechanism reference; do not merge its unrelated Git history.
+- Dao: a pinned mechanism reference; do not merge its unrelated Git history or copy its code without explicit review and attribution.
 
-## Review an upstream Yao update
+## Source boundary
 
-1. Fetch `upstream` and inspect changes since `upstream.lock.json`.
+Captain retains the Yao Engine source required for creation, evaluation, compilation, packaging, trust, installation, and release checks. Captain owns the public identity, A-F task modes, README, source lock, and downstream policy.
+
+Routine generated outputs are not source and should remain untracked:
+
+- `.previews/`, `dist/`, `reports/`;
+- localized or historical Yao homepage copies under `docs/`;
+- test scratch directories, caches, local telemetry, and provider raw output.
+
+## Review a Yao update
+
+1. Fetch `upstream` and inspect changes since the Yao pin in `upstream.lock.json`.
 2. Create `sync/yao-X.Y.Z` from Captain `main`.
-3. Select only changes that improve Captain's current contract. Do not restore the full Yao working tree by default.
-4. Resolve Captain-owned files intentionally and run `make test`.
-5. Update the Yao version and commit pin only after validation passes.
-6. Merge through review, bump Captain's own version, and publish a Captain release.
+3. Merge or cherry-pick Yao Engine changes while preserving Captain-owned files.
+4. Keep generated reports, previews, and duplicated upstream public docs out of the tracked tree.
+5. Run focused checks, then `make ci-test`.
+6. Update the Yao version and commit pin only after the complete validation passes.
+7. Merge through review, bump Captain's own version, and publish a Captain release.
 
-Prefer cherry-picking or manually integrating a focused upstream change. Use a full upstream merge only when Captain deliberately adopts the corresponding subsystem. Published history must not be rewritten.
+Yao's official self-update channel must not overwrite Captain. Captain users update only from Captain releases.
 
 Rollback by reverting the integration commit and retaining the previous Captain release.

@@ -1,68 +1,43 @@
 ---
 name: captain-meta-skill
-description: Design, create, evaluate, or safely evolve reusable agent skills from workflows, prompts, SOPs, scripts, or failure evidence. Use for skill architecture, trigger boundaries, minimal packaging, validation, and upstream-aware maintenance. Do not use for one-off prompts, ordinary documentation, summaries, or translation.
+description: Create, evaluate, migrate, package, release, or safely evolve reusable agent skills from workflows, prompts, SOPs, scripts, or failure evidence. Use to improve an existing skill, add trigger evals/tests, run CLI-assisted generation, Skill IR, trust checks, install simulation, and release gates. Exclude one-off prompts, ordinary documentation, summaries, translation, and copy-only edits.
 metadata:
   author: Captain
 ---
 
 # Captain Meta Skill
 
-Build the smallest reusable Skill that solves the recurring problem and leaves evidence that it works.
+Build the smallest reusable Skill for a recurring problem and prove it with proportionate gates. Captain routes; Yao executes and verifies; Dao contributes mechanisms only.
 
-## Route the task
-
-Choose the highest required mode when a request spans several modes:
+## Router Rules
 
 `F Evolve > E Reflect > D Evaluate > C Generate > B Design > A Root`
 
-- **A Root** — clarify a vague idea into a root problem, success condition, core tension, and smallest next step. Do not write files.
-- **B Design** — define positioning, workflow, boundaries, artifacts, and verification. Stop before implementation when design only is requested.
-- **C Generate** — create or refactor the explicitly locked target, then verify it and state the rollback boundary.
-- **D Evaluate** — declare the evidence level before scoring; static inspection is not runtime proof.
-- **E Reflect** — convert failures or feedback into a redacted evidence packet and decide `create`, `merge`, or `discard`.
-- **F Evolve** — apply an approved change, keep source and deployment status separate, retest, and roll back failed changes.
+- **A Root** — return request, root problem, first principle, success, tension, constraints/assumptions, and smallest next step; do not write.
+- **B Design** — define positioning, workflow, boundaries, artifacts, and verification; do not implement.
+- **C Generate** — change only the locked target, verify, and report rollback.
+- **D Evaluate** — use Yao evidence, trust, and quality gates; E1 is not runtime proof.
+- **E Reflect** — build a redacted evidence packet, find the nearest asset, choose `create`, `merge`, or `discard`; do not write.
+- **F Evolve** — the authorized active agent changes the locked target through Yao, retests, records deployment separately, and rolls back failures. No background agent mutates files.
 
-Full mode rules: [Captain task modes](references/captain-task-modes.md).
+Full contracts: [Captain task modes](references/captain-task-modes.md).
 
-## Working method
+## Modes
 
-1. Confirm the problem repeats and needs a Skill. For a one-off task, solve it directly without creating files.
-2. Lock the target directory, package name, intended users, observable success, exclusions, and write boundary.
-3. Inspect the nearest existing Skill or reusable asset before creating new structure.
-4. Choose the minimum package:
-   - always: `SKILL.md`;
-   - when the host needs metadata: `agents/interface.yaml`;
-   - only when instructions would otherwise bloat the entrypoint: `references/`;
-   - only for deterministic reusable logic: `scripts/`;
-   - only for repeatable behavioral checks: `evals/` or `tests/`.
-5. Keep frontmatter triggers concrete. State what the Skill handles and what it excludes.
-6. Validate structure, referenced paths, representative trigger cases, and the requested output contract.
-7. Report files changed, evidence level, verification result, remaining risk, and rollback point.
+Choose task and rigor independently: `Scaffold`, `Production`, `Library`, or `Governed`. Dao routing adds no second evaluator, scorer, installer, or engine; Yao remains the single implementation and verification source. See [modes](references/operating-modes.md) and [gates](references/gate-selection.md).
 
-## Evaluation boundary
+## Compact Workflow
 
-Use the lowest honest evidence label:
+1. Require repeated use; lock identity, target, output contract, exclusions, maturity, writes, and rollback.
+2. Inspect the nearest asset; ask only when a missing answer changes the contract.
+3. Build the minimum package and validate structure, routing, resources, and governance.
+4. For Production+, run Skill IR, compilation, trigger/output eval, trust, conformance, package verification, and install simulation.
+5. Publish only when authorized; label evidence honestly and record deployment separately.
 
-- **E1 Static** — files, links, metadata, and rules inspected.
-- **E2 Simulated** — deterministic fixtures or dry runs passed.
-- **E3 Runtime** — executed in the intended host with recorded results.
-- **E4 Operational** — repeated real use with reviewed outcomes.
+## Output Contract
 
-Never promote planned checks, generated reports, or missing telemetry into proof.
+Use `scripts/yao.py` with an explicit target; `--self` is only for Captain. Return changed files, gates, evidence level (`E1` static, `E2` simulated, `E3` runtime, `E4` operational), result, risk, and rollback. Never inflate evidence or commit generated/private output.
 
-## Evolution boundary
+## Reference map
 
-For failure-led work:
-
-1. Redact sensitive material and preserve the failing input, expected result, actual result, and environment.
-2. Find the nearest approved asset.
-3. Choose `create`, `merge`, or `discard`; prefer merging into an existing boundary.
-4. Apply one attributable change.
-5. Retest the failure and the nearest regression case.
-6. Record source status and deployment status independently.
-
-Do not create hidden background updaters, raw trajectory stores, a second Skill registry, or an implicit installer.
-
-## Captain maintenance
-
-Captain is an independent distribution. Users update from Captain releases. Maintainers may review and integrate Yao upstream changes, but upstream content is not copied wholesale into each Captain release. See [downstream maintenance](references/downstream-maintenance.md) and [`upstream.lock.json`](upstream.lock.json).
+[Task modes](references/captain-task-modes.md) · [method](references/skill-engineering-method.md) · [evaluation](references/eval-playbook.md) · [packaging](references/packaging-contracts.md) · [trust](references/trust-security-method.md) · [maintenance](references/downstream-maintenance.md) · [`upstream.lock.json`](upstream.lock.json)
