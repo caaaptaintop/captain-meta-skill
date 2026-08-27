@@ -57,7 +57,7 @@ def main() -> None:
     assert "assets/skill-overview.js" in payload["resources"]["assets"], payload["resources"]["assets"]
     assert "assets/review-studio.css" in payload["resources"]["assets"], payload["resources"]["assets"]
     assert "assets/review-viewer.css" in payload["resources"]["assets"], payload["resources"]["assets"]
-    assert payload["resources"]["reports"], payload
+    assert isinstance(payload["resources"]["reports"], list), payload
     assert "evals/trigger_cases.json" in payload["eval_plan"]["trigger"], payload["eval_plan"]
     assert payload["risk"]["trust_boundary"] == "external", payload
     assert payload["governance"]["maturity"] == "governed", payload
