@@ -76,9 +76,10 @@ def add_check(checks: list[str], failures: list[str], condition: bool, passed: s
         failures.append(failed)
 
 
-def relative_resource_check(skill_dir: Path, ir: dict[str, Any]) -> tuple[list[str], list[str]]:
+def relative_resource_check(skill_dir: Path, ir: dict[str, Any]) -> tuple[list[str], list[str], list[str]]:
     checks = []
     failures = []
+    warnings = []
     resources = ir.get("resources", {}) if isinstance(ir, dict) else {}
     for group in ("references", "scripts", "assets", "reports"):
         for raw_path in resources.get(group, []):
@@ -92,11 +93,13 @@ def relative_resource_check(skill_dir: Path, ir: dict[str, Any]) -> tuple[list[s
             except ValueError:
                 failures.append(f"{group} resource escapes package: {raw_path}")
                 continue
-            if not target.exists():
+            if not target.exists() and group == "reports":
+                warnings.append(f"generated report is not available yet: {raw_path}")
+            elif not target.exists():
                 failures.append(f"{group} resource is missing: {raw_path}")
             else:
                 checks.append(f"{group} resource resolves: {raw_path}")
-    return checks, failures
+    return checks, failures, warnings
 
 
 def common_evidence(skill_dir: Path) -> dict[str, Any]:
@@ -187,9 +190,10 @@ def check_target(skill_dir: Path, target: str, evidence: dict[str, Any]) -> dict
         "Skill IR description matches frontmatter",
         "Skill IR description does not match frontmatter",
     )
-    resource_checks, resource_failures = relative_resource_check(skill_dir, ir)
+    resource_checks, resource_failures, resource_warnings = relative_resource_check(skill_dir, ir)
     checks.extend(resource_checks[:12])
     failures.extend(resource_failures)
+    warnings.extend(resource_warnings)
 
     return {
         "target": target,

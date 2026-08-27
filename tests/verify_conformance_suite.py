@@ -8,7 +8,6 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SCRIPT = ROOT / "scripts" / "run_conformance_suite.py"
-EXPORT_IR = ROOT / "scripts" / "export_skill_ir.py"
 
 
 def main() -> None:
@@ -16,19 +15,6 @@ def main() -> None:
     tmp_root.mkdir(parents=True, exist_ok=True)
     output_json = tmp_root / "conformance_matrix.json"
     output_md = tmp_root / "conformance_matrix.md"
-    subprocess.run(
-        [
-            sys.executable,
-            str(EXPORT_IR),
-            str(ROOT),
-            "--output-json",
-            str(ROOT / "skill-ir" / "examples" / "yao-meta-skill.json"),
-        ],
-        cwd=ROOT,
-        check=True,
-        capture_output=True,
-        text=True,
-    )
     proc = subprocess.run(
         [
             sys.executable,
@@ -59,7 +45,7 @@ def main() -> None:
     shutil.copytree(
         ROOT,
         renamed_root,
-        ignore=shutil.ignore_patterns(".git", ".previews", "dist", "__pycache__", ".pytest_cache", "tmp*"),
+        ignore=shutil.ignore_patterns(".git", ".previews", "dist", "reports", "__pycache__", ".pytest_cache", "tmp*"),
     )
     renamed_proc = subprocess.run(
         [
@@ -81,6 +67,7 @@ def main() -> None:
     assert renamed_payload["summary"]["pass_count"] == 5, renamed_payload
     warnings = [warning for target in renamed_payload["targets"] for warning in target["warnings"]]
     assert any("source checkout directory differs" in warning for warning in warnings), renamed_payload
+    assert any("generated report is not available yet" in warning for warning in warnings), renamed_payload
 
     broken = tmp_root / "broken-skill"
     (broken / "agents").mkdir(parents=True, exist_ok=True)
