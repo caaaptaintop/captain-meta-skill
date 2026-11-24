@@ -18,6 +18,7 @@ EXCLUDED_ARCHIVE_PARTS = {
     ".pytest_cache",
     ".ruff_cache",
     ".yao",
+    "local-data",
     "__pycache__",
     ".venv",
     "venv",

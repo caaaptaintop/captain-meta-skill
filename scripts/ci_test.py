@@ -34,6 +34,7 @@ DEFAULT_TARGETS = [
     "python-compat-check",
     "architecture-maintainability-check",
     "target-safety-check",
+    "maintenance-boundary-check",
     "captain-downstream-check",
     "yao-cli-check",
     "yao-cli-world-class-check",

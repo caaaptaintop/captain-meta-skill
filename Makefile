@@ -42,6 +42,10 @@ architecture-maintainability-check:
 target-safety-check:
 	$(PYTHON) tests/verify_target_safety.py
 
+.PHONY: maintenance-boundary-check
+maintenance-boundary-check:
+	$(PYTHON) tests/verify_skill_maintenance.py
+
 captain-downstream-check:
 	$(PYTHON) tests/verify_captain_downstream.py
 

@@ -27,6 +27,7 @@ tests/tmp_baseline_compare.*
 reports/release_snapshots/
 reports/telemetry_events.jsonl
 .yao/
+local-data/
 evidence/world_class/submission-kit/
 evidence/world_class/submissions/
 registry/index.json

@@ -93,6 +93,7 @@ from yao_cli_target_policy import (
     prepare_target_context,
 )
 from yao_cli_update_commands import command_check_update, command_self_update
+from skill_maintenance import command_maintenance_check
 
 
 COMMAND_LINE_TOOLS_MAKE = Path("/Library/Developer/CommandLineTools/usr/bin/make")

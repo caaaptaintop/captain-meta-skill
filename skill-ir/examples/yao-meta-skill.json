@@ -41,10 +41,10 @@
   "workflow": {
     "steps": [
       "Require repeated use; lock identity, target, output contract, exclusions, maturity, writes, and rollback.",
-      "Inspect the nearest asset; ask only when a missing answer changes the contract.",
+      "Inspect the nearest asset and any `local-data/ADAPTATION.md`. Before writes, follow [maintenance policy](references/skill-maintenance-policy.md) for classification, source/base, file boundaries and rollback.",
       "Build the minimum package and validate structure, routing, resources, and governance.",
       "For Production+, run Skill IR, compilation, trigger/output eval, trust, conformance, package verification, and install simulation.",
-      "Publish only when authorized; label evidence honestly and record deployment separately."
+      "Check changes with `yao maintenance-check`; exclude private data. Publish only when authorized; report deployment separately."
     ],
     "decision_points": [
       "**A Root** — return request, root problem, first principle, success, tension, constraints/assumptions, and smallest next step; do not write.",
@@ -106,6 +106,7 @@
       "references/skill-atlas-method.md",
       "references/skill-engineering-method.md",
       "references/skill-ir-method.md",
+      "references/skill-maintenance-policy.md",
       "references/skillops-decision-policy.md",
       "references/systems-thinking-doctrine.md",
       "references/target-safety.md",
@@ -239,6 +240,7 @@
       "scripts/self_update.py",
       "scripts/simulate_install.py",
       "scripts/skill_ir_paths.py",
+      "scripts/skill_maintenance.py",
       "scripts/skill_os2_coverage_markdown.py",
       "scripts/skill_report_charts.py",
       "scripts/skill_report_i18n.py",

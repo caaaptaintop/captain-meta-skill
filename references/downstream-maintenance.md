@@ -30,4 +30,6 @@ Routine generated outputs are not source and should remain untracked:
 
 Yao's official self-update channel must not overwrite Captain. Captain users update only from Captain releases.
 
+For a locally customized Captain or any other installed skill, apply the [skill maintenance policy](skill-maintenance-policy.md) before updating. Retain its author base and custom diff; a managed update is not a three-way merge of customized source. Do not discard local adaptations or replace them with release defaults.
+
 Rollback by reverting the integration commit and retaining the previous Captain release.

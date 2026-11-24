@@ -73,6 +73,16 @@ def build_parser(command_handlers: dict[str, Callable[[argparse.Namespace], int]
     validate_cmd.add_argument("--require-manifest", action="store_true")
     validate_cmd.set_defaults(func=_handler(command_handlers, "command_validate"))
 
+    maintenance_cmd = subparsers.add_parser("maintenance-check", help="Compare an explicit before-copy with a local/custom/update change boundary.")
+    maintenance_cmd.add_argument("skill_dir")
+    maintenance_cmd.add_argument("--before", required=True)
+    maintenance_cmd.add_argument("--kind", choices=["local", "custom", "update"], required=True)
+    maintenance_cmd.add_argument("--allow", action="append", default=[], help="Exact relative changed file path; repeat as needed.")
+    maintenance_cmd.add_argument("--source-ref", default="")
+    maintenance_cmd.add_argument("--base-revision", default="")
+    maintenance_cmd.add_argument("--output-json")
+    maintenance_cmd.set_defaults(func=_handler(command_handlers, "command_maintenance_check"))
+
     evidence_build_cmd = subparsers.add_parser(
         "evidence-build",
         help="Build isolated evidence and optionally publish an immutable release bundle.",

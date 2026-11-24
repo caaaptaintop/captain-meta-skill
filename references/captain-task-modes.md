@@ -11,7 +11,7 @@ Task mode describes what the user needs now. Maturity tier describes how much en
 - `E Reflect`: build the normalized evidence packet used by the Yao adaptation workflow, identify the nearest existing asset, and recommend `create`, `merge`, or `discard`; do not mutate files.
 - `F Evolve`: the active agent applies only an explicitly authorized change to the locked target through the Yao engine, keeps deployment status separate from source status, retests, and rolls back on failed verification. No background agent mutates files.
 
-For compound requests choose the highest required mode: `F > E > D > C > B > A`. A higher mode may include lower-mode work, but it must preserve every lower mode's write and evidence boundary.
+For compound requests choose the highest required mode: `F > E > D > C > B > A`. A higher mode may include lower-mode work. A lower mode's no-write boundary applies during that analysis substage; once the user has authorized C/F implementation, use that stage's locked target and write boundaries. User requests for design-only, review-only, or no modifications remain binding until explicitly changed. Evidence standards remain in force throughout.
 
 ## Single-Engine Rule
 
@@ -33,6 +33,8 @@ Before structure, record:
 Ask only about unresolved assumptions that change the result.
 
 ## Evolution Decision
+
+Before C/F writes, follow [skill maintenance policy](skill-maintenance-policy.md). Local configuration is created on demand and kept outside reusable source; authorized functional customization may change source with provenance and a reproducible diff; upstream updates preserve local data and merge customizations before replacement. Existing task authorization is not a reason to request it again. Each skill's adaptation note records concrete local facts only.
 
 Use this sequence:
 
