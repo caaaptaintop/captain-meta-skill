@@ -1,9 +1,9 @@
 {
   "name": "captain-meta-skill",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "owner": "Captain",
   "updated_at": "2026-11-14",
-  "review_due": "2026-11-27",
+  "review_due": "2027-02-24",
   "status": "active",
   "maturity_tier": "governed",
   "lifecycle_stage": "library",

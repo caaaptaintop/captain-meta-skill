@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import json
+from datetime import date, timedelta
 import shutil
 import subprocess
 import sys
@@ -298,7 +299,7 @@ def main() -> None:
                         "reviewer": "Yao Team",
                         "scope": "Test network probe.",
                         "reason": "Network access is bounded to example.com for this isolated test fixture.",
-                        "expires_at": "2026-09-30",
+                        "expires_at": (date.today() + timedelta(days=365)).isoformat(),
                         "target_enforcement": {
                             "openai": "metadata-only",
                             "claude": "adapter metadata",
