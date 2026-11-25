@@ -214,7 +214,7 @@ def main() -> None:
     )
     (secret_skill / "agents" / "interface.yaml").write_text(INTERFACE, encoding="utf-8")
     (secret_skill / "scripts" / "leaky.py").write_text(
-        "TOKEN = 'ghp_1234567890abcdefghijklmnopqrstuv'\n",
+        "TOKEN = '" + "ghp" + "_" + "Ab12" * 8 + "'\n",
         encoding="utf-8",
     )
     secret_proc = subprocess.run(

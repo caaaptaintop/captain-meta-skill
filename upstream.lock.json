@@ -1,6 +1,6 @@
 {
   "distribution": "captain-meta-skill",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "yao": {
     "repository": "https://github.com/yaojingang/yao-meta-skill",
     "version": "2.1.0",
